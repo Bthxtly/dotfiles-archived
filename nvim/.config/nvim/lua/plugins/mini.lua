@@ -19,7 +19,7 @@ return {
           "^().*()$",
         },
         i = LazyVim.mini.ai_indent, -- indent
-        e = LazyVim.mini.ai_buffer, -- buffer
+        e = LazyVim.mini.ai_buffer, -- buffer (entire)
         u = ai.gen_spec.function_call(), -- u for "Usage"
         U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
       },

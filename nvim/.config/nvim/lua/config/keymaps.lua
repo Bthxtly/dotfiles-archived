@@ -115,11 +115,12 @@ function CompileRunGcc()
     vim.cmd("res -5")
     vim.cmd("term cargo run")
   elseif vim.bo.filetype == "markdown" or vim.bo.filetype == "vimwiki" then
-    vim.cmd("MarkdownPreview")
+    -- vim.cmd("MarkdownPreviewToggle")
+    vim.cmd("Markview toggle")
   elseif vim.bo.filetype == "tex" then
     vim.cmd("VimtexCompile")
   end
 end --}}}
 --}}}
 
--- vim:foldmethod=marker
+-- vim:foldmethod=marker:foldlevel=1

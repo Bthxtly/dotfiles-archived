@@ -4,6 +4,8 @@
 
 -- extras
 vim.g.lazyvim_blink_main = true
+vim.g.snacks_animate = false
+vim.g.lazyvim_picker = "telescope"
 
 local o = vim.opt
 o.clipboard = ""
@@ -15,6 +17,7 @@ o.spelllang = { "en", "it" }
 o.encoding = "UTF-8"
 o.shiftwidth = 2
 o.tabstop = 2
+o.laststatus = 3
 
 -- Enable persistent undo
 o.undofile = true
