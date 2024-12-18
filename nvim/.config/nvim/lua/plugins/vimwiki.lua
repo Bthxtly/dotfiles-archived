@@ -1,15 +1,3 @@
--- local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
--- parser_configs["vimwiki"] = {
---   experimental = true,
---   install_info = {
---     files = { "src/parser.c", "src/scanner.c" },
---     location = "tree-sitter-markdown",
---     url = "https://github.com/MDeiml/tree-sitter-markdown",
---   },
---   maintainers = { "@MDeiml" },
---   readme_name = "markdown (basic highlighting)",
--- }
-
 vim.cmd([[
 function! OpenMarkdownPreview (url)
     silent execute "!google-chrome-stable --new-window " . a:url
@@ -23,6 +11,8 @@ return {
   {
     "vimwiki/vimwiki",
     init = function()
+      vim.treesitter.language.register("markdown", { "vimwiki" })
+      -- vim.g.vimwiki_filetypes = { "markdown" }
       vim.g.vimwiki_global_ext = 0
       vim.g.vimwiki_list = {
         {
@@ -41,7 +31,6 @@ return {
     lazy = false, -- Recommended
     opts = {
       filetypes = { "markdown", "vimwiki", "Avante" },
-      vim.treesitter.language.register("markdown", { "vimwiki" }),
     },
     ft = { "markdown", "vimwiki", "Avante" },
     dependencies = {
