@@ -3,11 +3,16 @@ return {
     "hedyhli/outline.nvim",
     lazy = true,
     cmd = { "Outline", "OutlineOpen" },
-    keys = { -- Example mapping to toggle outline
+    keys = {
       { "<F10>", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
-      -- Your setup opts here
+      porviders = {
+        markdown = {
+          filetypes = { "vimwiki.markdown", "markdown" },
+        },
+      },
     },
+    ft = { "markdown", "vimwiki.markdown" },
   },
 }
