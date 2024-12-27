@@ -1,9 +1,5 @@
-#| --------------------------------------------------------------------------
-                              Configure
-  -------------------------------------------------------------------------- |#
-;;{{{
+#| ---------------------------Configure------------------------------------- |#
 (defcfg
-  ;; For Linux
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   output (uinput-sink "My KMonad output"
     ;; "/usr/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt"
@@ -20,11 +16,7 @@
   ;; Set the implicit around to `around`
   ;; implicit-around around
 )
-;;}}}
-#| --------------------------------------------------------------------------
-                                Source
-  -------------------------------------------------------------------------- |#
-;;{{{
+#| -----------------------------Source-------------------------------------- |#
 (defsrc ;; qwerty layout
   esc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -34,34 +26,33 @@
   lctl      lmet lalt           spc            ralt rctl
 )
 
-;; (defsrc ;; colemak layout
-;;   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-;;   tab  q    w    f    p    g    j    l    u    y    ;    [    ]    \
-;;   caps a    r    s    t    d    h    n    e    i    o    '    ret
-;;   lsft z    x    c    v    b    k    m    ,    .    /    rsft
-;;   lctl      lmet lalt           spc            ralt rctl 
-;; )
 
-;; (defsrc :name numpad
-;;   nlck kp/ kp* kp-
-;;   kp7  kp8 kp9 kp+
-;;   kp4  kp5 kp6
-;;   kp1  kp2 kp3 kprt
-;;   kp0      kp.
-;; )
-;;}}}
-#| --------------------------------------------------------------------------
-                                Layer
-  -------------------------------------------------------------------------- |#
-;;{{{
+  ;; (defsrc ;; colemak layout
+  ;;   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  ;;   tab  q    w    f    p    g    j    l    u    y    ;    [    ]    \
+  ;;   caps a    r    s    t    d    h    n    e    i    o    '    ret
+  ;;   lsft z    x    c    v    b    k    m    ,    .    /    rsft
+  ;;   lctl      lmet lalt           spc            ralt rctl 
+  ;; )
+
+#| -----------------------------Layer--------------------------------------- |#
 ;; layer colemak layout
 (deflayer colemak
   caps
   esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    f    p    g    j    l    u    y    ;    bspc esc  \
-  lctl a    r    s    t    d    h    n    e    i    o    '    ret
+  lctl a    r    s    t    d    h    n    e    i    o    @qte ret
   lsft z    x    c    v    b    k    m    ,    .    /    rsft
-  @qwe      lalt lmet            spc            @sym rctl
+  @qwe     lalt lmet            spc            @sym rctl
+)
+
+(deflayer wide_mod
+  caps
+  esc  1    2    3    4    5    =    6    7    8    9    0    -    bspc
+  tab  q    w    f    p    g    _    j    l    u    y    ;    bspc esc
+  lctl a    r    s    t    d    _    h    n    e    i    o    ret
+  lsft z    x    c    v    b    _    k    m    ,    .    rsft
+  @mc      lalt lmet            @ssp           @sym rctl
 )
 
 (deflayer qwerty
@@ -70,7 +61,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   lctl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @col      lalt met           spc            @sym rctl
+  @col      lalt lmet           spc            @sym rctl
 )
 
 (deflayer symbols
@@ -79,7 +70,7 @@
   _    @    #    %    &    *    ^    ^    del  $    spc  bspc esc  @fuc
   @fuc grv  ~    {    [   \(    left down up   rght ret  ret  @ext
   _    !   \_    }    ]   \)    +    -    =    \    |    @fuc
-  _         _    _              @num           _    _
+  @qwe      _    _              @num           _    _
 )
 
 (deflayer numbers
@@ -94,9 +85,9 @@
 (deflayer extension
   esc
   _    _     _     _     _     _     _     _     _     _     _     _    _    _
-  _    @rms1 @rms2 @rms3 @rms4 @rms5 @rms6 @rms7 @rms8 @rms9 @rms0 _    _    _
-  _    @rm1  @rm2  @rm3  @rm4  @rm5  @rm6  @rm7  @rm8  @rm9  @rm0  _    _
-  _    _     _     _     _     _     _     _     _     _     _     _
+  _    @lms1 @lms2 @lms3 @lms4 @lms5 @lms6 @lms7 @lms8 @lms9 @lms0 _    _    _
+  _    @lm1  @lm2  @lm3  @lm4  @lm5  @lm6  @lm7  @lm8  @lm9  @lm0  _    _
+  _    _     _     _     _     _     @lmh  @lmn  @lme  @lmi  _     _
   _          _     _                 _                 _     _
 )
 
@@ -109,6 +100,15 @@
   _         _    _              _              _    _
 )
 
+(deflayer minecraft
+  caps
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    f    p    g    j    l    u    y    ;    bspc esc  \
+  lctl a    r    s    t    d    h    n    e    i    o    '    ret
+  lsft z    x    c    v    b    k    m    ,    .    /    rsft
+  @col      lalt lmet            spc            @sym rctl
+)
+
 (deflayer blank
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -117,24 +117,24 @@
   _    _    _    _    _    _    _    _    _    _    _    _
   _         _    _              _              _    _
 )
-;;}}}
-#| --------------------------------------------------------------------------
-                               Aliases
-  -------------------------------------------------------------------------- |#
-;;{{{
-(defalias
+#| ----------------------------Aliases-------------------------------------- |#
+(defalias ;; layer
   col (layer-switch colemak)
   qwe (layer-switch qwerty)
-)
-
-(defalias
+  mc  (layer-switch minecraft)
   num (layer-toggle numbers)
   sym (layer-toggle symbols)
   ext (layer-toggle extension)
   fuc (layer-toggle function)
 )
 
-(defalias 
+(defalias ;; tap
+  qte (tap-next-release ' @ext)
+  tsp (tap-next t lmet)
+  ssp (tap-next-release spc lmet)
+)
+
+(defalias ;; sticky
   ss (sticky-key 1500 rsft)
   cs (sticky-key 1500 rctl)
   as (sticky-key 1500 ralt)
@@ -147,7 +147,7 @@
   ass (around @ss @as)
 )
 
-(defalias
+(defalias ;; other
   ;; scpy C-S-c
   ;; spst C-S-v
   ;; scut C-S-x
@@ -169,27 +169,30 @@
   ed end
 
   ;; lmet (+ lsft) + num
-  rm1 (around lmet 1)
-  rm2 (around lmet 2)
-  rm3 (around lmet 3)
-  rm4 (around lmet 4)
-  rm5 (around lmet 5)
-  rm6 (around lmet 6)
-  rm7 (around lmet 7)
-  rm8 (around lmet 8)
-  rm9 (around lmet 9)
-  rm0 (around lmet 0)
-  rms1 (around (around lmet rsft) 1)
-  rms2 (around (around lmet rsft) 2)
-  rms3 (around (around lmet rsft) 3)
-  rms4 (around (around lmet rsft) 4)
-  rms5 (around (around lmet rsft) 5)
-  rms6 (around (around lmet rsft) 6)
-  rms7 (around (around lmet rsft) 7)
-  rms8 (around (around lmet rsft) 8)
-  rms9 (around (around lmet rsft) 9)
-  rms0 (around (around lmet rsft) 0)
+  lm1 (around lmet 1)
+  lm2 (around lmet 2)
+  lm3 (around lmet 3)
+  lm4 (around lmet 4)
+  lm5 (around lmet 5)
+  lm6 (around lmet 6)
+  lm7 (around lmet 7)
+  lm8 (around lmet 8)
+  lm9 (around lmet 9)
+  lm0 (around lmet 0)
+  lmh (around lmet h)
+  lmn (around lmet n)
+  lme (around lmet e)
+  lmi (around lmet i)
+  lms1 (around (around lmet rsft) 1)
+  lms2 (around (around lmet rsft) 2)
+  lms3 (around (around lmet rsft) 3)
+  lms4 (around (around lmet rsft) 4)
+  lms5 (around (around lmet rsft) 5)
+  lms6 (around (around lmet rsft) 6)
+  lms7 (around (around lmet rsft) 7)
+  lms8 (around (around lmet rsft) 8)
+  lms9 (around (around lmet rsft) 9)
+  lms0 (around (around lmet rsft) 0)
 )
-;;}}}
 
-;; vim:fdm=marker:fdl=0
+;; vim:fdl=0

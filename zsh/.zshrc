@@ -141,4 +141,3 @@ function y() {
 
 source $HOME/.oh-my-zsh/custom/zoxide.zsh
 source $HOME/.oh-my-zsh/custom/variables.zsh
-# source $HOME/dotfiles/nvim/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh

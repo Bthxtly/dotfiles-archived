@@ -6,13 +6,13 @@ local map = vim.keymap.set
 --=========================================================================
 map("n", "<C-c>", "<esc>")
 -- I'm brilliant
-map("n", "go", "o<esc>S<esc>k", { desc = "add a new blank line below" })
-map("n", "gO", "O<esc>S<esc>j", { desc = "add a new blank line above" })
+map("n", "go", "o<esc>S<esc>k", { desc = "Add a new blank line below" })
+map("n", "gO", "O<esc>S<esc>j", { desc = "Add a new blank line above" })
 --=========================================================================
 -- tab
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "TP", "<cmd>tabnext<cr>", { desc = "switch to previous tab" })
-map("n", "TT", "<cmd>tabnext<cr>", { desc = "add a new tab" })
+map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
 --=========================================================================
 -- Windows manager {{{
 -- Disable the default s key
@@ -52,10 +52,6 @@ vim.keymap.set("n", "sx", "<C-w><C-x>")
 -- Auto insert spaces after a comma
 vim.keymap.set("i", ",", ",<space>")
 
--- Quick edit
--- vim.keymap.set("n", "<leader>vv", ":tabnew ~/.config/nvim/init.lua<CR>")
-vim.keymap.set("n", "<leader>vt", ":tabnew ~/Documents/VimWiki/index.md<CR>")
-
 -- Toggle highlight search {{{
 local hlstate = 0
 vim.keymap.set("n", "<leader><CR>", function()
@@ -65,7 +61,7 @@ vim.keymap.set("n", "<leader><CR>", function()
     vim.cmd("set hlsearch")
   end
   hlstate = 1 - hlstate
-end, { silent = true, desc = "toggle hlsearch" })
+end, { silent = true, desc = "Toggle hlsearch" })
 --}}}
 
 -- System clipboard copy and paste
@@ -73,17 +69,19 @@ vim.keymap.set("n", "Y", '"+y')
 vim.keymap.set("v", "Y", '"+y')
 
 -- Quick quit and save
-vim.keymap.set("c", "Q", "q!<CR>")
-vim.keymap.set("n", "<C-S>", ":w<CR>", { silent = true })
-vim.keymap.set("n", "<C-Q>", ":q<CR>", { silent = true })
+vim.keymap.set("c", "Q", "q!<CR>") -- force to quit in cmdline
+vim.keymap.set("n", "<C-S>", ":w<CR>", { silent = true, desc = "Write file" })
+vim.keymap.set("n", "<C-Q>", ":q<CR>", { silent = true, desc = "Quit" })
 vim.keymap.set("t", "<C-Q>", "<C-\\><C-N>:q<CR>", { silent = true })
 vim.keymap.set("t", "<C-H>", "<C-\\><C-N>")
 
 -- Shortcuts
-vim.keymap.set("n", "<F2>", ":Maximize<CR>", { silent = true })
-vim.keymap.set("n", "<F3>", ":lua CompileRunGcc()<CR>", { silent = true })
-vim.keymap.set("n", "<F8>", ":UndotreeToggle<CR>", { silent = true })
-vim.keymap.set("n", "<F9>", ":Neotree toggle<CR>", { silent = true })
+vim.keymap.set("n", "<F1>", ":cd %:h<CR>", { silent = true, desc = "cd to file path" })
+vim.keymap.set("n", "<F2>", ":Maximize<CR>", { silent = true, desc = "Maximize the current window" })
+vim.keymap.set("n", "<F3>", ":lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
+vim.keymap.set("n", "<F8>", ":UndotreeToggle<CR>", { silent = true, desc = "Undotree" })
+vim.keymap.set("n", "<F9>", ":Neotree toggle<CR>", { silent = true, desc = "Neotree" })
+-- vim.keymap.set("n", "<F10>", ":Trouble symbols toggle<CR>", { silent = true, desc = "Symbols (Trouble)" })
 
 -- Compile function {{{
 function CompileRunGcc()
@@ -99,7 +97,7 @@ function CompileRunGcc()
     vim.cmd("set splitbelow")
     vim.cmd("sp")
     vim.cmd("res -5")
-    vim.cmd("term g++ -std=c++11 % -Wall -o %< && time ./%<")
+    vim.cmd("term g++ -std=gnu++17 % -Wall -o %< && time ./%<")
     vim.cmd("normal i")
   elseif vim.bo.filetype == "sh" then
     vim.cmd("!time bash %")

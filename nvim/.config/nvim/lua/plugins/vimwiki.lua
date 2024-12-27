@@ -1,6 +1,6 @@
 vim.cmd([[
 function! OpenMarkdownPreview (url)
-    silent execute "!google-chrome-stable --new-window " . a:url
+    silent execute "!firefox --new-window " . a:url
     normal <CR>
 endfunction
 let g:mkdp_browserfunc = 'OpenMarkdownPreview'
@@ -30,9 +30,9 @@ return {
     enabled = true,
     lazy = false, -- Recommended
     opts = {
-      filetypes = { "markdown", "vimwiki", "Avante" },
+      filetypes = { "markdown", "vimwiki", "Avante", "codecompanion" },
     },
-    ft = { "markdown", "vimwiki", "Avante" },
+    ft = { "markdown", "vimwiki", "Avante", "codecompanion" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
@@ -41,11 +41,25 @@ return {
 
   {
     "iamcco/markdown-preview.nvim",
+    enabled = true,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && yarn install",
     init = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    enabled = false,
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      file_types = { "markdown", "vimwiki" },
+    },
   },
 }

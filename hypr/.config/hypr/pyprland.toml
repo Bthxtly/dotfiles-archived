@@ -12,17 +12,17 @@ size = "75% 75%"
 max_size = "1920px 100%"
 margin = 50
 
-[scratchpads.left]
-animation = "fromLeft"
+[scratchpads.bottom]
+animation = "fromBottom"
 command = "kitty --class kitty-ff"
 class = "kitty-ff"
 size = "75% 75%"
 max_size = "1920px 100%"
-margin = 20
+margin = 50
 
 [scratchpads.music]
-animation = "fromBottom"
-command = "spotify --enable-features=UseOzonePlatform --ozone-platform=wayland"
+animation = "fromLeft"
+command = "spotify-launcher"
 class = "spotify"
 size = "75% 75%"
 max_size = "1920px 100%"

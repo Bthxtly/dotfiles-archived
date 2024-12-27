@@ -9,7 +9,7 @@ return {
     opts = {
       porviders = {
         markdown = {
-          filetypes = { "vimwiki.markdown", "markdown" },
+          filetypes = { "vimwiki", "markdown" },
         },
       },
     },
