@@ -1,16 +1,21 @@
 vim.cmd("source ~/dotfiles/nvim/.config/nvim/current_theme.vim")
+vim.cmd('let &t_ZH="\\e[3m"')
+vim.cmd('let &t_ZR="\\e[23m"')
+-- vim.cmd("colorscheme gruvbox")
 
 return {
   -- add gruvbox
   {
     "ellisonleao/gruvbox.nvim",
     enabled = true,
+    priority = 1000,
+    config = true,
     opts = {
       undercurl = true,
       underline = true,
       bold = true,
-      italic = { -- doesn't work, don't know why
-        strings = true,
+      italic = {
+        strings = false,
         emphasis = true,
         comments = true,
         operators = false,

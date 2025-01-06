@@ -6,8 +6,8 @@ local map = vim.keymap.set
 --=========================================================================
 map("n", "<C-c>", "<esc>")
 -- I'm brilliant
-map("n", "go", "o<esc>S<esc>k", { desc = "Add a new blank line below" })
-map("n", "gO", "O<esc>S<esc>j", { desc = "Add a new blank line above" })
+map("n", "go", "o<esc>S<esc>gk", { desc = "Add a new blank line below" })
+map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
 --=========================================================================
 -- tab
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })

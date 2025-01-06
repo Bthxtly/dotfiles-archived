@@ -10,6 +10,7 @@ return {
   -- Vimwiki plugin
   {
     "vimwiki/vimwiki",
+    lazy = true,
     init = function()
       vim.treesitter.language.register("markdown", { "vimwiki" })
       -- vim.g.vimwiki_filetypes = { "markdown" }

@@ -6,11 +6,11 @@ plugins = [
 
 [scratchpads.clock]
 animation = "fromTop"
-command = "kitty --class kitty-cl -e tty-clock -cC7"
+command = "kitty --class kitty-cl -e tty-clock -bcsDC7"
 class = "kitty-cl"
-size = "75% 75%"
+size = "75% 16%"
 max_size = "1920px 100%"
-margin = 50
+margin = 20
 
 [scratchpads.bottom]
 animation = "fromBottom"
@@ -19,11 +19,3 @@ class = "kitty-ff"
 size = "75% 75%"
 max_size = "1920px 100%"
 margin = 50
-
-[scratchpads.music]
-animation = "fromLeft"
-command = "spotify-launcher"
-class = "spotify"
-size = "75% 75%"
-max_size = "1920px 100%"
-margin = 20
