@@ -8,7 +8,7 @@ echo $theme
 
 # Check the value of $theme and do the proper sed
 if [[ "$theme" == "light" ]]; then # {{{
-  hyprctl notify 5 2000 "rgb(00000f)" "switch the theme from light to dark"
+  hyprctl notify 5 2000 "rgb(00000f)" "DARK"
   sed -i "1 s/light/dark/" ~/dotfiles/nvim/.config/nvim/current_theme.vim
   sed -i "1 s/light/dark/" ~/dotfiles/kitty/.config/kitty/current_theme.conf
   sed -i "1 s/light/dark/" ~/dotfiles/rofi/.config/rofi/config.rasi
@@ -17,7 +17,7 @@ if [[ "$theme" == "light" ]]; then # {{{
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 # }}}
 elif [[ "$theme" == "dark" ]]; then # {{{
-  hyprctl notify 5 2000 "rgb(ffffff)" "switch the theme from dark to light"
+  hyprctl notify 5 2000 "rgb(ffffff)" "LIGHT"
   sed -i "1 s/dark/light/" ~/dotfiles/nvim/.config/nvim/current_theme.vim
   sed -i "1 s/dark/light/" ~/dotfiles/kitty/.config/kitty/current_theme.conf
   sed -i "1 s/dark/light/" ~/dotfiles/rofi/.config/rofi/config.rasi

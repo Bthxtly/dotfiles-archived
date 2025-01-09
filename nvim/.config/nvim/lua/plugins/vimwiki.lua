@@ -11,6 +11,7 @@ return {
   {
     "vimwiki/vimwiki",
     lazy = true,
+    ft = { "markdown", "vimwiki" },
     init = function()
       vim.treesitter.language.register("markdown", { "vimwiki" })
       -- vim.g.vimwiki_filetypes = { "markdown" }
@@ -29,11 +30,11 @@ return {
   {
     "OXY2DEV/markview.nvim",
     enabled = true,
-    lazy = false, -- Recommended
+    lazy = true,
+    -- ft = { "markdown", "vimwiki" },
     opts = {
-      filetypes = { "markdown", "vimwiki", "Avante", "codecompanion" },
+      filetypes = { "markdown", "vimwiki" },
     },
-    ft = { "markdown", "vimwiki", "Avante", "codecompanion" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
@@ -43,24 +44,12 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     enabled = true,
+    lazy = true,
+    ft = { "markdown", "vimwiki" },
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && yarn install",
     init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
+      vim.g.mkdp_filetypes = { "markdown", "vimwiki" }
     end,
-    ft = { "markdown" },
-  },
-
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    enabled = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {
-      file_types = { "markdown", "vimwiki" },
-    },
   },
 }

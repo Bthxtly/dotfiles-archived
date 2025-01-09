@@ -45,7 +45,7 @@ return {
       colorscheme = "gruvbox",
       icons = {
         kinds = {
-          Snippet = " ",
+          Snippet = " ",
         },
       },
     },

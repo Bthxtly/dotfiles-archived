@@ -1,7 +1,7 @@
 -- stylua: ignore
-vim.keymap.set("n", "<Left>", function() require("origami").h() end)
+-- vim.keymap.set("n", "<Left>", function() require("origami").h() end)
 -- stylua: ignore
-vim.keymap.set("n", "<Right>", function() require("origami").l() end)
+-- vim.keymap.set("n", "<Right>", function() require("origami").l() end)
 
 return {
   "chrisgrieser/nvim-origami",

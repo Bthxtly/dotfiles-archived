@@ -1,6 +1,7 @@
 -- change some telescope options and a keymap to browse plugin files
 return {
   "nvim-telescope/telescope.nvim",
+  -- enabled = false,
   keys = {
       -- add a keymap to browse plugin files
       -- stylua: ignore
@@ -14,12 +15,6 @@ return {
         "<leader>fs",
         function() require("telescope.builtin").live_grep() end,
         desc = "Find String (grep)",
-      },
-      -- stylua: ignore
-      {
-        "<leader>fh",
-        function() require("telescope.builtin").help_tags() end,
-        desc = "Find Help Tags",
       },
   },
   -- change some options

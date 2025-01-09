@@ -1,6 +1,8 @@
 return {
   {
     "David-Kunz/gen.nvim",
+    lazy = true,
+    cmd = { "Gen" },
     opts = {
       model = "mistral-nemo:12b-instruct-2407-q6_K", -- The default model to use.
       quit_map = "q", -- set keymap to close the response window
@@ -34,6 +36,7 @@ return {
       debug = false, -- Prints errors and the command which is run.
     },
   },
+
   {
     "olimorris/codecompanion.nvim",
     enabled = false,
@@ -42,64 +45,5 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = true,
-  },
-  {
-    "yetone/avante.nvim",
-    enabled = false,
-    event = "VeryLazy",
-    lazy = false,
-    version = false, -- set this if you want to always pull the latest change
-    opts = {
-      provider = "ollama",
-      vendors = {
-        ollama = {
-          ["local"] = true,
-          endpoint = "127.0.0.1:11434/v1",
-          -- model = "codegemma:7b",
-          model = "llama3.2-vision",
-          parse_curl_args = function(opts, code_opts)
-            return {
-              url = opts.endpoint .. "/chat/completions",
-              headers = {
-                ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json",
-              },
-              body = {
-                model = opts.model,
-                messages = require("avante.providers").copilot.parse_messages(code_opts), -- you can make your own message, but this is very advanced
-                max_tokens = 2048,
-                stream = true,
-              },
-            }
-          end,
-          parse_response_data = function(data_stream, event_state, opts)
-            require("avante.providers").openai.parse_response(data_stream, event_state, opts)
-          end,
-        },
-      },
-    },
-    build = "make",
-    dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "OXY2DEV/markview.nvim",
-      {
-        -- support for image pasting
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-          },
-        },
-      },
-    },
   },
 }

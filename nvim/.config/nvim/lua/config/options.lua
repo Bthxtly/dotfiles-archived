@@ -5,7 +5,6 @@
 -- extras
 vim.g.lazyvim_blink_main = true
 vim.g.snacks_animate = false
-vim.g.lazyvim_picker = "telescope"
 
 local o = vim.opt
 o.clipboard = ""

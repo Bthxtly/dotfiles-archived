@@ -1,10 +1,15 @@
 return {
-  { "AndrewRadev/sideways.vim", lazy = false },
-  { "mbbill/undotree", lazy = false },
-  { "tpope/vim-surround", lazy = false },
-  { "declancm/maximize.nvim", config = true },
+  { "tpope/vim-surround" },
   { "HiPhish/rainbow-delimiters.nvim" },
   { "tpope/vim-repeat" },
+  { "nanotee/zoxide.vim", lazy = true, cmd = { "Z" } },
+  { "mbbill/undotree", lazy = true, cmd = { "UndotreeToggle" } },
+  { "declancm/maximize.nvim", cmd = { "Maximize" } },
+  {
+    "AndrewRadev/sideways.vim",
+    lazy = true,
+    cmd = { "SidewaysLeft", "SidewaysRight" },
+  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {

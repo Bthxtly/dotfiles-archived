@@ -26,7 +26,6 @@
   lctl      lmet lalt           spc            ralt rctl
 )
 
-
   ;; (defsrc ;; colemak layout
   ;;   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   ;;   tab  q    w    f    p    g    j    l    u    y    ;    [    ]    \
@@ -68,7 +67,7 @@
   esc
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @    #    %    &    *    ^    ^    del  $    spc  bspc esc  @fuc
-  @fuc grv  ~    {    [   \(    left down up   rght ret  ret  @ext
+  @fuc grv  ~    {    [   \(    left down up   rght ret  @fuc @ext
   _    !   \_    }    ]   \)    +    -    =    \    |    @fuc
   @qwe      _    _              @num           _    _
 )
