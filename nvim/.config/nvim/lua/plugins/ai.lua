@@ -40,10 +40,24 @@ return {
   {
     "olimorris/codecompanion.nvim",
     enabled = false,
+    lazy = true,
+    cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat", "CodeCompanionCmd" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
     config = true,
+    opts = {
+      adapters = {
+        ollama = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "http[s]://open_compatible_ai_url", -- optional: default value is ollama url http://127.0.0.1:11434
+              chat_url = "/v1/chat/completions", -- optional: default value, override if different
+            },
+          })
+        end,
+      },
+    },
   },
 }

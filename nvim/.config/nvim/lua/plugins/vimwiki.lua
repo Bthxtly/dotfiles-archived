@@ -31,7 +31,7 @@ return {
     "OXY2DEV/markview.nvim",
     enabled = true,
     lazy = true,
-    -- ft = { "markdown", "vimwiki" },
+    ft = { "markdown", "vimwiki" },
     opts = {
       filetypes = { "markdown", "vimwiki" },
     },

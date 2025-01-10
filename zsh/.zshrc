@@ -108,6 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # vim mode
 bindkey -v
 
+# mcfly
+export MCFLY_KEY_SCHEME=vim # vim key scheme
+# export MCFLY_LIGHT=TRUE # light mode
+
 # use mkdir and cd 
 function mkcd {
   last=$(eval "echo \$$#")
@@ -120,25 +124,13 @@ function mkcd {
   fi
 }
 
-function dotfile {
-    mkdir -p ~/dotfiles/$@/.config && mv ~/.config/$@ ~/dotfiles/$@/.config && stow $@
-}
-
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/bthxtly/.dart-cli-completion/zsh-config.zsh ]] && . /home/bthxtly/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 # shellcheck shell=bash
 
+eval "$(mcfly init zsh)"
 source $HOME/.oh-my-zsh/custom/zoxide.zsh
 source $HOME/.oh-my-zsh/custom/variables.zsh
 source $HOME/.oh-my-zsh/custom/timer.zsh

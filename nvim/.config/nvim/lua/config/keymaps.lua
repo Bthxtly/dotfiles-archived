@@ -8,11 +8,13 @@ map("n", "<C-c>", "<esc>")
 -- I'm brilliant
 map("n", "go", "o<esc>S<esc>gk", { desc = "Add a new blank line below" })
 map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
---=========================================================================
 -- tab
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "TP", "<cmd>tabnext<cr>", { desc = "switch to previous tab" })
 map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
+-- unmap H and L
+map("n", "H", "H")
+map("n", "L", "L")
 --=========================================================================
 -- Windows manager {{{
 -- Disable the default s key
