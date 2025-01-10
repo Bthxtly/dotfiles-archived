@@ -7,10 +7,16 @@ return {
       { "<F10>", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
-      porviders = {
-        markdown = {
-          filetypes = { "vimwiki", "markdown" },
-        },
+      keymaps = {
+        unfold = { "<right>", "l" },
+        fold = { "<left>", "h" },
+        down_and_jump = "<C-n>",
+        up_and_jump = "<C-p>",
+        goto_location = { "<CR>", "m" },
+        goto_and_close = { "<S-CR>", "M" },
+      },
+      providers = { -- providers providers providers!!!
+        markdown = { filetypes = { "vimwiki", "markdown" } },
       },
     },
     ft = { "markdown", "vimwiki.markdown" },

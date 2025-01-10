@@ -28,8 +28,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "strawberry-light",
-      -- colorscheme = "gruvbox",
+      -- colorscheme = "strawberry-light",
+      colorscheme = "gruvbox",
       icons = {
         kinds = {
           Snippet = " ",
