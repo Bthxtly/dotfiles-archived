@@ -15,41 +15,6 @@ map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
 -- unmap H and L
 map("n", "H", "H")
 map("n", "L", "L")
---=========================================================================
--- Windows manager {{{
--- Disable the default s key
-vim.keymap.set("n", "s", "<nop>")
-vim.keymap.set("n", "ss", '"_xi')
-
--- Use f + arrow keys for moving the cursor around windows
-vim.keymap.set("n", "f<Left>", "<C-w>h")
-vim.keymap.set("n", "f<Down>", "<C-w>j")
-vim.keymap.set("n", "f<Up>", "<C-w>k")
-vim.keymap.set("n", "f<Right>", "<C-w>l")
-
--- Split the screens
-vim.keymap.set("n", "s<Down>", ":set splitbelow<CR>:split<CR>")
-vim.keymap.set("n", "s<Right>", ":set splitright<CR>:vsplit<CR>")
--- stylua: ignore
-vim.keymap.set("n", "s<Up>", function() vim.cmd("set nosplitbelow") vim.cmd("split") vim.cmd("set splitbelow") end)
--- stylua: ignore
-vim.keymap.set("n", "s<Left>", function() vim.cmd("set nosplitright") vim.cmd("vsplit") vim.cmd("set splitright") end)
-
--- -- Open terminal
--- vim.keymap.set("n", "t<Up>", "s<Up>:terminal<CR>:normal i<CR>")
--- vim.keymap.set("n", "t<Down>", "s<Down>:terminal<CR>:normal i<CR>")
--- vim.keymap.set("n", "t<Left>", "s<Left>:terminal<CR>:normal i<CR>")
--- vim.keymap.set("n", "t<Right>", "s<Right>:terminal<CR>:normal i<CR>")
-
--- Arrange screens
-vim.keymap.set("n", "sh", "<C-w>t<C-w>K")
-vim.keymap.set("n", "sv", "<C-w>t<C-w>H")
-vim.keymap.set("n", "srh", "<C-w>b<C-w>K")
-vim.keymap.set("n", "srv", "<C-w>b<C-w>H")
-vim.keymap.set("n", "sx", "<C-w><C-x>")
---}}}
---=========================================================================
--- Other mappings {{{
 
 -- Auto insert spaces after a comma
 vim.keymap.set("i", ",", ",<space>")
@@ -121,6 +86,38 @@ function CompileRunGcc()
     vim.cmd("VimtexCompile")
   end
 end --}}}
+--=========================================================================
+-- Windows manager {{{
+-- Disable the default s key
+vim.keymap.set("n", "s", "<nop>")
+vim.keymap.set("n", "ss", '"_xi')
+
+-- Use f + arrow keys for moving the cursor around windows
+vim.keymap.set("n", "f<Left>", "<C-w>h")
+vim.keymap.set("n", "f<Down>", "<C-w>j")
+vim.keymap.set("n", "f<Up>", "<C-w>k")
+vim.keymap.set("n", "f<Right>", "<C-w>l")
+
+-- Split the screens
+vim.keymap.set("n", "s<Down>", ":set splitbelow<CR>:split<CR>")
+vim.keymap.set("n", "s<Right>", ":set splitright<CR>:vsplit<CR>")
+-- stylua: ignore
+vim.keymap.set("n", "s<Up>", function() vim.cmd("set nosplitbelow") vim.cmd("split") vim.cmd("set splitbelow") end)
+-- stylua: ignore
+vim.keymap.set("n", "s<Left>", function() vim.cmd("set nosplitright") vim.cmd("vsplit") vim.cmd("set splitright") end)
+
+-- -- Open terminal
+-- vim.keymap.set("n", "t<Up>", "s<Up>:terminal<CR>:normal i<CR>")
+-- vim.keymap.set("n", "t<Down>", "s<Down>:terminal<CR>:normal i<CR>")
+-- vim.keymap.set("n", "t<Left>", "s<Left>:terminal<CR>:normal i<CR>")
+-- vim.keymap.set("n", "t<Right>", "s<Right>:terminal<CR>:normal i<CR>")
+
+-- Arrange screens
+vim.keymap.set("n", "sh", "<C-w>t<C-w>K")
+vim.keymap.set("n", "sv", "<C-w>t<C-w>H")
+vim.keymap.set("n", "srh", "<C-w>b<C-w>K")
+vim.keymap.set("n", "srv", "<C-w>b<C-w>H")
+vim.keymap.set("n", "sx", "<C-w><C-x>")
 --}}}
 
--- vim:foldmethod=marker:foldlevel=1
+-- vim:foldmethod=marker:foldlevel=0

@@ -4,7 +4,7 @@ return {
   { "tpope/vim-repeat" },
   { "nanotee/zoxide.vim", lazy = true, cmd = { "Z" } },
   { "mbbill/undotree", lazy = true, cmd = { "UndotreeToggle" } },
-  { "declancm/maximize.nvim", cmd = { "Maximize" } },
+  { "declancm/maximize.nvim", lazy = true, cmd = { "Maximize" } },
   {
     "AndrewRadev/sideways.vim",
     lazy = true,

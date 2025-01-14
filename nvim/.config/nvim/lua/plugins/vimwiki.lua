@@ -12,6 +12,7 @@ return {
     "vimwiki/vimwiki",
     lazy = true,
     ft = { "markdown", "vimwiki" },
+    keys = { "<leader>ww", "<leader>wt" },
     init = function()
       vim.treesitter.language.register("markdown", { "vimwiki" })
       -- vim.g.vimwiki_filetypes = { "markdown" }
