@@ -23,6 +23,7 @@ return {
   },
 
   { "bringsrain/strawberry" },
+  { "sainnhe/everforest" },
 
   -- Configure LazyVim to load gruvbox
   {
