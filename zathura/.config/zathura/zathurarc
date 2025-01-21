@@ -37,8 +37,8 @@ set scroll-step 50
 
 
 # color configure
-# include zathura-gruvbox/zathura-gruvbox-dark-soft
-include zathura-gruvbox/zathura-gruvbox-light-soft
+include zathura-gruvbox/zathura-gruvbox-dark-soft
+# include zathura-gruvbox/zathura-gruvbox-light-soft
 set recolor                     true
 set recolor-keephue             true                 
 set render-loading              true
