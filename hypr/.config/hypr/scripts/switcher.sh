@@ -3,32 +3,33 @@
 # ===get the current theme {{{
 line=$(<"$HOME/dotfiles/nvim/.config/nvim/current_theme.vim")
 theme=$(echo $line | cut -d= -f2)
-echo $theme
+# echo $theme
 # }}}
 
 # Check the value of $theme and do the proper sed
-if [[ "$theme" == "light" ]]; then # {{{
+if [[ "$theme" == "light" ]]; then
   hyprctl notify 5 2000 "rgb(00000f)" "DARK"
-  sed -i "1 s/light/dark/" ~/dotfiles/nvim/.config/nvim/current_theme.vim
-  sed -i "1 s/light/dark/" ~/dotfiles/kitty/.config/kitty/current_theme.conf
-  sed -i "1 s/light/dark/" ~/dotfiles/rofi/.config/rofi/config.rasi
-  # sed -i "23 s/light/dark/" ~/.config/rofi/master-config.rasi
-  # sed -i "22 s/Light/Dark/" ~/.config/fcitx5/conf/classicui.conf
+  mode="1 s/light/dark/"
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-# }}}
-elif [[ "$theme" == "dark" ]]; then # {{{
+elif [[ "$theme" == "dark" ]]; then
   hyprctl notify 5 2000 "rgb(ffffff)" "LIGHT"
-  sed -i "1 s/dark/light/" ~/dotfiles/nvim/.config/nvim/current_theme.vim
-  sed -i "1 s/dark/light/" ~/dotfiles/kitty/.config/kitty/current_theme.conf
-  sed -i "1 s/dark/light/" ~/dotfiles/rofi/.config/rofi/config.rasi
-  # sed -i "23 s/dark/light/" ~/.config/rofi/master-config.rasi
-  # sed -i "22 s/Dark/Light/" ~/.config/fcitx5/conf/classicui.conf
+  mode="1 s/dark/light/"
   gsettings set org.gnome.desktop.interface color-scheme default
-# }}}
 else
-  echo "Error"
+  hyprctl notify 3 2000 "rgb(ff0000)" "ERROR"
   exit 1
 fi
+
+# nvim
+sed -i "$mode" ~/dotfiles/nvim/.config/nvim/current_theme.vim
+# kitty
+sed -i "$mode" ~/dotfiles/kitty/.config/kitty/current_theme.conf
+# rofi
+sed -i "$mode" ~/dotfiles/rofi/.config/rofi/config.rasi
+# zathura
+sed -i "$mode" ~/dotfiles/zathura/.config/zathura/zathurarc
+# fcitx5
+# sed -i "22 s/Dark/Light/" ~/.config/fcitx5/conf/classicui.conf
 
 # ===reload nvim {{{
 # Get neovim sockets files
@@ -37,7 +38,7 @@ nvim_sockets=$(ls /run/user/1000/nvim*)
 # Find all Neovim sockets and send the source command
 for socket in $nvim_sockets; do
   if [ -S "$socket" ]; then
-    echo $socket
+    # echo $socket
     nvim --server "$socket" --remote-send '<C-\><C-N>:source $HOME/dotfiles/nvim/.config/nvim/current_theme.vim<CR>:<ESC>' >/dev/null
   fi
 done
@@ -52,7 +53,7 @@ if [ -n "$kitty_pid" ]; then
   # Send SIGUSR1 to the Kitty process
   for p in $kitty_pid; do
     kill -SIGUSR1 "$p"
-    echo "SIGUSR1 sent to Kitty (PID: $p)"
+    # echo "SIGUSR1 sent to Kitty (PID: $p)"
   done
 else
   echo "Kitty is not running."

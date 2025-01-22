@@ -1,3 +1,5 @@
+include zathura-gruvbox/zathura-gruvbox-light-soft
+
 map R reload
 
 # move around
@@ -37,11 +39,9 @@ set scroll-step 50
 
 
 # color configure
-include zathura-gruvbox/zathura-gruvbox-dark-soft
-# include zathura-gruvbox/zathura-gruvbox-light-soft
 set recolor                     true
-set recolor-keephue             true                 
+set recolor-keephue             true
 set render-loading              true
-map <C-l> feedkeys 
+map <C-l> feedkeys
 
 set window-title-home-tilde true
