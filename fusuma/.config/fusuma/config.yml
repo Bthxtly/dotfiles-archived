@@ -1,0 +1,50 @@
+swipe:
+  4:
+    right:
+      sendkey: "VOLUMEUP"         # volume up
+    left:
+      sendkey: "VOLUMEDOWN"       # volume down
+    up:
+      sendkey: "RIGHTCTRL+W"      # close the browser page
+    down:
+      sendkey: "GRAVE"            # Esc
+
+pinch:
+  4:
+    in:
+      sendkey: "RIGHTCTRL+MINUS"  # zoom in the browser page
+    out:
+      sendkey: "RIGHTCTRL+EQUAL"  # zoom out the browser page
+
+hold:
+  4:
+    command: "hyprctl dispatch fullscreen"  # toggle fullscreen
+
+threshold:
+  swipe: 0.8
+  pinch: 0.5
+  hold: 0.3
+
+# swipe:
+#
+#     support 3:, 4: fingers
+#     support left:, right:, up:, down: directions
+#     support begin:, update:, end: events
+#
+# pinch:
+#
+#     support 2:, 3:, 4: fingers
+#     support in:, out: directions
+#     support begin:, update:, end: events
+#
+# rotate:
+#
+#     support 2:, 3:, 4: fingers
+#     support clockwise:,counterclockwise: directions
+#     support begin:, update:, end: events
+#
+# hold:
+#
+#     require libinput version 1.19.0 or later
+#     support 1:, 2:, 3:, 4: fingers
+#     support begin:, end:, cancelled: events
