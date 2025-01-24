@@ -1,6 +1,6 @@
 {
   "LazyVim": { "branch": "main", "commit": "2bea40c447b72e54ffb2d5cddc98d7798990796f" },
-  "blink.cmp": { "branch": "main", "commit": "55eeffa22800e25f7a5c95fe8a799f4325424a44" },
+  "blink.cmp": { "branch": "main", "commit": "c4eafc1f87380da04eb8b9c5b52395c48edd102e" },
   "bufferline.nvim": { "branch": "main", "commit": "261a72b90d6db4ed8014f7bda976bcdc9dd7ce76" },
   "catppuccin": { "branch": "main", "commit": "f67b886d65a029f12ffa298701fb8f1efd89295d" },
   "clangd_extensions.nvim": { "branch": "main", "commit": "8f7b72100883e0e34400d9518d40a03f21e4d0a6" },
@@ -50,7 +50,7 @@
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "85b80abaa09cbbc039e3095b2f515b3cf8cadd11" },
   "rasi.vim": { "branch": "main", "commit": "7ce90590d007a7d15fc292313565e04a2ba57182" },
   "sideways.vim": { "branch": "main", "commit": "3cfe62d57e59e4c86812e2559fb56796655fd4da" },
-  "snacks.nvim": { "branch": "main", "commit": "de01907930bb125d1b67b4a1fb372f21d972f70b" },
+  "snacks.nvim": { "branch": "main", "commit": "b96bd540f785c725289f9f15f0147b1b2dac5a35" },
   "strawberry": { "branch": "master", "commit": "78ee677b335af15639259c0343e970ac6f43cd2f" },
   "telescope.nvim": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
