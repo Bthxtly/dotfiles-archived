@@ -1,4 +1,4 @@
-include zathura-gruvbox/zathura-gruvbox-light-soft
+include zathura-gruvbox/zathura-gruvbox-dark-soft
 
 map R reload
 
