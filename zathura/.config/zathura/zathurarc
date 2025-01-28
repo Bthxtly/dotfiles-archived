@@ -1,5 +1,3 @@
-include zathura-gruvbox/zathura-gruvbox-dark-soft
-
 map R reload
 
 # move around
@@ -39,6 +37,8 @@ set scroll-step 50
 
 
 # color configure
+include current_theme.conf
+
 set recolor                     true
 set recolor-keephue             true
 set render-loading              true

@@ -7,7 +7,7 @@ swipe:
     up:
       sendkey: "RIGHTCTRL+W"      # close the browser page
     down:
-      sendkey: "GRAVE"            # Esc
+      sendkey: "GRAVE"            # Escape
 
 pinch:
   4:
@@ -16,6 +16,18 @@ pinch:
     out:
       sendkey: "RIGHTCTRL+EQUAL"  # zoom out the browser page
 
+# rotate: 
+#   3:
+#     clockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,3" # rotate clockwise
+#     counterclockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,1" # rotate counterclockwise
+#   4:
+#     clockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,0" # rotate vertical
+#     counterclockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,0" # rotate vertical
+
 hold:
   4:
     command: "hyprctl dispatch fullscreen"  # toggle fullscreen
@@ -23,6 +35,7 @@ hold:
 threshold:
   swipe: 0.8
   pinch: 0.5
+  rotate: 0.5
   hold: 0.3
 
 # swipe:

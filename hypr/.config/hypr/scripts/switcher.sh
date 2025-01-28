@@ -27,7 +27,7 @@ sed -i "$mode" ~/dotfiles/kitty/.config/kitty/current_theme.conf
 # rofi
 sed -i "$mode" ~/dotfiles/rofi/.config/rofi/config.rasi
 # zathura
-sed -i "$mode" ~/dotfiles/zathura/.config/zathura/zathurarc
+sed -i "$mode" ~/dotfiles/zathura/.config/zathura/current_theme.conf
 # fcitx5
 # sed -i "22 s/Dark/Light/" ~/.config/fcitx5/conf/classicui.conf
 

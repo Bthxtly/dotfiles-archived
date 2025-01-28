@@ -30,6 +30,7 @@ return {
   -- Markdown Preview plugin
   {
     "OXY2DEV/markview.nvim",
+    enabled = true,
     ft = { "markdown", "vimwiki" },
     opts = {
       preview = {
@@ -44,5 +45,17 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    enabled = true,
+    lazy = true,
+    ft = { "markdown", "vimwiki" },
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown", "vimwiki" }
+    end,
   },
 }
