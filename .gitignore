@@ -1,4 +1,6 @@
 nvim/.config/nvim/spell/**
+kitty/.config/kitty/kitty-themes-master/**
+
 nvim/.config/nvim/current_theme.vim
 kitty/.config/kitty/current_theme.conf
 zathura/.config/zathura/current_theme.conf

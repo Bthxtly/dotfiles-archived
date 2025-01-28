@@ -57,27 +57,5 @@ return {
         { section = "startup" },
       },
     },
-
-    indent = {
-      hl = {
-        "DiagnosticInfo",
-        "DiagnosticError",
-        "DiagnosticHint",
-        "DiagnosticWarn",
-        "Number",
-        "Type",
-        "Constant",
-      },
-    },
-    scope = {
-      hl = "Type",
-    },
-    chunk = {
-      hl = "Type",
-    },
-
-    zoom_indicator = {
-      text = "",
-    },
   },
 }
