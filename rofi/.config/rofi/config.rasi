@@ -1,5 +1,3 @@
-@theme "/usr/share/rofi/themes/gruvbox-light-soft.rasi"
-
 configuration {
 	modes: "window,drun,run";
 /*	font: "mono 12";*/
@@ -151,3 +149,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@import "~/dotfiles/rofi/.config/rofi/current_theme.rasi"

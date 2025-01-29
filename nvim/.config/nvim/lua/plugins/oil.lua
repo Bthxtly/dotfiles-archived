@@ -3,7 +3,6 @@ local api = vim.api
 return {
   {
     "stevearc/oil.nvim",
-    event = "VeryLazy",
     opts = {
       vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
       keymaps = {

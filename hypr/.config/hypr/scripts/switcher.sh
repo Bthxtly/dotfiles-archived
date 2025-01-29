@@ -25,7 +25,7 @@ sed -i "$mode" ~/dotfiles/nvim/.config/nvim/current_theme.vim
 # kitty
 sed -i "$mode" ~/dotfiles/kitty/.config/kitty/current_theme.conf
 # rofi
-sed -i "$mode" ~/dotfiles/rofi/.config/rofi/config.rasi
+sed -i "$mode" ~/dotfiles/rofi/.config/rofi/current_theme.rasi
 # zathura
 sed -i "$mode" ~/dotfiles/zathura/.config/zathura/current_theme.conf
 # fcitx5
