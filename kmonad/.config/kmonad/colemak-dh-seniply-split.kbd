@@ -79,7 +79,7 @@
   grv      1     2     3     4     5     6     7     8     9     0     -     =     spc
   tab      q     w     f     p     b     j     l     u     y     '     [     ]
   @num     a     r     s     t     g     m     n     e     i     o     ;     _     ret
-  lsft  z     x     c     d     v     z     k     h     ,     .     /     rsft
+  lsft  z     x     c     d     v     z     k     h     ,     .     /     rsft
   lctl        lalt  @ext              lsft              @sym  ralt  _     _
 )
 
@@ -113,7 +113,7 @@
 
 (deflayer symbols
   _        _     _     _     _     _     _     _     _     _     _     _     _
-  _        _     _     _     _     _     _     _     _     _     _     _     _     _
+  _        _     _     _     _     _     _     _     _     _     _     _     _     _
   _        S-1   S-2   S-3   S-4   S-5   =     `     :     ;     +     «     »
   _        @la_s @lm_s @ls_s @lc_s S-6   *     \(    {     [     -     _     _     _
   _     nubs  S-nubs \\   S-\\  S-7   nubs  ¬     \)    }     ]     \_    _
@@ -122,8 +122,8 @@
 
 (deflayer numbers
   _        _     _     _     _     _     _     _     _     _     _     _     _
-  _        _     _     _     _     _     _     _     _     _     _     _     _     _
-  _        _     _     _     _     nlck  =     7     8     9     +     _     _
+  _        _     _     _     _     _     _     _     _     _     _     _     _     _
+  _        _     _     _     _     nlck  =     7     8     9     +     _     _
   _        @la_s @lm_s @ls_s @lc_s @ra_s *     4     5     6     -     _     _     _
   _     _     cmp   tab   bks   ret   _     0     1     2     3     /     _
   _           _     _                 _                 _     _     _     _

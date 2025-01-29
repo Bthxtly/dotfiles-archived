@@ -105,10 +105,6 @@ source $ZSH/oh-my-zsh.sh
 # vim mode
 bindkey -v
 
-# mcfly
-export MCFLY_KEY_SCHEME=vim # vim key scheme
-# export MCFLY_LIGHT=TRUE # light mode
-
 # use mkdir and cd 
 function mkcd {
   last=$(eval "echo \$$#")
@@ -127,7 +123,8 @@ function mkcd {
 ## [/Completion]
 # shellcheck shell=bash
 
-eval "$(mcfly init zsh)"
 source $HOME/.oh-my-zsh/custom/zoxide.zsh
 source $HOME/.oh-my-zsh/custom/variables.zsh
 source $HOME/.oh-my-zsh/custom/timer.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
