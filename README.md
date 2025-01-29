@@ -1,3 +1,6 @@
+<!---
+vim:nospell:nowrap
+--->
 # This is my dotfiles
 They are precious and I can't lose them!
 
