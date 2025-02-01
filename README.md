@@ -61,7 +61,7 @@ nvim
         │       ├── neovide.lua     # neovim GUI
         │       ├── oil.lua         # file manager in nvim buffer
         │       ├── outline.lua     # symbol tree
-        │       ├── small.lua       # vim-surround, rainbow brackets, dot-repeat, zoxide, undotree, maximize, sideways and image support
+        │       ├── small.lua       # vim-surround, rainbow brackets, dot-repeat, zoxide, undotree, maximize and sideways
         │       ├── snacks.lua      # dashboard
         │       ├── fzf.lua         # very excellent fuzzy finder
         │       ├── toggleterm.lua  # wait to be configured

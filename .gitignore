@@ -1,6 +1,11 @@
 nvim/.config/nvim/spell/**
+nvim/.config/nvim/lazyvim.json
+nvim/.config/nvim/lazy-lock.json
+
 kitty/.config/kitty/kitty-themes-master/**
 
+vifm/.config/vifm/vifminfo.json
 nvim/.config/nvim/current_theme.vim
+rofi/.config/rofi/current_theme.rasi
 kitty/.config/kitty/current_theme.conf
 zathura/.config/zathura/current_theme.conf
