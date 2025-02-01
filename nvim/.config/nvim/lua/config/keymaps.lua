@@ -5,6 +5,10 @@ local map = vim.keymap.set
 
 --=========================================================================
 map("n", "<C-c>", "<esc>")
+map("n", "Q", "@q")
+map("n", "j", "[")
+map("n", "k", "]")
+map("n", "ck", "<cmd>help digraph-table<cr>")
 -- I'm brilliant
 map("n", "go", "o<esc>S<esc>gk", { desc = "Add a new blank line below" })
 map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
@@ -17,7 +21,7 @@ map("n", "H", "H")
 map("n", "L", "L")
 
 -- Auto insert spaces after a comma
-vim.keymap.set("i", ",", ",<space>")
+vim.keymap.set("i", ",", ", ")
 
 -- Toggle highlight search {{{
 local hlstate = 0
@@ -89,8 +93,8 @@ end --}}}
 --=========================================================================
 -- Windows manager {{{
 -- Disable the default s key
-vim.keymap.set("n", "s", "<nop>")
-vim.keymap.set("n", "ss", '"_xi')
+vim.keymap.set("n", "s", "<nop>", { noremap = false })
+vim.keymap.set("n", "ss", "s")
 
 -- Use f + arrow keys for moving the cursor around windows
 vim.keymap.set("n", "f<Left>", "<C-w>h")
