@@ -32,13 +32,13 @@ window#waybar.solo {
 */
 
 .modules-right {
-    margin: 5px 10px 0 0;
+    margin: 0px 5px 0 0;
 }
 .modules-center {
-    margin: 5px 0 0 0;
+    margin: 0px 0 0 0;
 }
 .modules-left {
-    margin: 5px 0 0 10px;
+    margin: 0px 0 0 5px;
 }
 
 button {
