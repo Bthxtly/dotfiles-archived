@@ -24,6 +24,7 @@ return {
 
   { "bringsrain/strawberry" },
   { "sainnhe/everforest" },
+  { "rose-pine/neovim" },
 
   -- Configure LazyVim to load gruvbox
   {
