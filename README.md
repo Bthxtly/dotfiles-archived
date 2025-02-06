@@ -53,10 +53,11 @@ nvim
         │       ├── ai.lua          # use ollama with neovim
         │       ├── blink.lua       # auto completion
         │       ├── colorscheme.lua # gruvbox, strawberry(pink) and everforest colorscheme
-        │       ├── disable.lua     # don't get used to bufferline and flash
+        │       ├── disable.lua     # don't get used to bufferline, flash and noice
         │       ├── easy_align.lua  # align is important
         │       ├── highlight.lua   # add highlight supports for some file types
         │       ├── kitty_scrollback.lua  # operate kitty like in nvim buffer
+        │       ├── lualine.lua     # remove "branch" and change separator
         │       ├── mini.lua        # more text objects
         │       ├── neovide.lua     # neovim GUI
         │       ├── oil.lua         # file manager in nvim buffer
