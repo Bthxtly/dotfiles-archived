@@ -104,6 +104,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # vim mode
 bindkey -v
+bindkey '^Y' autosuggest-accept
+bindkey '^E' autosuggest-clear
 
 # use mkdir and cd 
 function mkcd {
