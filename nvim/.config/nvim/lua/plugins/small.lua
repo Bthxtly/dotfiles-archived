@@ -1,7 +1,7 @@
 return {
+  { "tpope/vim-repeat" },
   { "tpope/vim-surround" },
   { "HiPhish/rainbow-delimiters.nvim" },
-  { "tpope/vim-repeat" },
   { "nanotee/zoxide.vim", lazy = true, cmd = { "Z" } },
   { "mbbill/undotree", lazy = true, cmd = { "UndotreeToggle" } },
   { "declancm/maximize.nvim", lazy = true, cmd = { "Maximize" } },

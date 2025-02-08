@@ -1,8 +1,6 @@
 vim.cmd([[au BufRead,BufNewFile *.kbd set filetype=kbd]])
 vim.cmd([[au BufRead,BufNewFile *.rasi set filetype=rasi]])
-vim.filetype.add({
-  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
-})
+vim.filetype.add({ pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } })
 
 return {
   {
