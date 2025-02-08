@@ -16,6 +16,10 @@ map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "TP", "<cmd>tabnext<cr>", { desc = "switch to previous tab" })
 map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
+-- buffer
+map("n", "<leader>bb", "<cmd>bn<cr>", { desc = "switch to next buffer" })
+map("n", "<leader>bB", "<cmd>bp<cr>", { desc = "switch to previous buffer" })
+map("n", "<leader>bl", "<cmd>ls<cr>", { desc = "list buffers" })
 -- unmap H and L
 map("n", "H", "H")
 map("n", "L", "L")
@@ -47,12 +51,11 @@ vim.keymap.set("t", "<C-Q>", "<C-\\><C-N>:q<CR>", { silent = true })
 vim.keymap.set("t", "<C-H>", "<C-\\><C-N>")
 
 -- Shortcuts
-vim.keymap.set("n", "<F1>", ":cd %:h<CR>", { silent = true, desc = "cd to file path" })
+vim.keymap.set("n", "<F1>", ":cd %:h<CR>", { silent = false, desc = "cd to file path" })
 vim.keymap.set("n", "<F2>", ":Maximize<CR>", { silent = true, desc = "Maximize the current window" })
 vim.keymap.set("n", "<F3>", ":lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
 vim.keymap.set("n", "<F8>", ":UndotreeToggle<CR>", { silent = true, desc = "Undotree" })
 vim.keymap.set("n", "<F9>", ":Neotree toggle<CR>", { silent = true, desc = "Neotree" })
--- vim.keymap.set("n", "<F10>", ":Trouble symbols toggle<CR>", { silent = true, desc = "Symbols (Trouble)" })
 
 -- Compile function {{{
 function CompileRunGcc()
