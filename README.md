@@ -61,6 +61,7 @@ nvim
         │       ├── mini.lua        # more text objects
         │       ├── neovide.lua     # neovim GUI
         │       ├── oil.lua         # file manager in nvim buffer
+        │       ├── origami.lua     # <left> and <right> to unfold and fold
         │       ├── outline.lua     # symbol tree
         │       ├── small.lua       # vim-surround, rainbow brackets, dot-repeat, zoxide, undotree, maximize and sideways
         │       ├── snacks.lua      # dashboard
