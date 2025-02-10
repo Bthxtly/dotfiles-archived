@@ -14,11 +14,12 @@ map("n", "go", "o<esc>S<esc>gk", { desc = "Add a new blank line below" })
 map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
 -- tab
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
-map("n", "TP", "<cmd>tabnext<cr>", { desc = "switch to previous tab" })
+map("n", "TP", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
 map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
 -- buffer
 map("n", "<leader>bb", "<cmd>bn<cr>", { desc = "switch to next buffer" })
-map("n", "<leader>bB", "<cmd>bp<cr>", { desc = "switch to previous buffer" })
+map("n", "<leader>bn", "<cmd>bn<cr>", { desc = "switch to next buffer" })
+map("n", "<leader>bp", "<cmd>bp<cr>", { desc = "switch to previous buffer" })
 map("n", "<leader>bl", "<cmd>ls<cr>", { desc = "list buffers" })
 -- unmap H and L
 map("n", "H", "H")
