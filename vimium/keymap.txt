@@ -1,0 +1,19 @@
+# Insert your preferred key mappings here.
+
+map E previousTab
+map Y nextTab
+
+map e scrollDown
+map y scrollUp
+
+map q removeTab
+
+map ' Marks.activateGotoMode
+
+map % LinkHints.activateModeToOpenInNewForegroundTab
+map $ copyCurrentUrl
+
+map D duplicateTab
+
+map < moveTabLeft
+map > moveTabRight

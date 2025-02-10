@@ -1,0 +1,11 @@
+w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia
+y: https://www.youtube.com/results?search_query=%s Youtube
+g: https://github.com/search?q=%s&type=repositories Github
+l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...
+ei: https://translate.google.com/?sl=en&tl=it&text=%s&op=translate English to Italian
+ie: https://translate.google.com/?sl=it&tl=en&text=%s&op=translate Italian to English
+ec: https://translate.google.com/?sl=en&tl=zh-CN&text=%s&op=translate English to Chinese
+ce: https://translate.google.com/?sl=zh-CN&tl=en&text=%s&op=translate Chinese to English
+
+# gm: https://www.google.com/maps?q=%s Google maps
+# b: https://www.bing.com/search?q=%s Bing
