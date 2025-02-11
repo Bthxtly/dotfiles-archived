@@ -109,7 +109,7 @@ Vifm is a **VI**m-like **F**ile **M**anager in terminal.
 vifm
 ├── colors/               # gruvbox theme
 ├── favicons.vifm
-├── scripts/              # none
+├── scripts/              # nothing here though
 ├── vifm-help.txt
 └── vifmrc                # I think only this matters, or not even this...
 ```
