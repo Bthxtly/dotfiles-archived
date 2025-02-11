@@ -126,7 +126,7 @@ kmonad
 ```
 
 ## [fusuma](https://github.com/iberianpig/fusuma)
-Fusuma enable more gestures for touchpad.
+Fusuma enables more gestures for touchpad.
 ```sh
 fusuma
 └── config.yml
