@@ -5,7 +5,8 @@ vim:nospell:nowrap
 They are precious and fantastic!
 
 ## [Hyprland](https://hyprland.org)
-Hyprland is a tiling window manager on Wayland.
+Hyprland is a tiling window manager on Wayland. [Here](https://github.com/JaKooLit/Arch-Hyprland)
+is a much more advanced configuration.
 ```sh
 hypr
 ├── configs
