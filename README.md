@@ -169,8 +169,8 @@ vlc
 ```
 
 ## [vimium](https://github.com/philc/vimium)
-Vimium is an browser extension available on Chrome and Firefox, enable you to
-operate webpage in the vim way.
+Vimium is an browser extension available on Chrome and Firefox, enables you to
+operate webpages in the vim way.
 ```sh
 vimium/
 ├── keymap.txt
