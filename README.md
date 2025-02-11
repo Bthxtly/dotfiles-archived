@@ -134,7 +134,6 @@ fusuma
 
 ## [rofi](https://github.com/davatorium/rofi)
 Rofi is a dmenu replacement as an application launcher and window switcher
-![preview](.rofi.png)
 ```sh
 rofi/.config/rofi/
 ├── config.rasi
