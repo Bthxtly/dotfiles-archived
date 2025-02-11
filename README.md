@@ -148,7 +148,7 @@ Zathura is a simple Document viewer that supports vim-like keybinds.
 zathura
 ├── current_theme.conf    # works with hypr/.config/hypr/scripts/switcher.sh, in .gitignore
 ├── zathura-gruvbox/
-└── zathurarc             # keybinds, scroll method and colortheme
+└── zathurarc             # keybinds, scroll method and colorscheme
 ```
 
 ## [waybar](https://github.com/Alexays/Waybar)
