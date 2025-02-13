@@ -60,7 +60,6 @@ vim.keymap.set("n", "<F9>", ":Neotree toggle<CR>", { silent = true, desc = "Neot
 
 -- Compile function {{{
 function CompileRunGcc()
-  vim.cmd("w")
   if vim.bo.filetype == "c" then
     vim.cmd("set splitbelow")
     vim.cmd("!gcc % -o %< -lm")
