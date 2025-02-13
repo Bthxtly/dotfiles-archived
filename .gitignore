@@ -8,3 +8,5 @@ nvim/.config/nvim/current_theme.vim
 rofi/.config/rofi/current_theme.rasi
 kitty/.config/kitty/current_theme.conf
 zathura/.config/zathura/current_theme.conf
+
+vlc/.config/vlc/vlc-qt-interface.conf
