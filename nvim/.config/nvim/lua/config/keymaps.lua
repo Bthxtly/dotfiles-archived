@@ -61,6 +61,7 @@ vim.keymap.set("n", "<F9>", ":Neotree toggle<CR>", { silent = true, desc = "Neot
 -- Compile function {{{
 function CompileRunGcc()
   if vim.bo.filetype == "c" then
+    vim.cmd("w")
     vim.cmd("set splitbelow")
     vim.cmd("!gcc % -o %< -lm")
     vim.cmd("sp")
@@ -68,20 +69,24 @@ function CompileRunGcc()
     vim.cmd("term time ./%<")
     vim.cmd("normal i")
   elseif vim.bo.filetype == "cpp" then
+    vim.cmd("w")
     vim.cmd("set splitbelow")
     vim.cmd("sp")
     vim.cmd("res -5")
     vim.cmd("term g++ -std=gnu++17 % -Wall -o %< && time ./%<")
     vim.cmd("normal i")
   elseif vim.bo.filetype == "sh" then
+    vim.cmd("w")
     vim.cmd("!time bash %")
   elseif vim.bo.filetype == "python" then
+    vim.cmd("w")
     vim.cmd("set splitbelow")
     vim.cmd("sp")
     vim.cmd("res -5")
     vim.cmd("term python3 %")
     vim.cmd("normal i")
   elseif vim.bo.filetype == "rust" then
+    vim.cmd("w")
     vim.cmd("set splitbelow")
     vim.cmd("sp")
     vim.cmd("res -5")
@@ -90,6 +95,7 @@ function CompileRunGcc()
     -- vim.cmd("MarkdownPreviewToggle")
     vim.cmd("Markview toggle")
   elseif vim.bo.filetype == "tex" then
+    vim.cmd("w")
     vim.cmd("VimtexCompile")
   end
 end --}}}
