@@ -47,9 +47,8 @@ alias 'gu=git commit -m "update"'
 alias 'guu=git add --all && git commit -m "update" && git push'
 
 # [neo]vim
-alias 'c=nvim ~/.config/nvim/init.lua'
-alias 'h=nvim ~/.config/hypr/'
-alias 'iii=nvim ~/.config/i3/config'
+alias 'h=nvim ~/.config/hypr/configs/'
+# alias 'iii=nvim ~/.config/i3/config'
 alias 'k=nvim ~/.config/kitty/kitty.conf'
 alias 'v=nvim'
 alias 'vd=nvim ~/Documents/VimWiki/diary.md'
