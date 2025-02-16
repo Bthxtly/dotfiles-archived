@@ -14,8 +14,11 @@ return {
             },
           },
         },
+      },
 
-        cmdline = function()
+      cmdline = {
+        enabled = true,
+        sources = function()
           local type = vim.fn.getcmdtype()
           -- Search forward and backward
           if type == "/" or type == "?" then
@@ -60,6 +63,7 @@ return {
     -- dependencies = "nvim-telescope/telescope.nvim",
     opts = {
       snippetDir = vim.fn.stdpath("config") .. "/snippets",
+      jsonFormatter = "jq",
     },
   },
 }
