@@ -130,3 +130,5 @@ source $HOME/.oh-my-zsh/custom/variables.zsh
 source $HOME/.oh-my-zsh/custom/timer.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+eval $(thefuck --alias)
