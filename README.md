@@ -53,6 +53,7 @@ nvim
 │       ├── fzf.lua         # very excellent fuzzy finder
 │       ├── highlight.lua   # add highlight supports for some file types
 │       ├── kitty_scrollback.lua  # operate kitty like in nvim buffer
+│       ├── leetcode.lua    # do leetcode in nvim
 │       ├── lualine.lua     # remove "branch" and change separator
 │       ├── mini.lua        # more text objects
 │       ├── neovide.lua     # neovim GUI
