@@ -6,7 +6,7 @@ return {
   {
     "brenoprata10/nvim-highlight-colors",
     keys = {
-      { "<leader>ht", ':lua require("nvim-highlight-colors").toggle()<cr>', { silent = true, desc = "Toggle color" } },
+      { "<leader>ht", '<cmd>lua require("nvim-highlight-colors").toggle()<cr>', silent = true, desc = "Toggle color" },
     },
   },
   { "ap/vim-css-color", event = "VeryLazy" },
