@@ -144,7 +144,6 @@ rofi/.config/rofi/
 
 ## [zathura](https://github.com/pwmt/zathura)
 Zathura is a simple Document viewer that supports vim-like keybinds.
-![preview](.zathura.png)
 ```sh
 zathura
 ├── current_theme.conf    # works with hypr/.config/hypr/scripts/switcher.sh, in .gitignore
