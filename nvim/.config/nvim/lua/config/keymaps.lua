@@ -6,9 +6,9 @@ local map = vim.keymap.set
 --=========================================================================
 map("n", "<C-c>", "<esc>")
 map("n", "Q", "@q")
-map("n", "j", "[")
-map("n", "k", "]")
 map("n", "ck", "<cmd>help digraph-table<cr>")
+map("n", "<c-'>", "<c-]>", { desc = "Jump to entry" })
+map("n", "<leader>ha", "<cmd>so $VIMRUNTIME/syntax/hitest.vim<cr><c-w>T", { desc = "All highlight", silent = true })
 -- I'm brilliant
 map("n", "go", "o<esc>S<esc>gk", { desc = "Add a new blank line below" })
 map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
