@@ -13,6 +13,7 @@ export EDITOR=nvim
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH
+
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export QT_QPA_PLATFORM=wayland
 export SCREENSHOT_TOOL=grim
