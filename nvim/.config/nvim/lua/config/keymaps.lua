@@ -8,7 +8,7 @@ map("n", "<C-c>", "<esc>")
 map("n", "Q", "@q")
 map("n", "ck", "<cmd>help digraph-table<cr>")
 map("n", "<c-'>", "<c-]>", { desc = "Jump to entry" })
-map("n", "<leader>ha", "<cmd>so $VIMRUNTIME/syntax/hitest.vim<cr><c-w>T", { desc = "All highlight", silent = true })
+map("n", "<leader>ha", "<cmd>so $VIMRUNTIME/syntax/hitest.vim<cr>", { desc = "All highlight", silent = true })
 -- I'm brilliant
 map("n", "go", "o<esc>S<esc>gk", { desc = "Add a new blank line below" })
 map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
@@ -45,6 +45,7 @@ vim.keymap.set("n", "Y", '"+y')
 vim.keymap.set("v", "Y", '"+y')
 
 -- Quick quit and save
+map("n", "<leader>qa", "<cmd>wqall<cr>", { desc = "Write and quit all" })
 vim.keymap.set("c", "Q", "q!<CR>") -- force to quit in cmdline
 vim.keymap.set("n", "<C-S>", ":w<CR>", { silent = true, desc = "Write file" })
 vim.keymap.set("n", "<C-Q>", ":q<CR>", { silent = true, desc = "Quit" })
