@@ -11,6 +11,7 @@ return {
         end,
         desc = "Find Plugin File",
       },
+      { "<leader>fo", "<cmd>FzfLua zoxide<cr>", desc = "Zoxide" },
     },
   },
 }
