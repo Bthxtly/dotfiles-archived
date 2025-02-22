@@ -60,9 +60,10 @@ nvim
 │       ├── oil.lua         # file manager in nvim buffer
 │       ├── origami.lua     # <left> and <right> to unfold and fold
 │       ├── outline.lua     # symbol tree
-│       ├── small.lua       # surround, rainbow brackets, repeat, zoxide, undotree, maximize and sideways
+│       ├── small.lua       # surround, rainbow brackets, repeat, zoxide, maximize and sideways
 │       ├── snacks.lua      # dashboard
 │       ├── toggleterm.lua  # not configured
+│       ├── undotree.lua    # walk trough the undo histrory
 │       ├── vimtex.lua      # not configured
 │       └── vimwiki.lua     # vimwiki, markview and markdown-preview, for taking notes
 ├── .neoconf.json
@@ -154,7 +155,6 @@ zathura
 
 ## [waybar](https://github.com/Alexays/Waybar)
 Waybar is a highly customizable Wayland bar.
-![preview](.waybar.png)
 ```sh
 waybar
 ├── config.jsonc
