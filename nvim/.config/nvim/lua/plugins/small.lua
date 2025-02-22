@@ -12,20 +12,6 @@ return {
   },
 
   {
-    "mbbill/undotree",
-    lazy = true,
-    -- cmd = { "UndotreeToggle" },
-    keys = {
-      {
-        "<leader>su",
-        "<cmd>UndotreeToggle<cr>",
-        mode = "n",
-        desc = "Undotree",
-      },
-    },
-  },
-
-  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = { window = { mappings = { ["f"] = "noop" } } },
