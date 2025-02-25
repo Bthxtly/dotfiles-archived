@@ -45,7 +45,7 @@ vim.keymap.set("n", "Y", '"+y')
 vim.keymap.set("v", "Y", '"+y')
 
 -- Quick quit and save
-map("n", "<leader>qa", "<cmd>wqall<cr>", { desc = "Write and quit all" })
+map("n", "<leader>wa", "<cmd>wqall<cr>", { desc = "Write and quit all" })
 vim.keymap.set("c", "Q", "q!<CR>") -- force to quit in cmdline
 vim.keymap.set("n", "<C-S>", ":w<CR>", { silent = true, desc = "Write file" })
 vim.keymap.set("n", "<C-Q>", ":q<CR>", { silent = true, desc = "Quit" })
