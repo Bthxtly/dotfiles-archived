@@ -304,7 +304,7 @@
       "```"
     ],
     "description": "Insert fenced code block",
-    "prefix": "codeblock"
+    "prefix": "cb"
   },
   "Insert horizontal rule": {
     "body": "----------\n",
