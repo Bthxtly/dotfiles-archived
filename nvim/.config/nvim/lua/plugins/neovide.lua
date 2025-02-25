@@ -1,7 +1,8 @@
 if vim.g.neovide then
-  vim.o.guifont = "ComicShannsMono Nerd Font:h12" -- text below applies for VimScript
+  vim.o.guifont = "ComicShannsMono Nerd Font:h12"
   vim.g.neovide_floating_shadow = false
-  vim.keymap.set({ "n", "i" }, "<C-S-V>", '<ESC>"+p', { silent = true })
+  vim.keymap.set({ "n", "i" }, "<C-S-V>", '<cmd>set paste<cr><ESC>"+p<cmd>set paste!<cr>', { silent = true })
+  vim.keymap.set("i", "<C-M>", "<CR>")
 end
 
 return {}
