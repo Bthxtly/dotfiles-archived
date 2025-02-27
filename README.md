@@ -34,7 +34,7 @@ hypr
 Base on [LazyVim](https://lazyvim.org), a neovim distribution.
 ```sh
 nvim
-├── current_theme.vim     # works with hypr/.config/hypr/scripts/switcher.sh, in .gitignore
+├── current_theme.vim     # works with hypr/.config/hypr/scripts/switcher.sh
 ├── init.lua
 ├── lazy-lock.json
 ├── lazyvim.json
@@ -77,7 +77,7 @@ nvim
  terminal emulator.
 ```sh
 kitty
-├── current_theme.conf    # works with hypr/.config/hypr/scripts/switcher.sh, in .gitignore
+├── current_theme.conf    # works with hypr/.config/hypr/scripts/switcher.sh
 ├── gruvbox_dark.conf     # theme
 ├── gruvbox_light.conf    # theme
 ├── kitty_all.conf        # all options
@@ -140,7 +140,7 @@ Rofi is a dmenu replacement as an application launcher and window switcher
 ```sh
 rofi/.config/rofi/
 ├── config.rasi
-├── current_theme.rasi    # works with hypr/.config/hypr/scripts/switcher.sh, in .gitignore
+├── current_theme.rasi    # works with hypr/.config/hypr/scripts/switcher.sh
 └── gruvbox-rofi/
 ```
 
@@ -148,7 +148,7 @@ rofi/.config/rofi/
 Zathura is a simple Document viewer that supports vim-like keybinds.
 ```sh
 zathura
-├── current_theme.conf    # works with hypr/.config/hypr/scripts/switcher.sh, in .gitignore
+├── current_theme.conf    # works with hypr/.config/hypr/scripts/switcher.sh
 ├── zathura-gruvbox/
 └── zathurarc             # keybinds, scroll method and colorscheme
 ```
