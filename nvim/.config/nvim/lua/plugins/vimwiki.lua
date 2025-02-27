@@ -49,7 +49,6 @@ return {
 
   {
     "iamcco/markdown-preview.nvim",
-    enabled = true,
     lazy = true,
     ft = { "markdown", "vimwiki" },
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

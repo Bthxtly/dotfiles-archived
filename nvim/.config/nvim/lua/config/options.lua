@@ -1,31 +1,65 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
--- extras
-vim.g.lazyvim_blink_main = true
-vim.g.snacks_animate = false
-
 local o = vim.opt
-o.clipboard = ""
-o.confirm = false -- confirm before exiting file
+
+-- fold
 o.foldmethod = "indent"
-o.foldtext = [[foldtext()]]
+o.foldlevel = 99
+o.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+
+-- indent
+o.shiftwidth = 2
+o.tabstop = 2
+o.expandtab = true
+o.shiftround = true
+o.smartindent = true
+
+-- case
+o.ignorecase = true
+o.smartcase = true
+
+-- list
+o.list = true
+
+-- session
+o.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+
+-- number
+o.number = true
+o.relativenumber = true
+
+-- others
 o.scrolloff = 5
 o.mouse = "nv"
 o.spelllang = { "en", "it" }
 o.encoding = "UTF-8"
-o.shiftwidth = 2
-o.tabstop = 2
+o.cursorline = true
 o.laststatus = 3
+o.conceallevel = 2
+o.lazyredraw = true
+o.termguicolors = true
+o.updatetime = 200
+o.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+o.wrap = false
+o.formatexpr = "v:lua.require'conform'.formatexpr()"
+o.signcolumn = "yes"
 
 -- Enable persistent undo
 o.undofile = true
-o.undolevels = 1000 -- Number of undo levels
+o.undolevels = 10000 -- Number of undo levels
 o.undoreload = 10000 -- Number of lines to save for undo
 
 -- Enable backups and swap files
 o.backup = true
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+
 o.swapfile = true
 
 -- Set directories for undo, backup, and swap files

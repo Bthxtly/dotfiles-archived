@@ -2,34 +2,43 @@ return {
   -- code completion
   {
     "saghen/blink.cmp",
+    dependencies = "rafamadriz/friendly-snippets",
+    -- version = "*",
     build = "cargo build --release",
+    lazy = true,
     event = { "InsertEnter", "CmdlineEnter" },
+    opts_extend = { "sources.default" },
     opts = {
-
       sources = {
+        default = { "lazydev", "lsp", "path", "snippets", "buffer" },
         providers = {
-          snippets = {
-            opts = {
-              search_paths = { vim.fn.stdpath("config") .. "/snippets" },
-            },
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            score_offset = 100,
           },
         },
       },
 
+      appearance = {
+        ...,
+      },
+
+      signature = { enabled = true },
+
+      completion = {
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 200,
+        },
+      },
+
+      -- command line and search
       cmdline = {
         enabled = true,
-        sources = function()
-          local type = vim.fn.getcmdtype()
-          -- Search forward and backward
-          if type == "/" or type == "?" then
-            return { "buffer" }
-          end
-          -- Commands
-          if type == ":" then
-            return { "cmdline" }
-          end
-          return {}
-        end,
+        completion = {
+          menu = { auto_show = true },
+        },
       },
 
       keymap = {
@@ -42,6 +51,12 @@ return {
   -- add and edit snippets easily
   {
     "chrisgrieser/nvim-scissors",
+    -- dependencies = "nvim-telescope/telescope.nvim",
+    lazy = true,
+    opts = {
+      snippetDir = vim.fn.stdpath("config") .. "/snippets",
+      jsonFormatter = "jq",
+    },
     keys = {
       {
         "<leader>se",
@@ -60,10 +75,16 @@ return {
         mode = { "n", "v" },
       },
     },
-    -- dependencies = "nvim-telescope/telescope.nvim",
+  },
+
+  {
+    "folke/lazydev.nvim",
+    lazy = true,
+    ft = "lua",
     opts = {
-      snippetDir = vim.fn.stdpath("config") .. "/snippets",
-      jsonFormatter = "jq",
+      library = {
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
     },
   },
 }

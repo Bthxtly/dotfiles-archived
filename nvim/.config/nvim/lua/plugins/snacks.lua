@@ -1,42 +1,32 @@
+vim.g.snacks_animate = false
+
 return {
   "folke/snacks.nvim",
   opts = {
     image = { enabled = true },
 
-    input = { enabled = false },
+    indent = { enabled = true },
+
+    picker = { enabled = true },
+
+    statuscolumn = { enabled = false },
 
     dashboard = {
       width = 60,
       row = nil, -- dashboard position. nil for center
-      icon = " ",
       col = nil, -- dashboard position. nil for center
       pane_gap = 4, -- empty columns between vertical panes
       autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
       -- These settings are used by some built-in sections
       preset = {
-        -- Defaults to a picker that supports `fzf-lua`, `telescope.nvim` and `mini.pick`
-        ---@type fun(cmd:string, opts:table)|nil
-        pick = nil,
-        -- Used by the `keys` section to show keymaps.
-        -- Set your custom keymaps here.
-        -- When using a function, the `items` argument are the default keymaps.
-        ---@type snacks.dashboard.Item[]
+        pick = "fzf-lua",
+        -- stylua: ignore
         keys = {
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          -- { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = " ", key = "r", desc = "Recent Files", action = "<cmd>FzfLua oldfiles<cr>" },
-          {
-            icon = " ",
-            key = "c",
-            desc = "Config",
-            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-          },
-          {
-            icon = " ",
-            key = "s",
-            desc = "Select Session",
-            action = "<cmd>lua require('persistence').select()<cr>",
-          },
+          { icon = " ", key = "c", desc = "Config", action = "<cmd>lua require('fzf-lua').files({cwd = vim.fn.stdpath('config')})<cr>", },
+          { icon = " ", key = "s", desc = "Select Session", action = "<cmd>lua require('persistence').select()<cr>", },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = " ", key = "q", desc = "Quit", action = ":q" },
         },

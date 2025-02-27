@@ -3,8 +3,10 @@ return {
     "hedyhli/outline.nvim",
     lazy = true,
     cmd = { "Outline", "OutlineOpen" },
+    -- ft = { "markdown", "vimwiki.markdown" },
     keys = {
       { "<F10>", "<cmd>Outline<CR>", desc = "Toggle outline" },
+      { "<leader>so", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
       outline_window = {
@@ -24,6 +26,5 @@ return {
         markdown = { filetypes = { "vimwiki", "markdown" } },
       },
     },
-    ft = { "markdown", "vimwiki.markdown" },
   },
 }

@@ -1,4 +1,4 @@
-vim.cmd("source ~/dotfiles/nvim/.config/nvim/current_theme.vim")
+vim.cmd("source ~/.config/nvim/current_theme.vim")
 
 return {
   -- add gruvbox
@@ -33,17 +33,4 @@ return {
   { "bringsrain/strawberry" },
   { "sainnhe/everforest" },
   { "rose-pine/neovim" },
-
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-      icons = {
-        kinds = {
-          Snippet = " ",
-        },
-      },
-    },
-  },
 }
