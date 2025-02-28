@@ -1,6 +1,6 @@
-<!---
+<!--
 vim:nospell:nowrap
---->
+-->
 # These are my dotfiles
 They are precious and fantastic!
 
@@ -18,7 +18,7 @@ hypr
 │   ├── variables.conf
 │   └── windowrule.conf
 ├── hypridle.conf         # deal with suspend
-├── hyprland.conf         # refer to ``configs/''
+├── hyprland.conf         # refer to "configs/"
 ├── hyprlock.conf         # lock screen
 ├── hyprpaper.conf        # wallpapers
 ├── pyprland.toml         # scratch pads
@@ -34,6 +34,7 @@ hypr
 Base on [LazyVim](https://lazyvim.org), a neovim distribution.
 ```sh
 nvim
+├── colors/               # my own colorscheme, depend on mini.base16
 ├── current_theme.vim     # works with hypr/.config/hypr/scripts/switcher.sh
 ├── init.lua
 ├── lazy-lock.json
@@ -42,32 +43,38 @@ nvim
 │   ├── config
 │   │   ├── autocmds.lua
 │   │   ├── keymaps.lua
-│   │   ├── lazy.lua
+│   │   ├── lazy.lua        # set up lazy.nvim
 │   │   └── options.lua
 │   └── plugins
 │       ├── ai.lua          # use ollama with neovim
 │       ├── blink.lua       # auto completion and custom snippets
 │       ├── colorscheme.lua # gruvbox, strawberry(pink) and everforest colorscheme
+│       ├── conform.lua     # auto format codes
 │       ├── disable.lua     # don't get used to bufferline, flash and noice
 │       ├── easy_align.lua  # align is important
+│       ├── fidget.lua      # show neovim notifications and LSP messages
 │       ├── fzf.lua         # very excellent fuzzy finder
+│       ├── gitsigns.lua    # show git signs
 │       ├── highlight.lua   # add highlight supports for some file types
 │       ├── kitty_scrollback.lua  # operate kitty like in nvim buffer
 │       ├── leetcode.lua    # do leetcode in nvim
+│       ├── lsp.lua         # mason and nvim-lspconfig
 │       ├── lualine.lua     # remove "branch" and change separator
 │       ├── mini.lua        # more text objects
 │       ├── neovide.lua     # neovim GUI
 │       ├── oil.lua         # file manager in nvim buffer
 │       ├── origami.lua     # <left> and <right> to unfold and fold
 │       ├── outline.lua     # symbol tree
+│       ├── persistence.lua # save and load sessions
 │       ├── small.lua       # surround, rainbow brackets, repeat, zoxide, maximize and sideways
 │       ├── snacks.lua      # dashboard
 │       ├── toggleterm.lua  # not configured
+│       ├── treesitter.lua  # highlight, indent and more textobjects
+│       ├── trouble.lua     # display diagnostics messages
 │       ├── undotree.lua    # walk trough the undo histrory
 │       ├── vimtex.lua      # not configured
-│       └── vimwiki.lua     # vimwiki, markview and markdown-preview, for taking notes
-├── .neoconf.json
-├── pack/
+│       ├── vimwiki.lua     # vimwiki, markview and markdown-preview, for taking notes
+│       └── which-key.lua   # show available keybinds
 ├── snippets/
 └── stylua.toml
 ```

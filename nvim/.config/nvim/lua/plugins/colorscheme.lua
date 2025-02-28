@@ -19,6 +19,7 @@ return {
       },
       contrast = "soft",
       overrides = {
+        SignColumn = { link = "LineNr" },
         -- Markdown Header Background Overrides with Foreground Colors
         ["@markup.heading.1.markdown"] = { fg = "#fb4934", bg = "", bold = true },
         ["@markup.heading.2.markdown"] = { fg = "#fabd2f", bg = "", bold = true },
@@ -30,7 +31,7 @@ return {
     },
   },
 
-  { "bringsrain/strawberry" },
   { "sainnhe/everforest" },
-  { "rose-pine/neovim" },
+  { "echasnovski/mini.base16" },
+  { "rose-pine/neovim", styles = { italic = false } },
 }
