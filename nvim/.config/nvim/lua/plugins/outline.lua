@@ -6,7 +6,7 @@ return {
     -- ft = { "markdown", "vimwiki.markdown" },
     keys = {
       { "<F10>", "<cmd>Outline<CR>", desc = "Toggle outline" },
-      { "<leader>so", "<cmd>Outline<CR>", desc = "Toggle outline" },
+      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
       outline_window = {
