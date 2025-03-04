@@ -1,6 +1,5 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "bwpge/lualine-pretty-path" },
   opts = {
     options = {
       theme = "auto",
@@ -10,7 +9,6 @@ return {
     },
     sections = {
       lualine_a = {},
-      lualine_c = { "pretty_path" },
       lualine_y = {
         { "progress", separator = " ", padding = { left = 1, right = 0 } },
         { "location", padding = { left = 0, right = 1 } },
@@ -20,6 +18,14 @@ return {
           return " " .. os.date("%R")
         end,
       },
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = { "filename" },
+      lualine_x = { "location" },
+      lualine_y = {},
+      lualine_z = {},
     },
   },
 }
