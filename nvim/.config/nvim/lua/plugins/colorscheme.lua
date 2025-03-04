@@ -21,17 +21,17 @@ return {
       overrides = {
         SignColumn = { link = "LineNr" },
         -- Markdown Header Background Overrides with Foreground Colors
-        ["@markup.heading.1.markdown"] = { fg = "#fb4934", bg = "", bold = true },
-        ["@markup.heading.2.markdown"] = { fg = "#fabd2f", bg = "", bold = true },
-        ["@markup.heading.3.markdown"] = { fg = "#b8bb26", bg = "", bold = true },
-        ["@markup.heading.4.markdown"] = { fg = "#8ec07c", bg = "", bold = true },
-        ["@markup.heading.5.markdown"] = { fg = "#83a598", bg = "", bold = true },
-        ["@markup.heading.6.markdown"] = { fg = "#d3869b", bg = "", bold = true },
+        ["@markup.heading.1.markdown"] = { fg = "#cc241d", bg = "", bold = true },
+        ["@markup.heading.2.markdown"] = { fg = "#98971a", bg = "", bold = true },
+        ["@markup.heading.3.markdown"] = { fg = "#d79921", bg = "", bold = true },
+        ["@markup.heading.4.markdown"] = { fg = "#458588", bg = "", bold = true },
+        ["@markup.heading.5.markdown"] = { fg = "#b16286", bg = "", bold = true },
+        ["@markup.heading.6.markdown"] = { fg = "#689d6a", bg = "", bold = true },
       },
     },
   },
 
   { "sainnhe/everforest" },
-  { "echasnovski/mini.base16" },
-  { "rose-pine/neovim", styles = { italic = false } },
+  { "Bthxtly/mini.base16" },
+  { "rose-pine/neovim" },
 }

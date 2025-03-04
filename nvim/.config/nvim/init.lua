@@ -5,4 +5,8 @@ require("config.autocmds")
 require("config.keymaps")
 require("config.options")
 
-vim.cmd("colorscheme gruvbox")
+if vim.g.neovide or vim.env.TERM_PROGRAM == "ghostty" then
+  vim.cmd("colorscheme rose-pine")
+else
+  vim.cmd("colorscheme gruvbox")
+end
