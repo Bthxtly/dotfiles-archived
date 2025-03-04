@@ -31,7 +31,8 @@ hypr
 ```
 
 ## [neovim](https://github.com/neovim/neovim)
-Base on [LazyVim](https://lazyvim.org), a neovim distribution.
+~Base on [LazyVim](https://lazyvim.org), a neovim distribution.~
+Totally separate from LazyVim.
 ```sh
 nvim
 ├── colors/               # my own colorscheme, depend on mini.base16
@@ -59,7 +60,7 @@ nvim
 │       ├── kitty_scrollback.lua  # operate kitty like in nvim buffer
 │       ├── leetcode.lua    # do leetcode in nvim
 │       ├── lsp.lua         # mason and nvim-lspconfig
-│       ├── lualine.lua     # remove "branch" and change separator
+│       ├── lualine.lua     # status line
 │       ├── mini.lua        # more text objects
 │       ├── neovide.lua     # neovim GUI
 │       ├── oil.lua         # file manager in nvim buffer
