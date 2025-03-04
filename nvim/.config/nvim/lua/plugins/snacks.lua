@@ -9,6 +9,8 @@ return {
 
     picker = { enabled = true },
 
+    explorer = { enabled = true },
+
     statuscolumn = { enabled = false },
 
     dashboard = {

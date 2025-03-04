@@ -11,6 +11,7 @@ map("n", "Q", "@q")
 map("n", "ck", "<cmd>help digraph-table<cr>")
 map("n", "<c-'>", "<c-]>", { desc = "Jump to entry" })
 map("n", "<leader>ha", "<cmd>so $VIMRUNTIME/syntax/hitest.vim<cr>", { desc = "All highlight", silent = true })
+map("n", "<leader>cc", "<cmd>lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
 
 -- better search
 map("n", "<esc>", "<cmd>noh<cr>", { desc = "Disable hlsearch" })
@@ -73,7 +74,8 @@ map("n", "<F1>", ":cd %:h<CR>", { silent = false, desc = "cd to file path" })
 map("n", "<F2>", ":Maximize<CR>", { silent = true, desc = "Maximize the current window" })
 map("n", "<F3>", ":lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
 map("n", "<F8>", ":UndotreeToggle<CR>", { silent = true, desc = "Undotree" })
-map("n", "<F9>", ":Neotree toggle<CR>", { silent = true, desc = "Neotree" })
+map("n", "<F9>", "<cmd>lua Snacks.explorer.open()<CR>", { silent = true, desc = "Explorer" })
+map("n", "<leader>e", "<cmd>lua Snacks.explorer.open()<CR>", { silent = true, desc = "Explorer" })
 
 -- window
 -- Disable the default s key
@@ -97,6 +99,24 @@ map("n", "sv", "<C-w>t<C-w>H")
 map("n", "srh", "<C-w>b<C-w>K")
 map("n", "srv", "<C-w>b<C-w>H")
 map("n", "sx", "<C-w><C-x>")
+
+-- goto diagnostic
+-- diagnostic
+local diagnostic_goto = function(next, severity)
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity })
+  end
+end
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
 
 -- ui
 -- LazyVim.format.snacks_toggle():map("<leader>uf")
