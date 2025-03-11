@@ -4,10 +4,11 @@ alias 'cx=chmod +x'
 alias 'f=vifm'
 alias 'ff=vifm .'
 alias 'hib=systemctl hibernate'
+alias 'sus=systemctl suspend'
 alias 'i=clear && echo $(date) && echo "I use   BTW" && fastfetch'
 alias 'icat=kitten icat'
 alias 'lg=lazygit'
-alias 'nv=nvidia-smi'
+alias 'nv=clear && nvidia-smi'
 alias 'sd=unset all_proxy ALL_PROXY && ~/Applications/stable-diffusion-webui/webui.sh'
 alias 'sl=sl -e'
 alias "pkg_size=expac -H M '%m\t%n' | sort -h"
@@ -20,9 +21,9 @@ alias 'code=code  --enable-features=WaylandWindowDecorations --ozone-platform-hi
 alias 'mechvibes=mechvibes --in-process-gpu'
 
 # ls
-alias 'l=lsd -lah'
-alias 'ls=lsd'
-alias 'll=lsd -lh'
+alias 'l=eza -lah --icons'
+alias 'ls=eza --icons'
+alias 'll=eza -lh --icons'
 
 # exit
 alias ':q=exit'
