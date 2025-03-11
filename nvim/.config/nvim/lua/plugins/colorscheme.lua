@@ -31,7 +31,16 @@ return {
     },
   },
 
+  {
+    "rose-pine/neovim",
+    config = function()
+      require("rose-pine").setup({
+        variant = "auto",
+        dark_variant = "moon",
+      })
+    end,
+  },
+
   { "sainnhe/everforest" },
   { "Bthxtly/mini.base16" },
-  { "rose-pine/neovim" },
 }

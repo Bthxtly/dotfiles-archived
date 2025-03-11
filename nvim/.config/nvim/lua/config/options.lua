@@ -1,7 +1,9 @@
 local o = vim.opt
 
 -- fold
-o.foldmethod = "indent"
+-- o.foldmethod = "indent"
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldlevel = 99
 o.fillchars = {
   foldopen = "",
@@ -46,7 +48,7 @@ o.termguicolors = true
 o.updatetime = 200
 o.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 o.wrap = false
-o.formatexpr = "v:lua.require'conform'.formatexpr()"
+-- o.formatexpr = "v:lua.require'conform'.formatexpr()"
 o.signcolumn = "yes"
 
 -- Enable persistent undo

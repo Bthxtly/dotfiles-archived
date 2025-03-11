@@ -39,11 +39,17 @@ return {
         completion = {
           menu = { auto_show = true },
         },
+        keymap = {
+          ["<LEFT>"] = {},
+          ["<RIGHT>"] = {},
+        },
       },
 
       keymap = {
         ["<C-y>"] = { "accept", "fallback" },
         ["<CR>"] = {},
+        ["<UP>"] = {},
+        ["<DOWN>"] = {},
       },
     },
   },
