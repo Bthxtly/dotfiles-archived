@@ -74,7 +74,7 @@ nvim
 │       ├── trouble.lua     # display diagnostics messages
 │       ├── undotree.lua    # walk trough the undo histrory
 │       ├── vimtex.lua      # not configured
-│       ├── vimwiki.lua     # vimwiki, markview and markdown-preview, for taking notes
+│       ├── markdown.lua    # vimwiki, markview and markdown-preview, for taking notes
 │       └── which-key.lua   # show available keybinds
 ├── snippets/
 └── stylua.toml
