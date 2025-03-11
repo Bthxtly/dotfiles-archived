@@ -3,7 +3,16 @@ vim.g.snacks_animate = false
 return {
   "folke/snacks.nvim",
   opts = {
-    image = { enabled = true },
+    image = {
+      enabled = true,
+      doc = {
+        inline = false,
+        float = true,
+        -- half the defaults
+        max_width = 40,
+        max_height = 20,
+      },
+    },
 
     indent = { enabled = true },
 
