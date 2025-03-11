@@ -184,6 +184,8 @@ function CompileRunGcc()
   elseif vim.bo.filetype == "markdown" or vim.bo.filetype == "vimwiki" then
     -- vim.cmd("MarkdownPreviewToggle")
     vim.cmd("Markview toggle")
+  elseif vim.bo.filetype == "typst" then
+    vim.cmd("TypstPreviewToggle")
   elseif vim.bo.filetype == "tex" then
     vim.cmd("w")
     vim.cmd("VimtexCompile")

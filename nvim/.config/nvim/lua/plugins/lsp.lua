@@ -140,6 +140,15 @@ return {
 
       -- pyright
       require("lspconfig").pyright.setup({})
+
+      -- clangd
+      require("lspconfig").clangd.setup({})
+
+      -- jdtls
+      require("lspconfig").jdtls.setup({})
+
+      -- tinymist
+      require("lspconfig").tinymist.setup({})
     end,
   },
 }
