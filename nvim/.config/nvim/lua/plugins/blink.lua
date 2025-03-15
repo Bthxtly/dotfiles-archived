@@ -2,7 +2,7 @@ return {
   -- code completion
   {
     "saghen/blink.cmp",
-    dependencies = "rafamadriz/friendly-snippets",
+    -- dependencies = "rafamadriz/friendly-snippets",
     -- version = "*",
     build = "cargo build --release",
     lazy = true,
@@ -47,6 +47,7 @@ return {
 
       keymap = {
         ["<C-y>"] = { "accept", "fallback" },
+        ["<C-k>"] = { "fallback" }, -- disable <c-k> in insert mode
         ["<CR>"] = {},
         ["<UP>"] = {},
         ["<DOWN>"] = {},
