@@ -119,8 +119,6 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 
 -- ui
--- LazyVim.format.snacks_toggle():map("<leader>uf")
--- LazyVim.format.snacks_toggle(true):map("<leader>uF")
 -- stylua: ignore
 Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }) :map("<leader>uC")
   -- stylua: ignore
@@ -185,7 +183,7 @@ function CompileRunGcc()
     -- vim.cmd("MarkdownPreviewToggle")
     vim.cmd("Markview toggle")
   elseif vim.bo.filetype == "typst" then
-    vim.cmd("TypstPreviewToggle")
+    vim.cmd("TypstPreview")
   elseif vim.bo.filetype == "tex" then
     vim.cmd("w")
     vim.cmd("VimtexCompile")

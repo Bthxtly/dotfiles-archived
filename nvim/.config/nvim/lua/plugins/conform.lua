@@ -42,8 +42,10 @@ return {
       lua = { "stylua" },
       sh = { "shfmt" },
       python = { "autopep8" },
+      c = { "clang-format" },
+      cpp = { "clang-format" },
       java = { "clang-format" },
-      typst = { "typstfmt" },
+      typst = { "typstyle" },
     },
     -- The options you set here will be merged with the builtin formatters.
     -- You can also define any custom formatters here.

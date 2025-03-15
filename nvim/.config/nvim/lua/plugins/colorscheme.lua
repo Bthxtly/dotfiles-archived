@@ -15,7 +15,7 @@ return {
         emphasis = true,
         comments = true,
         operators = false,
-        folds = true,
+        folds = false,
       },
       contrast = "soft",
       overrides = {

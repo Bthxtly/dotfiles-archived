@@ -1,3 +1,5 @@
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "rename" })
+
 return {
   {
     "williamboman/mason.nvim",
@@ -118,6 +120,7 @@ return {
     -- },
 
     config = function()
+      vim.lsp.inlay_hint.enable(true)
       require("mason").setup()
       require("mason-lspconfig").setup()
 
@@ -138,17 +141,20 @@ return {
         },
       })
 
-      -- pyright
+      -- python
       require("lspconfig").pyright.setup({})
 
-      -- clangd
+      -- c/c++
       require("lspconfig").clangd.setup({})
 
-      -- jdtls
+      -- java
       require("lspconfig").jdtls.setup({})
 
-      -- tinymist
+      -- typst
       require("lspconfig").tinymist.setup({})
+
+      -- json
+      require("lspconfig").jsonls.setup({})
     end,
   },
 }
