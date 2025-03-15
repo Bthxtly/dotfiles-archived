@@ -44,8 +44,11 @@ alias 'xtie=exit'
 
 # git
 alias 'gc=git commit -m'
+alias 'gk=git checkout'
 alias 'gu=git commit -m "update"'
+alias 'gr=git rebase'
 alias 'guu=git add --all && git commit -m "update" && git push'
+alias 'gla=git log --all --decorate --oneline --graph'
 
 # [neo]vim
 alias 'h=nvim "+FzfLua files cwd=$HOME/.config/hypr"'
