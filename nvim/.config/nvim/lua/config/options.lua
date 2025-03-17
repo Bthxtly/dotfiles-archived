@@ -48,7 +48,7 @@ o.termguicolors = true
 o.updatetime = 200
 o.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 o.wrap = false
--- o.formatexpr = "v:lua.require'conform'.formatexpr()"
+o.formatexpr = "v:lua.require'conform'.formatexpr()"
 o.signcolumn = "yes"
 
 -- Enable persistent undo
