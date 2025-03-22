@@ -9,9 +9,11 @@ map b scroll full-up
 # map [index] e move down
 # map [index] y move up
 
-# # zoom
-# map <C-i> zoom in
-# map <C-o> zoom out
+# zoom
+map E zoom in
+map Y zoom out
+map <C-e> zoom in
+map <C-y> zoom out
 
 # enable copy to clipboard
 set selection-clipboard clipboard
