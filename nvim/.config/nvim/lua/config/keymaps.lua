@@ -31,6 +31,9 @@ map("n", "gO", "O<esc>S<esc>gj", { desc = "Add a new blank line above" })
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "TP", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
 map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
+map("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
+map("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
+map("n", "<leader>tt", "<cmd>tabnew<cr>", { desc = "add a new tab" })
 
 -- buffer
 map("n", "<leader>bb", "<cmd>bn<cr>", { desc = "switch to next buffer" })
@@ -63,6 +66,7 @@ map("v", "Y", '"+y')
 
 -- Quick quit and save
 map("c", "Q", "q!<CR>") -- force to quit in cmdline
+map("n", "<leader>qq", "<cmd>qall<cr>", { desc = "Quit all" })
 map("n", "<leader>wa", "<cmd>wqall<cr>", { desc = "Write and quit all" })
 map("n", "<C-S>", ":w<CR>", { silent = true, desc = "Write file" })
 map("n", "<C-Q>", ":q<CR>", { silent = true, desc = "Quit" })
