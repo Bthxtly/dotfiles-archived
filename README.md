@@ -31,12 +31,14 @@ hypr
 ```
 
 ## [neovim](https://github.com/neovim/neovim)
-~Base on [LazyVim](https://lazyvim.org), a neovim distribution.~
-Totally separate from LazyVim.
+~Based on [LazyVim](https://lazyvim.org), a neovim distribution.~\
+Totally separated from LazyVim.
 ```sh
 nvim
-├── colors/               # my own colorscheme, depend on mini.base16
-├── current_theme.vim     # works with hypr/.config/hypr/scripts/switcher.sh
+├── colors/                 # my own colorscheme, depend on mini.base16
+├── current_theme.vim       # works with hypr/.config/hypr/scripts/switcher.sh
+├── ftplugin                # filetype specific settings
+│   └── typst.lua           # comment string
 ├── init.lua
 ├── lazy-lock.json
 ├── lazyvim.json
@@ -61,6 +63,7 @@ nvim
 │       ├── leetcode.lua    # do leetcode in nvim
 │       ├── lsp.lua         # mason and nvim-lspconfig
 │       ├── lualine.lua     # status line
+│       ├── markdown.lua    # vimwiki, markview and markdown-preview, for taking notes
 │       ├── mini.lua        # more text objects
 │       ├── neovide.lua     # neovim GUI
 │       ├── oil.lua         # file manager in nvim buffer
@@ -72,11 +75,12 @@ nvim
 │       ├── toggleterm.lua  # not configured
 │       ├── treesitter.lua  # highlight, indent and more textobjects
 │       ├── trouble.lua     # display diagnostics messages
+│       ├── typst.lua       # typst-preview
 │       ├── undotree.lua    # walk trough the undo histrory
 │       ├── vimtex.lua      # not configured
-│       ├── markdown.lua    # vimwiki, markview and markdown-preview, for taking notes
 │       └── which-key.lua   # show available keybinds
 ├── snippets/
+├── spell/
 └── stylua.toml
 ```
 
@@ -93,7 +97,7 @@ kitty
 ```
 
 ## zsh([ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) as the framework)
-**Z** **SH**ell is a powerful shell. Oh My Zsh is a framework for managing zsh
+**Z SH**ell is a powerful shell. Oh My Zsh is a framework for managing zsh
 configuration.
 ```sh
 zsh
