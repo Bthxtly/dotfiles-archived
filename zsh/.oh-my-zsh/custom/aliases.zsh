@@ -21,10 +21,13 @@ alias 'code=code  --enable-features=WaylandWindowDecorations --ozone-platform-hi
 alias 'mechvibes=mechvibes --in-process-gpu'
 
 # ls
-alias 'l=eza -lah --icons'
-alias 'ls=eza --icons'
-alias 'll=eza -lh --icons'
+alias 'l=eza -lh --icons always'
+alias 'll=eza -lah --icons always'
+alias 'ls=eza --icons always'
 alias 'lt=eza --icons --tree'
+
+# cd
+alias 'ct=cd /tmp'
 
 # exit
 alias ':q=exit'
@@ -52,16 +55,16 @@ alias 'guu=git add --all && git commit -m "update" && git push'
 alias 'gla=git log --all --decorate --oneline --graph'
 
 # [neo]vim
-alias 'h=nvim "+FzfLua files cwd=$HOME/.config/hypr"'
+alias 'h=cd $HOME/.config/hypr && nvim "+FzfLua files"'
 # alias 'iii=nvim ~/.config/i3/config'
 alias 'k=nvim ~/.config/kitty/kitty.conf'
 alias 'lc=nvim leetcode.nvim'
 alias 'v=nvim'
 alias 'vc=nvim "+FzfLua files cwd=~/.config/nvim"'
 alias 'vd=nvim ~/Documents/VimWiki/diary.md'
-alias 'vr=nvim -R'
+alias 'vr=nvim -R' # read only
 alias 'vt=nvim ~/Documents/VimWiki/index.md'
-alias 'vv=nvim .'
+alias 'vv=nvim .' # open current directory with oil.nvim
 alias 'vz=nvim ~/.zshrc && source ~/.zshrc'
 alias 'vza=nvim ~/.oh-my-zsh/custom/aliases.zsh && source ~/.oh-my-zsh/custom/aliases.zsh'
 alias 'vzv=nvim ~/.oh-my-zsh/custom/variables.zsh && source ~/.oh-my-zsh/custom/variables.zsh'
