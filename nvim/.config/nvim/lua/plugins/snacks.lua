@@ -12,6 +12,8 @@ return {
         max_width = 40,
         max_height = 20,
       },
+      convert = { notify = false },
+      math = { enabled = false },
     },
 
     indent = { enabled = true },
@@ -33,10 +35,11 @@ return {
         pick = "fzf-lua",
         -- stylua: ignore
         keys = {
+          { icon = " ", key = "n", desc = "New file", action = "<cmd>enew<cr>"},
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
           { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = " ", key = "r", desc = "Recent Files", action = "<cmd>FzfLua oldfiles<cr>" },
-          { icon = " ", key = "c", desc = "Config", action = "<cmd>lua require('fzf-lua').files({cwd = vim.fn.stdpath('config')})<cr>", },
+          -- { icon = " ", key = "c", desc = "Config", action = "<cmd>lua require('fzf-lua').files({cwd = vim.fn.stdpath('config')})<cr>", },
           { icon = " ", key = "s", desc = "Select Session", action = "<cmd>lua require('persistence').select()<cr>", },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = " ", key = "q", desc = "Quit", action = ":q" },
@@ -51,7 +54,7 @@ return {
   M   `MM.M    MM   Y  , MM.      ,MP  `MM A'      MM    M  YM.P'  MM  
   M     YMM    MM     ,M `Mb.    ,dP'   :MM;       MM    M  `YM'   MM  
 .JML.    YM  .JMMmmmmMMM   `"bmmd"'      VF      .JMML..JML. `'  .JMML.]],
-          hl = "GruvboxBlueBold",
+          hl = "Character",
         },
       },
       sections = {
