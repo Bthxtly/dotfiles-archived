@@ -37,8 +37,7 @@
           "markdown",
           "tex",
           "html",
-          "global",
-          "all"
+          "global"
         ],
         "path": "./snippets/global.json"
       },
