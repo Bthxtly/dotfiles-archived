@@ -150,7 +150,7 @@ fusuma
 ## [rofi](https://github.com/davatorium/rofi)
 Rofi is a dmenu replacement as an application launcher and window switcher
 ```sh
-rofi/.config/rofi/
+rofi
 ├── config.rasi
 ├── current_theme.rasi    # works with hypr/.config/hypr/scripts/switcher.sh
 └── gruvbox-rofi/
