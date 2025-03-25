@@ -49,6 +49,7 @@ nvim
 │   │   ├── lazy.lua        # set up lazy.nvim
 │   │   └── options.lua
 │   └── plugins
+│       ├── 2048.lua        # play 2048 in neovim
 │       ├── ai.lua          # use ollama with neovim
 │       ├── blink.lua       # auto completion and custom snippets
 │       ├── colorscheme.lua # gruvbox, strawberry(pink) and everforest colorscheme
