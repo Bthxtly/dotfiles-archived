@@ -11,7 +11,7 @@ o.fillchars = {
   fold = " ",
   foldsep = " ",
   diff = "╱",
-  eob = " ",
+  eob = "~",
 }
 
 -- indent
