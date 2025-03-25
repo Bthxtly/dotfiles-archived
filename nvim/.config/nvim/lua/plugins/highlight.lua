@@ -1,5 +1,4 @@
 vim.cmd([[au BufRead,BufNewFile *.kbd set filetype=kbd]])
-vim.cmd([[au BufRead,BufNewFile *.rasi set filetype=rasi]])
 vim.filetype.add({ pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } })
 
 return {
@@ -10,7 +9,6 @@ return {
     },
   },
   { "ap/vim-css-color", event = "VeryLazy" },
-  { "Fymyte/rasi.vim", lazy = true, ft = "rasi" },
   { "kmonad/kmonad-vim", lazy = true, ft = "kbd" },
   { "fladson/vim-kitty", lazy = true, ft = "kitty" },
 }

@@ -1,8 +1,8 @@
 return {
   { "tpope/vim-repeat" },
+  { "j-hui/fidget.nvim" },
   { "tpope/vim-surround" },
   { "HiPhish/rainbow-delimiters.nvim" },
-  { "nanotee/zoxide.vim", lazy = true, cmd = { "Z" } },
   { "declancm/maximize.nvim", lazy = true, cmd = { "Maximize" } },
 
   {
