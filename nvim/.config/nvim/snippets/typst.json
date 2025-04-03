@@ -2,10 +2,13 @@
   "cb": {
     "body": [
       "```${1:typst}",
-      "$0",
       "```"
     ],
     "prefix": "cb"
+  },
+  "f": {
+    "body": "${1:f}(${2:x})$0",
+    "prefix": "f"
   },
   "ha": {
     "body": [
@@ -30,11 +33,11 @@
   },
   "ma": {
     "body": "\\$$1\\$$0",
-    "prefix": "m"
+    "prefix": "y"
   },
   "maa": {
     "body": "\\$ $1 \\$$0",
-    "prefix": "mm"
+    "prefix": "yy"
   },
   "mkdocs": {
     "body": [

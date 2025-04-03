@@ -8,7 +8,6 @@ o.foldlevel = 99
 o.fillchars = {
   foldopen = "",
   foldclose = "",
-  fold = " ",
   foldsep = " ",
   diff = "╱",
   eob = "~",
