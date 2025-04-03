@@ -9,13 +9,38 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
   desc = "Setup LSP hover window",
   callback = function()
-    -- local width = math.floor(vim.o.columns * 0.8)
-    -- local height = math.floor(vim.o.lines * 0.3)
+    vim.lsp.handlers["textDocument/hover"] = { border = "rounded" }
+  end,
+})
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = "rounded",
-      -- max_width = width,
-      -- max_height = height,
-    })
+local og_virt_text
+local og_virt_line
+vim.api.nvim_create_autocmd({ "CursorMoved", "DiagnosticChanged" }, {
+  group = vim.api.nvim_create_augroup("diagnostic_only_virtlines", {}),
+  callback = function()
+    if og_virt_line == nil then
+      og_virt_line = vim.diagnostic.config().virtual_lines
+    end
+
+    -- ignore if virtual_lines.current_line is disabled
+    if not (og_virt_line and og_virt_line.current_line) then
+      if og_virt_text then
+        vim.diagnostic.config({ virtual_text = og_virt_text })
+        og_virt_text = nil
+      end
+      return
+    end
+
+    if og_virt_text == nil then
+      og_virt_text = vim.diagnostic.config().virtual_text
+    end
+
+    local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
+
+    if vim.tbl_isempty(vim.diagnostic.get(0, { lnum = lnum })) then
+      vim.diagnostic.config({ virtual_text = og_virt_text })
+    else
+      vim.diagnostic.config({ virtual_text = false })
+    end
   end,
 })
