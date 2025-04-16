@@ -24,6 +24,7 @@ alias 'mechvibes=mechvibes --in-process-gpu'
 alias 'l=eza -lh --icons always'
 alias 'll=eza -lah --icons always'
 alias 'ls=eza --icons always'
+alias 's=eza --icons always'
 alias 'lt=eza --icons --tree'
 
 # cd

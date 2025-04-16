@@ -21,3 +21,6 @@ export SDL_VIDEODRIVER=wayland
 
 # colorful man page
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+
+# set go path
+export GOPATH=$HOME/Applications/go
