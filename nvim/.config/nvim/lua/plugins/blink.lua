@@ -1,14 +1,16 @@
+local snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+
 return {
   -- code completion
   {
     "saghen/blink.cmp",
-    -- dependencies = "rafamadriz/friendly-snippets",
     -- version = "*",
     build = "cargo build --release",
     lazy = true,
     event = { "InsertEnter", "CmdlineEnter" },
-    opts_extend = { "sources.default" },
+    -- opts_extend = { "sources.default" },
     opts = {
+      snippets = { preset = "luasnip" },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
         providers = {
@@ -55,13 +57,22 @@ return {
     },
   },
 
+  -- snippet engine
+  {
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp",
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { snippet_dir } })
+    end,
+  },
+
   -- add and edit snippets easily
   {
     "chrisgrieser/nvim-scissors",
     -- dependencies = "nvim-telescope/telescope.nvim",
     lazy = true,
     opts = {
-      snippetDir = vim.fn.stdpath("config") .. "/snippets",
+      snippetDir = snippet_dir,
       jsonFormatter = "jq",
     },
     keys = {
