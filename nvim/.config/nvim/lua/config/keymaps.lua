@@ -31,15 +31,15 @@ map("n", "gO", "m`<cmd>set paste<cr>O<esc><cmd>set nopaste<cr>``", { desc = "Add
 map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "TP", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
 map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
+map("n", "<leader>tt", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
-map("n", "<leader>tt", "<cmd>tabnew<cr>", { desc = "add a new tab" })
 
 -- buffer
 map("n", "<leader>bb", "<cmd>bn<cr>", { desc = "switch to next buffer" })
 map("n", "<leader>bn", "<cmd>bn<cr>", { desc = "switch to next buffer" })
 map("n", "<leader>bp", "<cmd>bp<cr>", { desc = "switch to previous buffer" })
-map("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete current buffer" })
+map("n", "<leader>bd", "<cmd>bn<cr><cmd>bd #<cr>", { desc = "Delete current buffer and keep the window" })
 map("n", "<leader>bl", "<cmd>ls<cr>", { desc = "list buffers" })
 
 -- better up/down
@@ -121,12 +121,7 @@ map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
-
 -- ui
--- stylua: ignore
-Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }) :map("<leader>uC")
-  -- stylua: ignore
-Snacks.toggle.option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" }) :map("<leader>uA")
 Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
 Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
 Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
@@ -138,6 +133,12 @@ Snacks.toggle.dim():map("<leader>ud")
 Snacks.toggle.animate():map("<leader>ua")
 Snacks.toggle.indent():map("<leader>ui")
 Snacks.toggle.scroll():map("<leader>uS")
+Snacks.toggle
+  .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" })
+  :map("<leader>uC")
+Snacks.toggle
+  .option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" })
+  :map("<leader>uA")
 Snacks.toggle({
   name = "Git Signs",
   get = function()
