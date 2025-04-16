@@ -1,11 +1,11 @@
 local o = vim.opt
 
 -- fold
--- o.foldmethod = "indent"
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldlevel = 99
 o.fillchars = {
+  fold = "·",
   foldopen = "",
   foldclose = "",
   foldsep = " ",
