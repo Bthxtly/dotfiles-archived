@@ -28,9 +28,6 @@ map("n", "go", "m`<cmd>set paste<cr>o<esc><cmd>set nopaste<cr>``", { desc = "Add
 map("n", "gO", "m`<cmd>set paste<cr>O<esc><cmd>set nopaste<cr>``", { desc = "Add a new blank line above" })
 
 -- tab
-map("n", "TN", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
-map("n", "TP", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
-map("n", "TT", "<cmd>tabnew<cr>", { desc = "add a new tab" })
 map("n", "<leader>tt", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "switch to next tab" })
 map("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "switch to previous tab" })
@@ -103,6 +100,12 @@ map("n", "sv", "<C-w>t<C-w>H")
 map("n", "srh", "<C-w>b<C-w>K")
 map("n", "srv", "<C-w>b<C-w>H")
 map("n", "sx", "<C-w><C-x>")
+
+-- remove gr* keymaps
+vim.keymap.del({ "n" }, "grr")
+vim.keymap.del({ "n" }, "grn")
+vim.keymap.del({ "n" }, "gri")
+vim.keymap.del({ "n", "x" }, "gra")
 
 -- goto diagnostic
 -- diagnostic
