@@ -16,17 +16,17 @@ pinch:
     out:
       sendkey: "RIGHTCTRL+EQUAL"  # zoom out the browser page
 
-rotate:
-  3:
-    clockwise:
-      command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,0" # rotate vertical
-    counterclockwise:
-      command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,0" # rotate vertical
-  4:
-    clockwise:
-      command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,3" # rotate clockwise
-    counterclockwise:
-      command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,1" # rotate counterclockwise
+# rotate:
+#   3:
+#     clockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,0" # rotate vertical
+#     counterclockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,0" # rotate vertical
+#   4:
+#     clockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,3" # rotate clockwise
+#     counterclockwise:
+#       command: "hyprctl keyword monitor eDP-1,preferred,auto,auto,transform,1" # rotate counterclockwise
 
 hold:
   4:
