@@ -20,7 +20,7 @@
       "cpu",
       "memory",
       "temperature",
-      "wireplumber",
+      "pulseaudio",
       "backlight",
       "battery",
       "clock",
@@ -159,7 +159,7 @@
         "󰁹"
       ]
     },
-    "wireplumber": {
+    "pulseaudio": {
       "scroll-step": 1, // %, can be a float
       "format": "{icon} {volume}%",
       "format-bluetooth": "{icon} {volume}% ",
