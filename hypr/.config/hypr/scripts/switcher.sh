@@ -62,10 +62,10 @@ else
 fi
 # }}}
 
-===reload fcitx5 {{{
+# ===reload fcitx5 {{{
 if [[ "$(ps aux | grep -E '[0-9]{1,2}:[0-9]{1,2} fcitx5' | grep -o 'fcitx5')" = "fcitx5" ]]; then
   fcitx5 -r &
 fi
-}}}
+# }}}
 
 # vim:foldmethod=marker:foldlevel=0
