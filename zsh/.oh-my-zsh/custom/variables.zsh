@@ -24,3 +24,6 @@ export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p
 
 # set go path
 export GOPATH=$HOME/Applications/go
+
+# less UTF-8 supports
+export LESSCHARSET=utf-8
