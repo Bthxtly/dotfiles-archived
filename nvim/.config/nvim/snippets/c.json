@@ -48,18 +48,14 @@
     "prefix": "#ifndef"
   },
   "#include \"...\"": {
-    "body": [
-      "#include \"$0\""
-    ],
+    "body": "#include \"$0\"",
     "description": "#include \"...\" snippet",
-    "prefix": "#incl"
+    "prefix": "incmy"
   },
   "#include <...>": {
-    "body": [
-      "#include <$0>"
-    ],
+    "body": "#include <$0>",
     "description": "#include <...> snippet",
-    "prefix": "#inc"
+    "prefix": "inc"
   },
   "#warning": {
     "body": [
@@ -135,13 +131,11 @@
   },
   "Starter Template": {
     "body": [
-      "#include <stdbool.h>",
       "#include <stdio.h>",
-      "#include <stdlib.h>",
       "",
-      "int main(int argc, char *argv[])",
-      "{$0",
-      "\treturn EXIT_SUCCESS;",
+      "int main() {",
+      "  $0",
+      "  return 0;",
       "}"
     ],
     "description": "Standard starter template for a tiny C program",

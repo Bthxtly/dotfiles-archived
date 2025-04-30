@@ -41,6 +41,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       sh = { "shfmt" },
+      zsh = { "shfmt" },
       python = { "autopep8" },
       c = { "clang-format" },
       cpp = { "clang-format" },

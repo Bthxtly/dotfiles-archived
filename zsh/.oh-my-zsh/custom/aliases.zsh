@@ -1,20 +1,21 @@
+alias "fzf=fzf --bind=ctrl-e:preview-down,ctrl-y:preview-up --reverse --color=16 --preview-window=65%:wrap:border-sharp: --preview 'bat --color=always --style=plain,changes {}'"
+alias "gpp=g++"
+alias "ka=killall"
+alias "pkg_size=expac -H M '%m\t%n' | sort -h"
 alias 'brn=brn2'
 alias 'cl=tty-clock -cC7'
 alias 'cx=chmod +x'
 alias 'f=vifm'
 alias 'ff=vifm .'
 alias 'hib=systemctl hibernate'
-alias 'sus=systemctl suspend'
 alias 'i=clear && echo $(date) && echo "I use   BTW" && fastfetch'
 alias 'icat=kitten icat'
 alias 'lg=lazygit'
 alias 'nv=clear && nvidia-smi'
 alias 'sd=unset all_proxy ALL_PROXY && ~/Applications/stable-diffusion-webui/webui.sh'
 alias 'sl=sl -e'
-alias "pkg_size=expac -H M '%m\t%n' | sort -h"
-# alias "pkg_size=(LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | LC_ALL=C.UTF-8 sort -h)"
-alias 'waybar=killall waybar; waybar &'
-alias "fzf=fzf --bind=ctrl-e:preview-down,ctrl-y:preview-up --reverse --color=16 --preview-window=65%:wrap:border-sharp: --preview 'bat --color=always --style=plain,changes {}'"
+alias 'sus=systemctl suspend'
+# alias 'waybar=killall waybar; waybar &'
 
 # wayland
 alias 'code=code  --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
@@ -57,9 +58,9 @@ alias 'gla=git log --all --decorate --oneline --graph'
 
 # [neo]vim
 alias 'h=cd $HOME/.config/hypr && nvim "+FzfLua files"'
-# alias 'iii=nvim ~/.config/i3/config'
 alias 'k=nvim ~/.config/kitty/kitty.conf'
 alias 'lc=nvim leetcode.nvim'
+alias 't=nvim ~/Documents/VimWiki/TODO.md'
 alias 'v=nvim'
 alias 'vc=nvim "+FzfLua files cwd=~/.config/nvim"'
 alias 'vd=nvim ~/Documents/VimWiki/diary.md'
@@ -69,6 +70,7 @@ alias 'vv=nvim .' # open current directory with oil.nvim
 alias 'vz=nvim ~/.zshrc && source ~/.zshrc'
 alias 'vza=nvim ~/.oh-my-zsh/custom/aliases.zsh && source ~/.oh-my-zsh/custom/aliases.zsh'
 alias 'vzv=nvim ~/.oh-my-zsh/custom/variables.zsh && source ~/.oh-my-zsh/custom/variables.zsh'
+alias 'vimdiff=nvim -d'
 
 # something might be useful
 alias 'term_size=echo "Rows=$(tput lines) Cols=$(tput cols)"'

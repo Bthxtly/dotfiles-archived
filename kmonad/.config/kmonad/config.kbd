@@ -95,7 +95,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @cms @ams @ms  @sms @ass @v0   @v-   @v+   pgup _    _    _    _
   _    @as  @acs @cs  @scs @ss  @mps  @mpl  @mns  pgdn _    _    _
-  _    @hm  @scut @scpy @spst @ed  prnt @b-   @b+   ins  _    _
+  _    @hm  @scut @scpy @spst @ed @lch @b-  @b+   ins  _    _
   _         _    _              _              _    _
 )
 
@@ -166,6 +166,7 @@
   b- BrightnessDown
   hm home
   ed end
+  lch Dashboard ;; XF86Launch2
 
   ;; lmet (+ lsft) + num
   lm1 (around lmet 1)

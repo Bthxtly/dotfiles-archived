@@ -73,9 +73,6 @@ map("t", "<C-H>", "<C-\\><C-N>")
 -- Shortcuts
 map("n", "<F1>", ":cd %:h<CR>", { silent = false, desc = "cd to file path" })
 map("n", "<F2>", ":Maximize<CR>", { silent = true, desc = "Maximize the current window" })
-map("n", "<F3>", ":lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
-map("n", "<F8>", ":UndotreeToggle<CR>", { silent = true, desc = "Undotree" })
-map("n", "<F9>", "<cmd>lua Snacks.explorer.open()<CR>", { silent = true, desc = "Explorer" })
 map("n", "<leader>e", "<cmd>lua Snacks.explorer.open()<CR>", { silent = true, desc = "Explorer" })
 
 -- window
@@ -133,15 +130,13 @@ Snacks.toggle.line_number():map("<leader>ul")
 Snacks.toggle.treesitter():map("<leader>uT")
 Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
 Snacks.toggle.dim():map("<leader>ud")
-Snacks.toggle.animate():map("<leader>ua")
 Snacks.toggle.indent():map("<leader>ui")
-Snacks.toggle.scroll():map("<leader>uS")
 Snacks.toggle
   .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" })
   :map("<leader>uC")
 Snacks.toggle
   .option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" })
-  :map("<leader>uA")
+  :map("<leader>ut")
 Snacks.toggle({
   name = "Git Signs",
   get = function()
@@ -151,8 +146,15 @@ Snacks.toggle({
     require("gitsigns").toggle_signs(state)
   end,
 }):map("<leader>ug")
--- Snacks.toggle.profiler():map("<leader>dpp")
--- Snacks.toggle.profiler_highlights():map("<leader>dph")
+Snacks.toggle({
+  name = "Treesitter context",
+  get = function()
+    return require("treesitter-context").enabled()
+  end,
+  set = function()
+    require("treesitter-context").toggle()
+  end,
+}):map("<leader>ux")
 
 -- Compile function
 function CompileRunGcc()

@@ -2,6 +2,7 @@ vim.g.snacks_animate = false
 
 return {
   "folke/snacks.nvim",
+  lazy = false,
   opts = {
     image = {
       enabled = true,
@@ -63,5 +64,10 @@ return {
         { section = "startup" },
       },
     },
+  },
+  keys = {
+    "<leader>fs",
+    "<cmd>lua Snacks.picker()<cr>",
+    desc = "open Snacks.picker",
   },
 }

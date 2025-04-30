@@ -269,15 +269,15 @@
     ]
   },
   "Insert Warning": {
-    "body": "> [!WARNING]\n> ",
+    "body": [
+      "> [!WARNING]",
+      "> "
+    ],
     "description": "Insert Warning",
-    "prefix": [
-      "warning",
-      "w"
-    ]
+    "prefix": "warning"
   },
   "Insert bold and italic text": {
-    "body": "___${1}___ $0",
+    "body": "***${1}***$0",
     "description": "Insert bold and italic text",
     "prefix": [
       "bold and italic",
@@ -285,7 +285,7 @@
     ]
   },
   "Insert bold text": {
-    "body": "**${1}** $0",
+    "body": "__${1}__$0",
     "description": "Insert bold text",
     "prefix": [
       "bold",
@@ -312,7 +312,7 @@
     "prefix": "horizontal rule"
   },
   "Insert italic text": {
-    "body": "*${1}* $0",
+    "body": "*${1}*$0",
     "description": "Insert italic text",
     "prefix": [
       "i",
@@ -482,5 +482,14 @@
     ],
     "description": "Add header level 6",
     "prefix": "hh"
+  },
+  "w": {
+    "body": [
+      "__$1__",
+      "*$2*",
+      "",
+      "$0"
+    ],
+    "prefix": "w"
   }
 }
