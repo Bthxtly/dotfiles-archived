@@ -31,7 +31,7 @@ notify_user() {
 
 # Change brightness
 change_kbd_backlight() {
-  light -"$1" "$2" && get_icon && notify_user
+  brightnessctl s "$1" && get_icon && notify_user
 }
 
 # Execute accordingly
@@ -40,10 +40,10 @@ case "$1" in
   get_kbd_backlight
   ;;
 "--inc")
-  change_kbd_backlight "A" "5"
+  change_kbd_backlight "10+"
   ;;
 "--dec")
-  change_kbd_backlight "U" "5"
+  change_kbd_backlight "10-"
   ;;
 *)
   get_kbd_backlight

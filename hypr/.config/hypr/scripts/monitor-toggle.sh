@@ -11,6 +11,13 @@ moveAllWorkspacesToMonitor() {
 INTERNAL_MONITOR="eDP-1"
 EXTERNAL_MONITOR="DP-1"
 
+# {
+#   IFS= read -r INTERNAL_MONITOR
+#   IFS= read -r EXTERNAL_MONITOR
+# } < <(hyprctl monitors all | grep ID | cut --delimiter ' ' --fields 2)
+# echo $INTERNAL_MONITOR
+# echo $EXTERNAL_MONITOR
+
 NUM_MONITORS=$(hyprctl monitors all | grep --count Monitor)
 NUM_MONITORS_ACTIVE=$(hyprctl monitors | grep --count Monitor)
 
