@@ -10,15 +10,17 @@ return {
           theme = "auto",
           section_separators = { left = "", right = "" },
           component_separators = { left = "", right = "" },
-          disabled_filetypes = { statusline = { "snacks_dashboard", "Outline" } },
+          disabled_filetypes = {
+            statusline = { "snacks_dashboard", "Outline", "dap-view", "dap-view-term" },
+          },
         },
         sections = {
           lualine_a = {},
           lualine_b = { "branch", "diff", "diagnostics" },
           lualine_c = { "filename" },
-          lualine_x = { "filetype" },
+          lualine_x = {},
           lualine_y = {
-            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            -- { "progress", separator = " ", padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {
