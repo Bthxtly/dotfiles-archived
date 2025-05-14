@@ -10,6 +10,8 @@ moveAllWorkspacesToMonitor() {
 # TODO: Detect these instead of hardcoding them
 INTERNAL_MONITOR="eDP-1"
 EXTERNAL_MONITOR="DP-1"
+INTERNAL_MONITOR_="eDP-2"
+EXTERNAL_MONITOR_="DP-2"
 
 # {
 #   IFS= read -r INTERNAL_MONITOR
@@ -29,21 +31,28 @@ if [ "$NUM_MONITORS_ACTIVE" -ge 2 ] && hyprctl monitors | cut --delimiter ' ' --
   hyprctl keyword monitor "$INTERNAL_MONITOR,disable"
   # Alternate fix to ensure I start on workspace 1
   #hyprctl dispatch workspace 1
-  exit
+fi
+
+if [ "$NUM_MONITORS_ACTIVE" -ge 2 ] && hyprctl monitors | cut --delimiter ' ' --fields 2 | grep --quiet ^$INTERNAL_MONITOR_; then
+  hyprctl keyword monitor "$INTERNAL_MONITOR_,disable"
 fi
 
 # Handle socket events from hyprland socket2
 handleEvents() {
-  echo $1
+  # echo $1
   case $1 in
   "monitoradded>>$EXTERNAL_MONITOR")
     moveAllWorkspacesToMonitor "$EXTERNAL_MONITOR"
     hyprctl keyword monitor "$INTERNAL_MONITOR,disable"
+    hyprctl keyword monitor "$INTERNAL_MONITOR_,disable"
     hyprctl keyword monitor "$EXTERNAL_MONITOR,2560x1440@180,0x0,1.25"
+    hyprctl keyword monitor "$EXTERNAL_MONITOR_,2560x1440@180,0x0,1.25"
     ;;
   "monitorremoved>>$EXTERNAL_MONITOR")
     hyprctl keyword monitor "$INTERNAL_MONITOR,preferred,auto,1.6"
+    hyprctl keyword monitor "$INTERNAL_MONITOR_,preferred,auto,1.6"
     moveAllWorkspacesToMonitor "$INTERNAL_MONITOR"
+    moveAllWorkspacesToMonitor "$INTERNAL_MONITOR_"
     ;;
   *)
     # ignore all other events or use them somehow else
@@ -52,4 +61,5 @@ handleEvents() {
 }
 
 # Listen to live events from hyprland socket2 continuously
-socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handleEvents "$line"; done
+# start only once
+pidof socat || socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handleEvents "$line"; done
