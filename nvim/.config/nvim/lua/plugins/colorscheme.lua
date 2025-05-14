@@ -41,6 +41,5 @@ return {
     end,
   },
 
-  { "sainnhe/everforest" },
   { "Bthxtly/mini.base16" },
 }
