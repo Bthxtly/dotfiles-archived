@@ -10,8 +10,6 @@ return {
       { "<bs>", desc = "Decrement Selection", mode = "x" },
     },
     opts_extend = { "ensure_installed" },
-    ---@type TSConfig
-    ---@diagnostic disable-next-line: missing-fields
     opts = {
       ensure_installed = {
         "bash",
@@ -54,6 +52,18 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "folke/snacks.nvim" },
     event = "VeryLazy",
+    config = function()
+      Snacks.toggle({
+        name = "Treesitter context",
+        get = function()
+          return require("treesitter-context").enabled()
+        end,
+        set = function()
+          require("treesitter-context").toggle()
+        end,
+      }):map("<leader>ux")
+    end,
   },
 }
