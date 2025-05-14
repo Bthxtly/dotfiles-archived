@@ -1,5 +1,40 @@
 vim.g.snacks_animate = false
 
+local logo
+if vim.g.neovide then
+  logo = [[
+            `7MN.   `7MF'`7MM"""YMM    .g8""8q.`7MMF'   `7MF'`7MMF'`7MMM.     ,MMF'
+              MMN.    M    MM    `7  .dP'    `YM.`MA     ,V    MM    MMMb    dPMM  
+              M YMb   M    MM   d    dM'      `MM VM:   ,V     MM    M YM   ,M MM  
+              M  `MN. M    MMmmMM    MM        MM  MM.  M'     MM    M  Mb  M' MM  
+              M   `MM.M    MM   Y  , MM.      ,MP  `MM A'      MM    M  YM.P'  MM  
+              M     YMM    MM     ,M `Mb.    ,dP'   :MM;       MM    M  `YM'   MM  
+            .JML.    YM  .JMMmmmmMMM   `"bmmd"'      VF      .JMML..JML. `'  .JMML.]]
+else
+  logo = [[
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠁⠈⣷
+              ⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⠛⡗⠊⠁
+              ⠀⠀⠀⠀⠀⠀⠀⢸⡁⠀⣸⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠚⠁⠀⠀⢠⡇⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⡇⠀⠉⠑⠲⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠒⠉⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠉⠒⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣧⡤⠒⠚⠉⠉⠉⠉⠉⠉⠉⠙⠒⠦⣄⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⠀
+              ⠀⠀⢀⣠⣤⣄⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⣀⣤⣤⣤⣄⡀⠀⠀⠈⠑⢦⡀⠀⠀⠀⠀⡇⠀⠀⠀
+              ⠀⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⢃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠙⢦⡀⢀⣰⠇⠀⠀⠀
+              ⣴⣾⣿⣿⣿⣿⡇⠀⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣟⠁⣿⣿⣿⣀⣿⠃⠀⠀⠀⠀⠀⠀⠹⡉⠁⠀⠀⠀⠀
+              ⢿⣿⣿⣿⣿⡿⠇⠀⢀⣤⣄⣀⠉⠉⠑⡶⠦⠀⠀⠀⠀⠀⠀⢀⣀⣀⡀⠉⠛⢿⢿⠿⠏⢁⡴⠛⠦⣀⠀⠀⠀⠀⢳⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠛⠛⠿⣷⣶⣧⡀⠀⠀⠀⠀⢀⠔⠉⠀⠀⠀⠉⠓⠢⠤⠤⠚⠁⠀⠀⠀⣰⠓⢆⠀⠀⢸⡀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡟⠻⢷⣄⠀⢰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣾⣿⡇⠈⢣⠀⢸⠃⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠉⠁⡇⠀⠀⣷⠶⠶⣤⡀⠀⠀⠀⢀⡤⢄⠀⠻⣿⣿⠏⠀⢸⠀⡼⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⢣⠀⠀⠀⣀⣀⡀⠁⠀⢀⡀⠀⠓⣉⠀⠀⠠⣾⣿⣇⡜⡴⠁⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠢⣀⠀⠈⢇⠀⢺⣿⣿⡟⠀⠀⠸⣍⢩⠟⠁⠀⠀⠀⠀⣠⣾⠟⠀⠀⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⣦⣌⣳⣄⡀⠀⠀⠀⠀⠀⠈⠁⠀⠀⢀⣀⡴⡞⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠛⢲⣋⣀⣀⣀⡀⠈⠉⠉⠑⠒⣒⠚⠉⠉⠉⡤⢄⣀⠈⢳⠤⢤⡀⠀⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⠋⠀⠀⠀⠀⠹⣄⣀⢀⡤⠚⠉⠓⠦⣄⣀⣇ ⠀⠉⠙⠦⠴⠃⠀⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡅⢈⡏⠀⠀⠀⠀⠀⠸⣅⣠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ]]
+end
+
 return {
   "folke/snacks.nvim",
   lazy = false,
@@ -21,36 +56,6 @@ return {
       .option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" })
       :map("<leader>ut")
 
-    Snacks.toggle({
-      name = "Git Signs",
-      get = function()
-        return require("gitsigns.config").config.signcolumn
-      end,
-      set = function(state)
-        require("gitsigns").toggle_signs(state)
-      end,
-    }):map("<leader>ug")
-
-    Snacks.toggle({
-      name = "Treesitter context",
-      get = function()
-        return require("treesitter-context").enabled()
-      end,
-      set = function()
-        require("treesitter-context").toggle()
-      end,
-    }):map("<leader>ux")
-
-    Snacks.toggle({
-      name = "Illuminate",
-      get = function()
-        return not require("illuminate").is_paused()
-      end,
-      set = function()
-        require("illuminate").toggle()
-      end,
-    }):map("<leader>uu")
-
     opts = {
       image = {
         enabled = true,
@@ -71,8 +76,6 @@ return {
 
       explorer = { enabled = true },
 
-      statuscolumn = { enabled = false },
-
       dashboard = {
         width = 60,
         row = nil, -- dashboard position. nil for center
@@ -88,23 +91,13 @@ return {
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
           { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = " ", key = "r", desc = "Recent Files", action = "<cmd>FzfLua oldfiles<cr>" },
-          -- { icon = " ", key = "c", desc = "Config", action = "<cmd>lua require('fzf-lua').files({cwd = vim.fn.stdpath('config')})<cr>", },
+          { icon = " ", key = "c", desc = "Config", action = "<cmd>lua require('fzf-lua').files({cwd = vim.fn.stdpath('config')})<cr>", },
           { icon = " ", key = "s", desc = "Select Session", action = "<cmd>lua require('persistence').select()<cr>", },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = " ", key = "q", desc = "Quit", action = ":q" },
         },
           -- Used by the `header` section
-          header = {
-            [[
-`7MN.   `7MF'`7MM"""YMM    .g8""8q.`7MMF'   `7MF'`7MMF'`7MMM.     ,MMF'
-  MMN.    M    MM    `7  .dP'    `YM.`MA     ,V    MM    MMMb    dPMM  
-  M YMb   M    MM   d    dM'      `MM VM:   ,V     MM    M YM   ,M MM  
-  M  `MN. M    MMmmMM    MM        MM  MM.  M'     MM    M  Mb  M' MM  
-  M   `MM.M    MM   Y  , MM.      ,MP  `MM A'      MM    M  YM.P'  MM  
-  M     YMM    MM     ,M `Mb.    ,dP'   :MM;       MM    M  `YM'   MM  
-.JML.    YM  .JMMmmmmMMM   `"bmmd"'      VF      .JMML..JML. `'  .JMML.]],
-            hl = "Character",
-          },
+          header = { logo, hl = "Character" },
         },
         sections = {
           { section = "header" },
