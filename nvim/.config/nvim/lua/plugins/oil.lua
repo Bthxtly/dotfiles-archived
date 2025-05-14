@@ -1,5 +1,3 @@
-local api = vim.api
-
 return {
   {
     "stevearc/oil.nvim",
@@ -9,7 +7,6 @@ return {
         ["+"] = "actions.select",
       },
     },
-    -- Optional dependencies
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
   },
 }

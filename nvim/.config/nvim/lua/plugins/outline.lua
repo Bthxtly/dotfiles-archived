@@ -5,15 +5,9 @@ return {
     cmd = { "Outline", "OutlineOpen" },
     -- ft = { "markdown", "vimwiki.markdown" },
     keys = {
-      { "<F10>", "<cmd>Outline<CR>", desc = "Toggle outline" },
       { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
-      outline_window = {
-        -- position = "right",
-        -- relative_width = false,
-        -- width = 25,
-      },
       keymaps = {
         unfold = { "<right>", "l" },
         fold = { "<left>", "h" },
