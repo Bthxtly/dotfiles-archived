@@ -11,7 +11,13 @@ return {
           section_separators = { left = "", right = "" },
           component_separators = { left = "", right = "" },
           disabled_filetypes = {
-            statusline = { "snacks_dashboard", "Outline", "dap-view", "dap-repl", "dap-view-term" },
+            statusline = {
+              "snacks_dashboard",
+              "Outline",
+              "Avante",
+              "AvanteSelectedFiles",
+              "dap-repl",
+            },
           },
         },
         sections = {
