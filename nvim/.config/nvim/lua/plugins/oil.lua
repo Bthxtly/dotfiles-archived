@@ -7,6 +7,6 @@ return {
         ["+"] = "actions.select",
       },
     },
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { { "echasnovski/mini.icons", lazy = true } },
   },
 }

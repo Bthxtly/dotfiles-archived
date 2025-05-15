@@ -22,10 +22,6 @@ return {
         },
       },
 
-      appearance = {
-        ...,
-      },
-
       signature = { enabled = true },
 
       completion = {
@@ -61,6 +57,8 @@ return {
   {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
+    lazy = true,
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { snippet_dir } })
     end,

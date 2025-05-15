@@ -1,8 +1,9 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    lazy = true,
     dependencies = {
-      { "mfussenegger/nvim-dap-python" },
+      { "mfussenegger/nvim-dap-python", lazy = true },
     },
 
     config = function()
@@ -41,12 +42,15 @@ return {
 
   {
     "miroshQa/debugmaster.nvim",
+    lazy = true,
+    dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       local dm = require("debugmaster")
       -- make sure you don't have any other keymaps that starts with "<leader>d" to avoid delay
       vim.keymap.set({ "n", "v" }, "<leader>n", dm.mode.toggle, { nowait = true })
       vim.keymap.set("t", "<C-/>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
     end,
+    keys = { "<leader>n" },
   },
 
   {

@@ -82,7 +82,6 @@ return {
   {
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoFzfLua" },
-    event = "VeryLazy",
     opts = {},
     -- stylua: ignore
     keys = {

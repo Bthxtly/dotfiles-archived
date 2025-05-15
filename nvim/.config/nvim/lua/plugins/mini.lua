@@ -1,7 +1,7 @@
 return {
   {
     "echasnovski/mini.ai",
-    event = "VeryLazy",
+    event = { "InsertEnter", "CmdlineEnter" },
     opts = function()
       local ai = require("mini.ai")
       return {
@@ -39,6 +39,7 @@ return {
 
   {
     "echasnovski/mini.pairs",
+    event = { "InsertEnter", "CmdlineEnter" },
     opts = {
       modes = { insert = true, command = true, terminal = false },
       -- skip autopair when next character is one of these

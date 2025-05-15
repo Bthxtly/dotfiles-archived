@@ -3,12 +3,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
-    event = { "VeryLazy" },
+    event = { "BufReadPre", "BufNewFile" },
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    keys = {
-      { "<s-space>", desc = "Increment Selection" },
-      { "<bs>", desc = "Decrement Selection", mode = "x" },
-    },
     opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = {
@@ -47,13 +43,13 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
   },
 
   {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = { "folke/snacks.nvim" },
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       Snacks.toggle({
         name = "Treesitter context",
