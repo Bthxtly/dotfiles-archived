@@ -60,7 +60,7 @@
       //"ignored-players": ["google-chrome-stable"]
     },
     "cava": {
-      // "cava_config": "~/.config/cava/config",
+      "cava_config": "$HOME/.config/cava/config",
       "framerate": 30,
       "autosens": 1,
       "bars": 8,
@@ -178,7 +178,7 @@
           ""
         ]
       },
-      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      "on-click": "pamixer -t"
     }
   }
 ]

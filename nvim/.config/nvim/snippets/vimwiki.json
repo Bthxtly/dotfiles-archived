@@ -285,7 +285,7 @@
     ]
   },
   "Insert bold text": {
-    "body": "__${1}__$0",
+    "body": "**${1}**$0",
     "description": "Insert bold text",
     "prefix": [
       "bold",

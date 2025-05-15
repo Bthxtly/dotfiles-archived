@@ -12,7 +12,7 @@ export EDITOR=nvim
 # config globle variables
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH
+export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH
 
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export QT_QPA_PLATFORM=wayland
