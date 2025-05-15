@@ -5,17 +5,17 @@ return {
     cmd = { "Gen" },
     opts = {
       model = "qwen2.5-coder:14b", -- The default model to use.
-      quit_map = "q",              -- set keymap to close the response window
-      retry_map = "<c-r>",         -- set keymap to re-send the current prompt
-      accept_map = "<c-cr>",       -- set keymap to replace the previous selection with the last result
-      host = "localhost",          -- The host running the Ollama service.
-      port = "11434",              -- The port on which the Ollama service is listening.
-      display_mode = "split",      -- The display mode. Can be "float" or "split" or "horizontal-split".
-      show_prompt = true,          -- Shows the prompt submitted to Ollama.
-      show_model = false,          -- Displays which model you are using at the beginning of your chat session.
-      no_auto_close = true,        -- Never closes the window automatically.
-      file = true,                 -- Write the payload to a temporary file to keep the command short.
-      hidden = false,              -- Hide the generation window (if true, will implicitly set `prompt.replace = true`), requires Neovim >= 0.10
+      quit_map = "q", -- set keymap to close the response window
+      retry_map = "<c-r>", -- set keymap to re-send the current prompt
+      accept_map = "<c-cr>", -- set keymap to replace the previous selection with the last result
+      host = "localhost", -- The host running the Ollama service.
+      port = "11434", -- The port on which the Ollama service is listening.
+      display_mode = "split", -- The display mode. Can be "float" or "split" or "horizontal-split".
+      show_prompt = true, -- Shows the prompt submitted to Ollama.
+      show_model = false, -- Displays which model you are using at the beginning of your chat session.
+      no_auto_close = true, -- Never closes the window automatically.
+      file = true, -- Write the payload to a temporary file to keep the command short.
+      hidden = false, -- Hide the generation window (if true, will implicitly set `prompt.replace = true`), requires Neovim >= 0.10
       init = function()
         pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
       end,
@@ -23,10 +23,10 @@ return {
       command = function(options)
         local body = { model = options.model, stream = true }
         return "curl --silent --no-buffer -X POST http://"
-            .. options.host
-            .. ":"
-            .. options.port
-            .. "/api/chat -d $body"
+          .. options.host
+          .. ":"
+          .. options.port
+          .. "/api/chat -d $body"
       end,
       -- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
       -- This can also be a command string.
@@ -39,8 +39,7 @@ return {
 
   {
     "yetone/avante.nvim",
-    -- enabled = false,
-    event = "VeryLazy",
+    lazy = true,
     opts = {
       -- provider = "chutes",
       -- vendors = {
@@ -74,6 +73,11 @@ return {
         endpoint = "http://127.0.0.1:11434",
         model = "qwen2.5-coder:14b",
       },
+      mappings = {
+        ask = "<leader>aa", -- ask
+        edit = "<leader>ae", -- edit
+        refresh = "<leader>ar", -- refresh
+      },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
@@ -83,30 +87,36 @@ return {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
     },
+    keys = {
+      { "<leader>aa", desc = "avante: ask" },
+      { "<leader>ae", desc = "avante: edit" },
+    },
   },
 
   {
     "olimorris/codecompanion.nvim",
+    lazy = true,
+    cmd = { "CodeCompanion" },
     opts = {
       strategies = {
         -- Change the default chat adapter
         inline = {
-          adapter = 'qwen',
+          adapter = "qwen",
         },
         cmd = {
-          adapter = 'qwen',
+          adapter = "qwen",
         },
         chat = {
-          adapter = 'qwen',
+          adapter = "qwen",
         },
       },
       adapters = {
         qwen = function()
-          return require('codecompanion.adapters').extend('ollama', {
-            name = 'qwen', -- Give this adapter a different name to differentiate it from the default ollama adapter
+          return require("codecompanion.adapters").extend("ollama", {
+            name = "qwen", -- Give this adapter a different name to differentiate it from the default ollama adapter
             schema = {
               model = {
-                default = 'qwen2.5-coder:14b',
+                default = "qwen2.5-coder:14b",
               },
             },
           })
