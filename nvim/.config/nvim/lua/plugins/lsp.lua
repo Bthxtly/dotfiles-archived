@@ -9,22 +9,14 @@ return {
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
-    opts_extend = { "ensure_installed" },
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shfmt",
-      },
-    },
+    config = function()
+      require("mason").setup({})
+    end,
   },
 
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "williamboman/mason-lspconfig.nvim",
-    },
-    -- event = "VeryLazy",
     opts = function(_, opts)
       vim.diagnostic.config({
         virtual_text = {
@@ -50,8 +42,6 @@ return {
 
     config = function()
       vim.lsp.inlay_hint.enable(true)
-      require("mason").setup()
-      require("mason-lspconfig").setup()
 
       -- lua_ls
       require("lspconfig").lua_ls.setup({

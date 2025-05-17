@@ -15,7 +15,7 @@ return {
       -- C and C++
       dap.adapters["codelldb"] = {
         type = "executable",
-        command = "/home/bthxtly/.local/share/nvim/mason/bin/codelldb",
+        command = "/usr/bin/codelldb",
       }
       for _, lang in ipairs({ "c", "cpp" }) do
         dap.configurations[lang] = {
@@ -51,16 +51,5 @@ return {
       vim.keymap.set("t", "<C-/>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
     end,
     keys = { "<leader>n" },
-  },
-
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
-    config = function()
-      require("mason").setup()
-      require("mason-nvim-dap").setup()
-    end,
   },
 }

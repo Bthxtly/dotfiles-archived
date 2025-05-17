@@ -1,6 +1,5 @@
 return {
   "stevearc/conform.nvim",
-  dependencies = { "mason.nvim" },
   lazy = true,
   event = { "BufWritePre" },
   cmd = { "ConformInfo", "FormatEnable", "FormatDisable" },
@@ -26,7 +25,7 @@ return {
       c = { "clang-format" },
       cpp = { "clang-format" },
       java = { "clang-format" },
-      typst = { "prettypst" },
+      typst = { "typstyle" },
     },
     -- The options you set here will be merged with the builtin formatters.
     -- You can also define any custom formatters here.
