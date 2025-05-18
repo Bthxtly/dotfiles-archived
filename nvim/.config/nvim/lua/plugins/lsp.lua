@@ -43,40 +43,76 @@ return {
     config = function()
       vim.lsp.inlay_hint.enable(true)
 
+      -- make lsp highlight lower priority than treesitter
+      vim.highlight.priorities.semantic_tokens = 95
+
       -- lua_ls
-      require("lspconfig").lua_ls.setup({
-        settings = {
-          Lua = {
-            runtime = { version = "LuaJIT" },
-            diagnostics = {
-              enable = true,
-              globals = { "vim", "Snacks" }, -- Prevent warnings for Neovim globals
-            },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file("", true),
-            },
-            telemetry = { enable = false },
+      vim.lsp.enable("lua_ls")
+      vim.lsp.config("lua_ls", {
+        Lua = {
+          -- Inlay hints
+          hint = {
+            enable = true,
+            setType = true,
+            arrayIndex = "Disable",
+          },
+          codeLens = {
+            enable = true,
+          },
+          completion = {
+            callSnippet = "Replace",
+            postfix = ".",
+            displayContext = 50,
+          },
+          telemetry = {
+            enable = false,
           },
         },
       })
 
       -- python
-      require("lspconfig").pyright.setup({})
+      vim.lsp.enable("pyright")
+      vim.lsp.config("pyright", {
+        cmd = { "delance-langserver", "--stdio" },
+        filetypes = { "python" },
+        root_markers = {
+          "pyproject.toml",
+          "setup.py",
+          "setup.cfg",
+          "requirements.txt",
+          "Pipfile",
+          "pyrightconfig.json",
+          ".git",
+        },
+        single_file_support = true,
+        settings = {
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = "openFilesOnly",
+              inlayHints = {
+                variableTypes = true,
+                functionReturnTypes = true,
+                callArgumentNames = true,
+                pytestParameters = true,
+              },
+            },
+          },
+        },
+      })
 
       -- c/c++
-      require("lspconfig").clangd.setup({})
-
-      -- java
-      require("lspconfig").jdtls.setup({})
+      vim.lsp.enable("clangd")
 
       -- typst
-      require("lspconfig").tinymist.setup({})
+      vim.lsp.enable("tinymist")
 
       -- json
-      require("lspconfig").jsonls.setup({})
+      vim.lsp.enable("jsonls")
 
       -- cmake
-      require("lspconfig").cmake.setup({})
+      vim.lsp.enable("cmake")
     end,
   },
 }
