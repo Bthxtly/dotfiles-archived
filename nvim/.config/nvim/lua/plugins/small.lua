@@ -2,7 +2,12 @@ return {
   { "tpope/vim-repeat" },
   { "tpope/vim-fugitive" },
   { "tpope/vim-surround" },
-  { "j-hui/fidget.nvim" },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup({})
+    end,
+  },
   { "HiPhish/rainbow-delimiters.nvim" },
   { "dnlhc/glance.nvim", lazy = true, cmd = "Glance" },
   { "declancm/maximize.nvim", lazy = true, cmd = { "Maximize" } },

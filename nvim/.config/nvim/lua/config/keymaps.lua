@@ -159,8 +159,12 @@ function CompileRunGcc()
     vim.cmd("Markview toggle")
   elseif vim.bo.filetype == "typst" then
     vim.cmd("TypstPreview")
-  elseif vim.bo.filetype == "tex" then
+  elseif vim.bo.filetype == "java" then
     vim.cmd("w")
-    vim.cmd("VimtexCompile")
+    vim.cmd("set splitbelow")
+    vim.cmd("sp")
+    vim.cmd("res -5")
+    vim.cmd("term javac % && java %<")
+    vim.cmd("normal i")
   end
 end

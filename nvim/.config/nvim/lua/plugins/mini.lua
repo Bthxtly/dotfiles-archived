@@ -1,7 +1,7 @@
 return {
   {
     "echasnovski/mini.ai",
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = { "BufReadPre", "BufNewFile" },
     opts = function()
       local ai = require("mini.ai")
       return {
@@ -52,5 +52,13 @@ return {
       -- better deal with markdown code blocks
       markdown = true,
     },
+  },
+
+  {
+    "echasnovski/mini.notify",
+    enabled = false,
+    config = function()
+      require("mini.notify").setup({})
+    end,
   },
 }
