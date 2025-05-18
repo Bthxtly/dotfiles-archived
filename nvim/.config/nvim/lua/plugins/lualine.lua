@@ -45,6 +45,9 @@ return {
         },
       }
 
+      -- fix wrong seperator highlight
+      vim.api.nvim_set_hl(0, "StatusLine", { link = "lualine_c_normal" })
+
       local trouble = require("trouble")
       local symbols = trouble.statusline({
         mode = "lsp_document_symbols",
