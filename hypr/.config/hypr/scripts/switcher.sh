@@ -10,14 +10,10 @@ theme=$(echo $line | cut -d= -f2)
 if [[ "$theme" == "light" ]]; then
   hyprctl notify 5 2000 "rgb(00000f)" "DARK"
   mode="1 s/light/dark/"
-  # fcitx5
-  sed -i "22 s/Light/Dark/" ~/.config/fcitx5/conf/classicui.conf
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 elif [[ "$theme" == "dark" ]]; then
   hyprctl notify 5 2000 "rgb(ffffff)" "LIGHT"
   mode="1 s/dark/light/"
-  # fcitx5
-  sed -i "22 s/Dark/Light/" ~/.config/fcitx5/conf/classicui.conf
   gsettings set org.gnome.desktop.interface color-scheme default
 else
   hyprctl notify 3 2000 "rgb(ff0000)" "ERROR"
@@ -59,12 +55,6 @@ if [ -n "$kitty_pid" ]; then
   done
 else
   echo "Kitty is not running."
-fi
-# }}}
-
-# ===reload fcitx5 {{{
-if [[ "$(ps aux | grep -E '[0-9]{1,2}:[0-9]{1,2} fcitx5' | grep -o 'fcitx5')" = "fcitx5" ]]; then
-  fcitx5 -r &
 fi
 # }}}
 
