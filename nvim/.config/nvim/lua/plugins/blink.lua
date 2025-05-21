@@ -8,16 +8,28 @@ return {
     build = "cargo build --release",
     lazy = true,
     event = { "InsertEnter", "CmdlineEnter" },
-    -- opts_extend = { "sources.default" },
     opts = {
       snippets = { preset = "luasnip" },
       sources = {
-        default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer" },
+        per_filetype = {
+          lua = { inherit_defaults = true, "lazydev" },
+          python = { inherit_defaults = true, "minuet" },
+          c = { inherit_defaults = true, "minuet" },
+          cpp = { inherit_defaults = true, "minuet" },
+        },
         providers = {
           lazydev = {
             name = "LazyDev",
             module = "lazydev.integrations.blink",
             score_offset = 100,
+          },
+          minuet = {
+            name = "minuet",
+            module = "minuet.blink",
+            async = true,
+            timeout_ms = 3000,
+            score_offset = 50,
           },
         },
       },
@@ -25,10 +37,20 @@ return {
       signature = { enabled = true },
 
       completion = {
+        menu = {
+          draw = {
+            columns = {
+              { "label", "label_description", gap = 1 },
+              { "kind_icon", "kind" },
+            },
+          },
+        },
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
         },
+        -- avoid unnessary LLM request
+        trigger = { prefetch_on_insert = false },
       },
 
       -- command line and search
@@ -38,19 +60,21 @@ return {
           menu = { auto_show = true },
         },
         keymap = {
-          ["<LEFT>"] = {},
-          ["<RIGHT>"] = {},
+          ["<Left>"] = {},
+          ["<Right>"] = {},
         },
       },
 
       keymap = {
         ["<C-y>"] = { "accept", "fallback" },
         ["<C-k>"] = { "fallback" }, -- disable <c-k> in insert mode
+        ["<C-l>"] = require("minuet").make_blink_map(),
         ["<CR>"] = {},
-        ["<UP>"] = {},
-        ["<DOWN>"] = {},
+        ["<Up>"] = {},
+        ["<Down>"] = {},
       },
     },
+    opts_extend = { "sources.default" },
   },
 
   -- snippet engine

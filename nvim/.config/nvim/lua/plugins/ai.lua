@@ -39,18 +39,9 @@ return {
 
   {
     "yetone/avante.nvim",
+    commit = "2f806ca34223a50435018dd21d443795f619828d",
     lazy = true,
     opts = {
-      -- provider = "chutes",
-      -- vendors = {
-      --   chutes = {
-      --     __inherited_from = "openai",
-      --     api_key_name = "CHUTES_API_KEY",
-      --     endpoint = "https://llm.chutes.ai/v1",
-      --     model = "Qwen/Qwen2.5-VL-32B-Instruct",
-      --   },
-      -- },
-
       provider = "gemini", -- Recommend using Claude
       -- auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       behaviour = {
@@ -60,6 +51,7 @@ return {
         auto_apply_diff_after_generation = false,
         support_paste_from_clipboard = false,
       },
+
       gemini = {
         -- @see https://ai.google.dev/gemini-api/docs/models/gemini
         model = "gemini-2.0-flash",
@@ -73,6 +65,17 @@ return {
         endpoint = "http://127.0.0.1:11434",
         model = "qwen2.5-coder:14b",
       },
+
+      -- provider = "chutes",
+      vendors = {
+        chutes = {
+          __inherited_from = "openai",
+          api_key_name = "CHUTES_API_TOKEN",
+          endpoint = "https://llm.chutes.ai/v1",
+          model = "Qwen/Qwen2.5-VL-32B-Instruct",
+        },
+      },
+
       mappings = {
         ask = "<leader>aa", -- ask
         edit = "<leader>ae", -- edit
@@ -93,7 +96,66 @@ return {
   },
 
   {
+    "milanglacier/minuet-ai.nvim",
+    lazy = true,
+    config = function()
+      require("minuet").setup({
+
+        provider = "gemini",
+
+        -- -- recommend for local model for resource saving
+        -- n_completions = 1,
+        -- context_window = 512,
+
+        provider_options = {
+
+          gemini = {
+            model = "gemini-2.0-flash",
+            stream = true,
+            api_key = "GEMINI_API_KEY",
+            -- prevent request timeout from outputing too many tokens
+            optional = {
+              generationConfig = {
+                maxOutputTokens = 256,
+                -- disable thinking for faster completion retrieval.
+                thinkingConfig = {
+                  thinkingBudget = 0,
+                },
+              },
+              safetySettings = {
+                {
+                  -- HARM_CATEGORY_HATE_SPEECH,
+                  -- HARM_CATEGORY_HARASSMENT
+                  -- HARM_CATEGORY_SEXUALLY_EXPLICIT
+                  category = "HARM_CATEGORY_DANGEROUS_CONTENT",
+                  -- BLOCK_NONE
+                  threshold = "BLOCK_ONLY_HIGH",
+                },
+              },
+            },
+          },
+
+          -- ollama
+          openai_fim_compatible = {
+            -- For Windows users, TERM may not be present in environment variables.
+            -- Consider using APPDATA instead.
+            api_key = "TERM",
+            name = "Ollama",
+            end_point = "http://localhost:11434/v1/completions",
+            model = "qwen2.5-coder:14b",
+            optional = {
+              max_tokens = 56,
+              top_p = 0.9,
+            },
+          },
+        },
+      })
+    end,
+  },
+
+  {
     "olimorris/codecompanion.nvim",
+    enabled = false,
     lazy = true,
     cmd = { "CodeCompanion" },
     opts = {
