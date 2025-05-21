@@ -1,7 +1,7 @@
 return {
   "RRethy/vim-illuminate",
   dependencies = { "folke/snacks.nvim" },
-  ft = { "python", "scheme", "lua" },
+  ft = { "python", "scheme", "lua", "java" },
   config = function(_, opts)
     Snacks.toggle({
       name = "Illuminate",
