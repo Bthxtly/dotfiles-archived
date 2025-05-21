@@ -3,7 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     builtin_marks = { ".", "^" },
-    excluded_filetypes = { "AvanteInput" },
+    excluded_filetypes = { "AvanteInput", "AvantePromptInput" },
     default_mappings = false,
   },
 }
