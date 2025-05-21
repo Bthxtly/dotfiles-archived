@@ -50,25 +50,25 @@ return {
       --     model = "Qwen/Qwen2.5-VL-32B-Instruct",
       --   },
       -- },
-      --
-      -- -- provider = "gemini", -- Recommend using Claude
-      -- -- -- auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      -- -- behaviour = {
-      -- --   auto_suggestions = false, -- Experimental stage
-      -- --   auto_set_highlight_group = true,
-      -- --   auto_set_keymaps = true,
-      -- --   auto_apply_diff_after_generation = false,
-      -- --   support_paste_from_clipboard = false,
-      -- -- },
-      -- -- gemini = {
-      -- --   -- @see https://ai.google.dev/gemini-api/docs/models/gemini
-      -- --   model = "gemini-2.0-flash",
-      -- --   -- model = "gemini-1.5-flash",
-      -- --   temperature = 0,
-      -- --   max_tokens = 4096,
-      -- -- },
 
-      provider = "ollama",
+      provider = "gemini", -- Recommend using Claude
+      -- auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+      behaviour = {
+        auto_suggestions = false, -- Experimental stage
+        auto_set_highlight_group = true,
+        auto_set_keymaps = true,
+        auto_apply_diff_after_generation = false,
+        support_paste_from_clipboard = false,
+      },
+      gemini = {
+        -- @see https://ai.google.dev/gemini-api/docs/models/gemini
+        model = "gemini-2.0-flash",
+        -- model = "gemini-1.5-flash",
+        temperature = 0,
+        max_tokens = 4096,
+      },
+
+      -- provider = "ollama",
       ollama = {
         endpoint = "http://127.0.0.1:11434",
         model = "qwen2.5-coder:14b",
@@ -79,8 +79,7 @@ return {
         refresh = "<leader>ar", -- refresh
       },
     },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
+    build = "make BUILD_FROM_SOURCE=true",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "stevearc/dressing.nvim",
