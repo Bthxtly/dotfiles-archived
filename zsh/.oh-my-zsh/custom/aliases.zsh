@@ -13,7 +13,6 @@ alias 'icat=kitten icat'
 alias 'lg=lazygit'
 alias 'nv=clear && nvidia-smi'
 alias 'sd=unset all_proxy ALL_PROXY && ~/Applications/stable-diffusion-webui/webui.sh'
-alias 'sl=sl -e'
 alias 'sus=systemctl suspend'
 # alias 'waybar=killall waybar; waybar &'
 
@@ -22,11 +21,12 @@ alias 'code=code  --enable-features=WaylandWindowDecorations --ozone-platform-hi
 alias 'mechvibes=mechvibes --in-process-gpu'
 
 # ls
-alias 'l=eza -lh --icons always'
-alias 'll=eza -lah --icons always'
-alias 'ls=eza --icons always'
-alias 's=eza --icons always'
-alias 'lt=eza --icons --tree'
+alias 'l=eza -lh --icons auto'
+alias 'll=eza -lah --icons auto'
+alias 'ls=eza --icons auto'
+alias 'sl=eza --icons auto'
+alias 's=eza --icons auto'
+alias 'lt=eza --icons auto --tree'
 
 # cd
 alias 'ct=cd /tmp'
