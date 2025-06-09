@@ -1,3 +1,4 @@
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "rename" })
 vim.keymap.set("n", "<leader>uh", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
@@ -113,6 +114,9 @@ return {
 
       -- cmake
       vim.lsp.enable("cmake")
+
+      -- hyprland
+      vim.lsp.enable("hyprls")
     end,
   },
 }
