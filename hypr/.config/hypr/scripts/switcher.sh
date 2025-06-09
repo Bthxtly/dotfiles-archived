@@ -29,19 +29,6 @@ sed -i "$mode" ~/dotfiles/rofi/.config/rofi/current_theme.rasi
 # zathura
 sed -i "$mode" ~/dotfiles/zathura/.config/zathura/current_theme.conf
 
-# ===reload nvim {{{
-# Get neovim sockets files
-nvim_sockets=$(ls /run/user/1000/nvim*)
-
-# Find all Neovim sockets and send the source command
-for socket in $nvim_sockets; do
-  if [ -S "$socket" ]; then
-    # echo $socket
-    nvim --server "$socket" --remote-send '<C-\><C-N>:source $HOME/dotfiles/nvim/.config/nvim/current_theme.vim<CR>:<ESC>' >/dev/null
-  fi
-done
-# }}}
-
 # ===reload kitty {{{
 # Get the PID of the Kitty process
 kitty_pid=$(pgrep kitty)
@@ -56,6 +43,19 @@ if [ -n "$kitty_pid" ]; then
 else
   echo "Kitty is not running."
 fi
+# }}}
+
+# ===reload nvim {{{
+# Get neovim sockets files
+nvim_sockets=$(ls /run/user/1000/nvim*)
+
+# Find all Neovim sockets and send the source command
+for socket in $nvim_sockets; do
+  if [ -S "$socket" ]; then
+    # echo $socket
+    nvim --server "$socket" --remote-send '<C-\><C-N>:source $HOME/dotfiles/nvim/.config/nvim/current_theme.vim<CR>:<ESC>' >/dev/null
+  fi
+done
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0
