@@ -9,7 +9,6 @@ return {
     end,
   },
   { "HiPhish/rainbow-delimiters.nvim" },
-  { "dnlhc/glance.nvim", lazy = true, cmd = "Glance" },
   { "declancm/maximize.nvim", lazy = true, cmd = { "Maximize" } },
 
   {
