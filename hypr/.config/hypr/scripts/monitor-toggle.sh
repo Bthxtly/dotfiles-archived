@@ -39,7 +39,7 @@ fi
 
 # Handle socket events from hyprland socket2
 handleEvents() {
-  # echo $1
+  echo $1
   case $1 in
   "monitoradded>>$EXTERNAL_MONITOR")
     moveAllWorkspacesToMonitor "$EXTERNAL_MONITOR"
