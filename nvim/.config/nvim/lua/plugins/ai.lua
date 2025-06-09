@@ -39,7 +39,6 @@ return {
 
   {
     "yetone/avante.nvim",
-    commit = "2f806ca34223a50435018dd21d443795f619828d",
     lazy = true,
     opts = {
       provider = "gemini", -- Recommend using Claude
