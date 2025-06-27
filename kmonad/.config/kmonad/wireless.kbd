@@ -1,7 +1,7 @@
 #| ---------------------------Configure------------------------------------- |#
 (defcfg
-  input  (device-file "/dev/input/by-id/usb-YICHIP_Wireless_Device_b120300001-event-kbd")
-  output (uinput-sink "My KMonad output"
+  input  (device-file "/dev/bt_keyboard")
+  output (uinput-sink "Wireless keyboard"
     ;; "/usr/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt"
     )
   ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
@@ -43,15 +43,6 @@
   lctl a    r    s    t    d    h    n    e    i    o    @qte ret
   lsft z    x    c    v    b    k    m    ,    .    /    rsft
   @qwe     lalt lmet            spc            @sym rctl
-)
-
-(deflayer wide_mod
-  caps
-  esc  1    2    3    4    5    =    6    7    8    9    0    -    bspc
-  tab  q    w    f    p    g    _    j    l    u    y    ;    bspc esc
-  lctl a    r    s    t    d    _    h    n    e    i    o    ret
-  lsft z    x    c    v    b    _    k    m    ,    .    rsft
-  @mc      lalt lmet            @ssp           @sym rctl
 )
 
 (deflayer qwerty
@@ -99,15 +90,6 @@
   _         _    _              _              _    _
 )
 
-(deflayer minecraft
-  caps
-  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    f    p    g    j    l    u    y    ;    bspc esc  \
-  lctl a    r    s    t    d    h    n    e    i    o    '    ret
-  lsft z    x    c    v    b    k    m    ,    .    /    rsft
-  @col      lalt lmet            spc            @sym rctl
-)
-
 (deflayer blank
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -120,7 +102,6 @@
 (defalias ;; layer
   col (layer-switch colemak)
   qwe (layer-switch qwerty)
-  mc  (layer-switch minecraft)
   num (layer-toggle numbers)
   sym (layer-toggle symbols)
   ext (layer-toggle extension)
