@@ -10,6 +10,11 @@ return {
       -- Python
       require("dap-python").setup("python3")
 
+      -- Java
+      require("jdtls.dap").setup_dap_main_class_configs()
+      -- require("jdtls").test_class()
+      -- require("jdtls").test_nearest_method()
+
       local dap = require("dap")
 
       -- C and C++
@@ -28,13 +33,13 @@ return {
             end,
             cwd = "${workspaceFolder}",
           },
-          {
-            type = "codelldb",
-            request = "attach",
-            name = "Attach to process",
-            pid = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
-          },
+          -- {
+          --   type = "codelldb",
+          --   request = "attach",
+          --   name = "Attach to process",
+          --   pid = require("dap.utils").pick_process,
+          --   cwd = "${workspaceFolder}",
+          -- },
         }
       end
     end,
