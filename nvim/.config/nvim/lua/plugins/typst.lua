@@ -6,6 +6,6 @@ return {
       ["tinymist"] = "/usr/bin/tinymist",
       ["websocat"] = "/usr/bin/websocat",
     },
-    open_cmd = "firefox --class typst-preview --new-window %s",
+    open_cmd = "zen --class typst-preview %s",
   },
 }
