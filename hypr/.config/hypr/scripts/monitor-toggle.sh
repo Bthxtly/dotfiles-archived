@@ -61,5 +61,5 @@ handleEvents() {
 }
 
 # Listen to live events from hyprland socket2 continuously
-# start only once
-pidof socat || socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handleEvents "$line"; done
+killall socat
+socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handleEvents "$line"; done
