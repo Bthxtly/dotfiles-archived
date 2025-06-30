@@ -107,7 +107,7 @@ bindkey -v
 bindkey '^Y' autosuggest-accept
 bindkey '^E' autosuggest-clear
 
-# use mkdir and cd 
+# use mkdir and cd
 function mkcd {
   last=$(eval "echo \$$#")
   if [ ! -n "$last" ]; then

@@ -12,6 +12,7 @@ map("n", "ck", "<cmd>help digraph-table<cr>")
 map("n", "<c-'>", "<c-]>", { desc = "Jump to entry" })
 map("n", "<leader>ha", "<cmd>so $VIMRUNTIME/syntax/hitest.vim<cr>", { desc = "All highlight", silent = true })
 map("n", "<leader>cc", "<cmd>lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
+map("n", "<leader>cd", "<cmd>cd %:h<CR>", { silent = false, desc = "cd to file path" })
 
 -- better search
 map("n", "<esc>", "<cmd>noh<cr>", { desc = "Disable hlsearch" })
@@ -71,7 +72,6 @@ map("t", "<C-Q>", "<C-\\><C-N>:q<CR>", { silent = true })
 map("t", "<C-H>", "<C-\\><C-N>")
 
 -- Shortcuts
-map("n", "<F1>", ":cd %:h<CR>", { silent = false, desc = "cd to file path" })
 map("n", "<F2>", ":Maximize<CR>", { silent = true, desc = "Maximize the current window" })
 map("n", "<leader>e", "<cmd>lua Snacks.explorer.open()<CR>", { silent = true, desc = "Explorer" })
 
@@ -113,7 +113,6 @@ local diagnostic_goto = function(next, severity)
     go({ severity = severity })
   end
 end
-map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
@@ -142,7 +141,7 @@ function CompileRunGcc()
     vim.cmd("normal i")
   elseif vim.bo.filetype == "sh" then
     vim.cmd("w")
-    vim.cmd("!time bash %")
+    vim.cmd("!sh %")
   elseif vim.bo.filetype == "python" then
     vim.cmd("w")
     vim.cmd("set splitbelow")

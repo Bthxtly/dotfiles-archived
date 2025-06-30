@@ -11,7 +11,7 @@
     "prefix": "cb"
   },
   "f": {
-    "body": "\\$${1:f}\\$$0",
+    "body": "\\$${1:f}(${2:x})\\$$0",
     "prefix": "f"
   },
   "ha": {
@@ -25,6 +25,10 @@
   "hs": {
     "body": "=== $0",
     "prefix": "hs"
+  },
+  "inte": {
+    "body": "integral_${1:a}^${2:b} ${3:f(x)} dif ${4:x}",
+    "prefix": "inte"
   },
   "ma": {
     "body": "\\$$1\\$$0",
