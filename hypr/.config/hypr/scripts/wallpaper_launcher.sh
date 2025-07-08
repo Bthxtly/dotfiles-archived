@@ -36,6 +36,5 @@ wall_selection=$(find "${wall_dir}" -maxdepth 1 -type f \( -iname "*.jpg" -o -in
 
 # Set the wallpaper
 [[ -n "$wall_selection" ]] || exit 1
-swww img ${wall_dir}/${wall_selection}
-
+swww img ${wall_dir}/${wall_selection} --transition-step 12
 exit 0
