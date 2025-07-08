@@ -368,7 +368,7 @@ filextype */
 "
 " Or leave it for automatic detection
 "
-" fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
+fileviewer *[^/] pygmentize -O style=monokai -f terminal -g
 
 " Displaying pictures in terminal
 "
