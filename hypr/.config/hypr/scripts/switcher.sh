@@ -10,11 +10,15 @@ theme=$(echo $line | cut -d= -f2)
 if [[ "$theme" == "light" ]]; then
   hyprctl notify 5 2000 "rgb(00000f)" "DARK"
   mode="1 s/light/dark/"
+  wallpaper="arc-dark.png"
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
 elif [[ "$theme" == "dark" ]]; then
   hyprctl notify 5 2000 "rgb(ffffff)" "LIGHT"
   mode="1 s/dark/light/"
+  wallpaper="flow-gradient-design-fluid-motion.jpg"
   gsettings set org.gnome.desktop.interface color-scheme default
+
 else
   hyprctl notify 3 2000 "rgb(ff0000)" "ERROR"
   exit 1
@@ -29,7 +33,10 @@ sed -i "$mode" ~/dotfiles/rofi/.config/rofi/current_theme.rasi
 # zathura
 sed -i "$mode" ~/dotfiles/zathura/.config/zathura/current_theme.conf
 
-# ===reload kitty {{{
+# wallpaper
+swww img ~/Pictures/Wallpapers/$wallpaper --transition-step 20
+
+# reload kitty {{{
 # Get the PID of the Kitty process
 kitty_pid=$(pgrep kitty)
 
@@ -45,7 +52,13 @@ else
 fi
 # }}}
 
-# ===reload nvim {{{
+# relaod zathrua
+zathura_pid=$(pidof zathura)
+for p in $zathura_pid; do
+  busctl --user call org.pwmt.zathura.PID-$p /org/pwmt/zathura org.pwmt.zathura SourceConfig
+done
+
+# reload nvim {{{
 # Get neovim sockets files
 nvim_sockets=$(ls /run/user/1000/nvim*)
 
