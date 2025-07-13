@@ -53,7 +53,7 @@ entry {
 listview {
     enabled:             true;
     columns:             5;
-    lines:               2;
+    lines:               1;
     spacing:             50px;
     padding:             20px 30px;
     cycle:               true;

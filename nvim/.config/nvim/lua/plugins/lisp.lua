@@ -8,7 +8,7 @@ return {
   },
   {
     "Olical/conjure",
-    ft = { "python", "scheme" },
+    ft = { "scheme" },
     init = function()
       -- Disable the documentation mapping
       vim.g["conjure#mapping#doc_word"] = false
