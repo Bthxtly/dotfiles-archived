@@ -13,6 +13,13 @@ vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+  desc = "Correct lualine highlight in Gruvbox",
+  callback = function()
+    vim.api.nvim_set_hl(0, "StatusLine", { link = "lualine_c_normal" })
+  end,
+})
+
 -- local og_virt_text
 -- local og_virt_line
 -- vim.api.nvim_create_autocmd({ "CursorMoved", "DiagnosticChanged" }, {
