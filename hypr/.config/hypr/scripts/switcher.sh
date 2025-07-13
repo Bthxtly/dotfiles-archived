@@ -10,13 +10,15 @@ theme=$(echo $line | cut -d= -f2)
 if [[ "$theme" == "light" ]]; then
   hyprctl notify 5 2000 "rgb(00000f)" "DARK"
   mode="1 s/light/dark/"
-  wallpaper="arc-dark.png"
+  swww query | cut -d' ' -f8 >~/.cache/swww/.light-wallpaper
+  read wallpaper <~/.cache/swww/.dark-wallpaper
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 elif [[ "$theme" == "dark" ]]; then
   hyprctl notify 5 2000 "rgb(ffffff)" "LIGHT"
   mode="1 s/dark/light/"
-  wallpaper="flow-gradient-design-fluid-motion.jpg"
+  swww query | cut -d' ' -f8 >~/.cache/swww/.dark-wallpaper
+  read wallpaper <~/.cache/swww/.light-wallpaper
   gsettings set org.gnome.desktop.interface color-scheme default
 
 else
@@ -34,7 +36,7 @@ sed -i "$mode" ~/dotfiles/rofi/.config/rofi/current_theme.rasi
 sed -i "$mode" ~/dotfiles/zathura/.config/zathura/current_theme.conf
 
 # wallpaper
-swww img ~/Pictures/Wallpapers/$wallpaper --transition-step 20
+swww img $wallpaper --transition-step 20
 
 # reload kitty {{{
 # Get the PID of the Kitty process
