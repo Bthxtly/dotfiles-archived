@@ -8,7 +8,7 @@ window#waybar {
     font-family: FontAwesome, monospace;
     background-color: transparent;
     border-bottom: 0px;
-    color: #ebdbb2;
+    color: #32302f;
     transition-property: background-color;
     transition-duration: .5s;
     margin-bottom: 0;
@@ -51,17 +51,17 @@ button {
 /*
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ebdbb2;
+    box-shadow: inset 0 -3px #32302f;
 } */
 
 #workspaces {
-    background-color: #282828;
+    background-color: #ebdbb2;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ebdbb2;
+    color: #32302f;
     border-radius: 0;
 }
 
@@ -78,7 +78,7 @@ button:hover {
 }
 
 #workspaces button.active {
-    background-color: #665c54;
+    background-color: #fbf1c7;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
@@ -99,16 +99,15 @@ button:hover {
 #backlight,
 #pulseaudio,
 #tray,
-#mpris,
 #load {
     padding: 0 10px;
-    background-color: #282828;
-    color: #ebdbb2;
+    background-color: #ebdbb2;
+    color: #32302f;
 }
 
 #mode {
     background-color: #689d6a;
-    color: #282828;
+    color: #ebdbb2;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
@@ -123,25 +122,26 @@ button:hover {
 }
 
 #cava {
+    color: #458588;
     padding: 0 5px;
 }
 
 #battery.charging, #battery.plugged {
-    background-color: #ebdbb2;
-    color: #32302f;
+    background-color: #32302f;
+    color: #ebdbb2;
 }
 
 @keyframes blink {
     to {
-        background-color: #282828;
-        color: #ebdbb2;
+        background-color: #ebdbb2;
+        color: #32302f;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #cc241d;
-    color: #ebdbb2;
+    color: #32302f;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -154,8 +154,8 @@ label:focus {
 }
 
 #wireplumber.muted {
-    background-color: #ebdbb2;
-    color: #32302f;
+    background-color: #32302f;
+    color: #ebdbb2;
 }
 
 #tray > .passive {
@@ -166,15 +166,21 @@ label:focus {
     -gtk-icon-effect: highlight;
 }
 
-#mpris.playing {
-    background-color: #ebdbb2;
-    color: #32302f;
-}
-
 #tray menu {
     font-family: sans-serif;
 }
 
 #scratchpad.empty {
     background: transparent;
+}
+
+#mpris{
+    padding: 0 10px;
+    background-color: #32302f;
+    color: #ebdbb2;
+}
+
+#mpris.playing {
+    background-color: #ebdbb2;
+    color: #32302f;
 }
