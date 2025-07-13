@@ -11,18 +11,17 @@ map("n", "Q", "@q")
 map("n", "ck", "<cmd>help digraph-table<cr>")
 map("n", "<c-'>", "<c-]>", { desc = "Jump to entry" })
 map("n", "<leader>ha", "<cmd>so $VIMRUNTIME/syntax/hitest.vim<cr>", { desc = "All highlight", silent = true })
-map("n", "<leader>cc", "<cmd>lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
 map("n", "<leader>cd", "<cmd>cd %:h<CR>", { silent = false, desc = "cd to file path" })
 
 -- better search
 map("n", "<esc>", "<cmd>noh<cr>", { desc = "Disable hlsearch" })
--- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
-map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
+-- -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+-- map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
+-- map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
+-- map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
+-- map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
+-- map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
+-- map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
 -- I'm brilliant
 map("n", "go", "m`<cmd>set paste<cr>o<esc><cmd>set nopaste<cr>``", { desc = "Add a new blank line below" })
@@ -119,53 +118,3 @@ map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-
-map("n", "<leader>m", "<cmd>make<cr>", { desc = "Make" })
-
--- Compile function
-function CompileRunGcc()
-  if vim.bo.filetype == "c" then
-    vim.cmd("w")
-    vim.cmd("set splitbelow")
-    vim.cmd("!gcc % -o %< -lm")
-    vim.cmd("sp")
-    vim.cmd("res -5")
-    vim.cmd("term time ./%<")
-    vim.cmd("normal i")
-  elseif vim.bo.filetype == "cpp" then
-    vim.cmd("w")
-    vim.cmd("set splitbelow")
-    vim.cmd("sp")
-    vim.cmd("res -5")
-    vim.cmd("term g++ -std=gnu++17 % -Wall -o %< && time ./%<")
-    vim.cmd("normal i")
-  elseif vim.bo.filetype == "sh" then
-    vim.cmd("w")
-    vim.cmd("!sh %")
-  elseif vim.bo.filetype == "python" then
-    vim.cmd("w")
-    vim.cmd("set splitbelow")
-    vim.cmd("sp")
-    vim.cmd("res -5")
-    vim.cmd("term python3 %")
-    vim.cmd("normal i")
-  elseif vim.bo.filetype == "rust" then
-    vim.cmd("w")
-    vim.cmd("set splitbelow")
-    vim.cmd("sp")
-    vim.cmd("res -5")
-    vim.cmd("term cargo run")
-  elseif vim.bo.filetype == "markdown" or vim.bo.filetype == "vimwiki" then
-    -- vim.cmd("MarkdownPreviewToggle")
-    vim.cmd("Markview toggle")
-  elseif vim.bo.filetype == "typst" then
-    vim.cmd("TypstPreview")
-  elseif vim.bo.filetype == "java" then
-    vim.cmd("w")
-    vim.cmd("set splitbelow")
-    vim.cmd("sp")
-    vim.cmd("res -5")
-    vim.cmd("term javac % && java %<")
-    vim.cmd("normal i")
-  end
-end
