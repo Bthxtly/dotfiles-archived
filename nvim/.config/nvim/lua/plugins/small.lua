@@ -8,7 +8,6 @@ return {
       require("fidget").setup({})
     end,
   },
-  { "HiPhish/rainbow-delimiters.nvim" },
   { "declancm/maximize.nvim", lazy = true, cmd = { "Maximize" } },
 
   {
