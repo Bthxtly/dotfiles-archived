@@ -83,6 +83,8 @@ function CompileRunGcc()
     else
       vim.cmd("term python3 %")
     end
+  elseif vim.fn.expand("%:e") == "b" then
+    vim.cmd("term brainfuck %")
   end
 
   vim.cmd("normal i")
