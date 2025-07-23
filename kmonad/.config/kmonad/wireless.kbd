@@ -1,6 +1,6 @@
 #| ---------------------------Configure------------------------------------- |#
 (defcfg
-  input  (device-file "/dev/bt_keyboard")
+  input  (device-file "/dev/input/by-id/usb-YICHIP_Wireless_Device_b120300001-event-kbd")
   output (uinput-sink "Wireless keyboard"
     ;; "/usr/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt"
     )
