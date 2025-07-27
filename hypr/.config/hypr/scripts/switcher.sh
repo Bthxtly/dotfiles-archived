@@ -19,12 +19,12 @@ function dark2light() {
   gsettings set org.gnome.desktop.interface color-scheme default
 
   # qt
-  cp ~/.config/qt5ct/colors/{dark,scheme}.conf
-  cp ~/.config/qt6ct/colors/{dark,scheme}.conf
+  cp ~/.config/qt5ct/colors/{light,scheme}.conf
+  cp ~/.config/qt6ct/colors/{light,scheme}.conf
 
   # gtk
-  cp ~/.config/gtk-3.0/{dark,gtk}.css
-  cp ~/.config/gtk-4.0/{dark,gtk}.css
+  cp ~/.config/gtk-3.0/{light,gtk}.css
+  cp ~/.config/gtk-4.0/{light,gtk}.css
 }
 
 function light2dark() {
@@ -40,12 +40,12 @@ function light2dark() {
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
   # qt
-  cp ~/.config/qt5ct/colors/{light,scheme}.conf
-  cp ~/.config/qt6ct/colors/{light,scheme}.conf
+  cp ~/.config/qt5ct/colors/{dark,scheme}.conf
+  cp ~/.config/qt6ct/colors/{dark,scheme}.conf
 
   # gtk
-  cp ~/.config/gtk-3.0/{light,gtk}.css
-  cp ~/.config/gtk-4.0/{light,gtk}.css
+  cp ~/.config/gtk-3.0/{dark,gtk}.css
+  cp ~/.config/gtk-4.0/{dark,gtk}.css
 }
 
 # Check the value of $theme and do the proper sed
