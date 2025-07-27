@@ -1,6 +1,6 @@
 configuration {
 	modes: "window,drun,run";
-/*	font: "mono 12";*/
+	font: "DejaVu Sans Mono 10";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/

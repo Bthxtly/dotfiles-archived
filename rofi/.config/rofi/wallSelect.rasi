@@ -4,16 +4,16 @@ configuration {
     modi:                "drun";
     show-icons:          true;
     drun-display-format: "{name}";
-    font:                "ComicShannsMono Nerd Font 15";
+    font:                "ComicShannsMono Nerd Font 10";
     hover-select:        true;
 }
 
 //----- Global Properties -----//
 
 * {
-main-bg:                 #FFFFFF44;
+main-bg:                 #EBDBB2;
 main-fg:                 #282828;
-select-bg:               #ffffff;
+select-bg:               #F2E5BC;
 select-fg:               #282828;
 }
 
@@ -28,10 +28,10 @@ window {
     cursor:              "default";
     spacing:             0px;
     padding:             0px;
-    border:              0px;
-    border-radius:       0px;
-    border-color:        transparent;
-    background-color:    transparent;
+    border:              10px;
+    border-radius:       10px;
+    border-color:        inherit;
+    background-color:    inherit;
 }
 
 //----- Main Box -----//
@@ -53,15 +53,15 @@ entry {
 listview {
     enabled:             true;
     columns:             5;
-    lines:               1;
+    lines:               2;
     spacing:             50px;
     padding:             20px 30px;
     cycle:               true;
-    dynamic:             false;
+    dynamic:             true;
     scrollbar:           false;
     flow:                horizontal;
     layout:              vertical;
-    fixed-height:        true;
+    fixed-height:        false;
     fixed-columns:       true;
     cursor:              "default";
     background-color:    transparent;
