@@ -127,4 +127,56 @@ return {
       },
     },
   },
+
+  {
+    "saghen/blink.nvim",
+    build = "cargo build --release", -- for delimiters
+    opts = {
+      tree = { enabled = true },
+    },
+    keys = {
+      -- tree
+      { "<leader>E", "<cmd>BlinkTree toggle<cr>", desc = "Reveal current file in tree" },
+      { "<leader>e", "<cmd>BlinkTree toggle-focus<cr>", desc = "Toggle file tree focus" },
+    },
+  },
+
+  {
+    "saghen/blink.pairs",
+    build = "cargo build --release",
+    --- @module 'blink.pairs'
+    --- @type blink.pairs.Config
+    opts = {
+      mappings = {
+        enabled = true,
+        cmdline = true,
+        disabled_filetypes = {},
+        -- https://github.com/Saghen/blink.pairs/blob/main/lua/blink/pairs/config/mappings.lua#L14
+        pairs = {},
+      },
+      highlights = {
+        enabled = true,
+        cmdline = true,
+        groups = {
+          "RainbowDelimiterCyan",
+          "RainbowDelimiterOrange",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterYellow",
+          "RainbowDelimiterViolet",
+          "RainbowDelimiterGreen",
+          "RainbowDelimiterRed",
+        },
+        unmatched_group = "BlinkPairsUnmatched",
+
+        -- highlights matching pairs under the cursor
+        matchparen = {
+          enabled = true,
+          -- known issue where typing won't update matchparen highlight, disabled by default
+          cmdline = false,
+          group = "BlinkPairsMatchParen",
+        },
+      },
+      debug = false,
+    },
+  },
 }
