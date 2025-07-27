@@ -72,7 +72,6 @@ map("t", "<C-H>", "<C-\\><C-N>")
 
 -- Shortcuts
 map("n", "<F2>", ":Maximize<CR>", { silent = true, desc = "Maximize the current window" })
-map("n", "<leader>e", "<cmd>lua Snacks.explorer.open()<CR>", { silent = true, desc = "Explorer" })
 
 -- window
 -- Disable the default s key

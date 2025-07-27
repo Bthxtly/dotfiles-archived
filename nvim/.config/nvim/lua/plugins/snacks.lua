@@ -74,7 +74,7 @@ return {
 
       picker = { enabled = true },
 
-      explorer = { enabled = true },
+      explorer = { enabled = false },
 
       notifier = { enabled = true },
 
