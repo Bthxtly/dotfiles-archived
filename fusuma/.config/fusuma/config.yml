@@ -30,7 +30,7 @@ pinch:
 
 hold:
   4:
-    command: "hyprctl dispatch fullscreen"  # toggle fullscreen
+    command: "hyprctl dispatch fullscreenstate 1 3"  # toggle fullscreen
 
 threshold:
   swipe: 0.8
