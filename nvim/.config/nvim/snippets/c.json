@@ -371,6 +371,13 @@
     "description": "Header include guard",
     "prefix": "#once"
   },
+  "jump": {
+    "body": [
+      "${1:a}:",
+      "${2:jump}($1);"
+    ],
+    "prefix": "ju"
+  },
   "main() template": {
     "body": [
       "int main(int argc, char *argv[])",

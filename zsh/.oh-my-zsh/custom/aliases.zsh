@@ -73,6 +73,7 @@ alias 'vza=nvim ~/.oh-my-zsh/custom/aliases.zsh && source ~/.oh-my-zsh/custom/al
 alias 'vzv=nvim ~/.oh-my-zsh/custom/variables.zsh && source ~/.oh-my-zsh/custom/variables.zsh'
 alias 'vimdiff=nvim -d'
 alias 'f=fd --type f | fzf | xargs -I {} nvim {}'
+alias 'his=history | nvim -'
 
 # something might be useful
 alias 'term_size=echo "Rows=$(tput lines) Cols=$(tput cols)"'
