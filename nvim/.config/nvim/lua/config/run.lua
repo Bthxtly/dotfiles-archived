@@ -1,5 +1,6 @@
 vim.keymap.set("n", "<leader>cc", "<cmd>lua CompileRunGcc()<CR>", { silent = true, desc = "Run code" })
 vim.keymap.set("n", "<leader>mh", "<cmd>lua RunManim('h')<cr>", { silent = true, desc = "Run Manim high quality" })
+vim.keymap.set("n", "<leader>mm", "<cmd>lua RunManim('h')<cr>", { silent = true, desc = "Run Manim medium quality" })
 vim.keymap.set("n", "<leader>ml", "<cmd>lua RunManim('l')<cr>", { silent = true, desc = "Run Manim low quality" })
 
 -- interactive Manim
@@ -33,6 +34,8 @@ local function render_scene(quality)
   local video_path = dir_name .. "/media/videos/" .. file_name
   if q == "l" then
     video_path = video_path .. "/480p15/" .. class_name .. ".mp4"
+  elseif q == "m" then
+    video_path = video_path .. "/720p30/" .. class_name .. ".mp4"
   else
     video_path = video_path .. "/1080p60/" .. class_name .. ".mp4"
   end
@@ -40,7 +43,7 @@ local function render_scene(quality)
   local cmd =
     string.format("manim -q" .. q .. " '%s' '%s' && mpv --wayland-app-id=manim '%s'", file_path, class_name, video_path)
 
-  vim.cmd("term " .. cmd)
+  vim.cmd("term " .. cmd .. " || read")
 end
 
 local function file_exists(path)
@@ -98,3 +101,13 @@ function RunManim(quality)
   render_scene(quality or "l")
   vim.cmd("normal i")
 end
+
+vim.api.nvim_create_autocmd("TermClose", {
+  desc = "auto close terminal",
+  pattern = "*",
+  callback = function(args)
+    if string.find(vim.api.nvim_buf_get_name(0), "manim") then
+      vim.cmd("bdelete! " .. args.buf)
+    end
+  end,
+})
