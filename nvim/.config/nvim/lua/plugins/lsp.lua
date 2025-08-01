@@ -6,16 +6,6 @@ end, { desc = "toggle inlay hints" })
 
 return {
   {
-    "williamboman/mason.nvim",
-    cmd = "Mason",
-    keys = { { "<leader>mc", "<cmd>Mason<cr>", desc = "Mason" } },
-    build = ":MasonUpdate",
-    config = function()
-      require("mason").setup({})
-    end,
-  },
-
-  {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     opts = function(_, opts)
