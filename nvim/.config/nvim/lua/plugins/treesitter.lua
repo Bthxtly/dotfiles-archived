@@ -11,6 +11,15 @@ local language = {
   "vimdoc",
 }
 
+local function textobj_move(char, obj, desc)
+  local move = require("nvim-treesitter-textobjects.move")
+  -- stylua: ignore start
+  vim.keymap.set({"n", "x", "o"}, "]"..char, function () move.goto_next_start(obj, 'textobjects') end, {desc="Next " .. desc .. " start"})
+  vim.keymap.set({"n", "x", "o"}, "["..char, function () move.goto_previous_start(obj, 'textobjects') end, {desc="Previous " .. desc .. " start"})
+  vim.keymap.set({"n", "x", "o"}, "]"..string.upper(char), function () move.goto_next_end(obj, 'textobjects') end, {desc="Next " .. desc .. " end"})
+  vim.keymap.set({"n", "x", "o"}, "["..string.upper(char), function () move.goto_previous_end(obj, 'textobjects') end, {desc="Previous " .. desc.." end"})
+  -- stylua: ignore end
+end
 
 return {
   {
@@ -51,6 +60,18 @@ return {
     branch = "main",
     lazy = false,
     opts = {},
+    config = function()
+      -- movement
+      require("nvim-treesitter-textobjects").setup({ move = { set_jump = true } })
+      textobj_move("c", "@class.outer", "Class")
+      textobj_move("f", "@function.outer", "Function")
+      textobj_move("r", "@parameter.outer", "Parameter")
+
+      -- ;, to repeate
+      local ts_repeat_move = require("nvim-treesitter-textobjects.repeatable_move")
+      vim.keymap.set({ "n", "x", "o" }, "<C-.>", ts_repeat_move.repeat_last_move)
+      vim.keymap.set({ "n", "x", "o" }, "<C-,>", ts_repeat_move.repeat_last_move_opposite)
+    end,
   },
 
   {
