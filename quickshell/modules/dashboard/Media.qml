@@ -316,7 +316,7 @@ Item {
         color: Colours.palette.m3surfaceContainer
 
         function onClicked(): void {
-          root.visibilities.dashboard = false;
+          // root.visibilities.dashboard = false;
           if (Hyprland.focusedWorkspace.id == 9)
           Hyprland.dispatch("workspace previous");
           else
@@ -501,7 +501,7 @@ Item {
         color: Colours.palette.m3surfaceContainer
 
         function onClicked(): void {
-          root.visibilities.dashboard = false;
+          // root.visibilities.dashboard = false;
           Hyprland.dispatch("togglespecialworkspace pwvu");
         }
       }
