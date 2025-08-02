@@ -111,8 +111,7 @@ return {
     return opts
   end,
   keys = {
-    "<leader>fs",
-    "<cmd>lua Snacks.picker()<cr>",
-    desc = "open Snacks.picker",
+    { "<leader>fs", "<cmd>lua Snacks.picker()<cr>", desc = "open Snacks.picker" },
+    { "<leader>sN", "<cmd>lua Snacks.notifier.show_history()<cr>", desc = "open notify history" },
   },
 }
