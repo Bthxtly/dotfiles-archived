@@ -37,6 +37,9 @@ return {
           additional_vim_regex_highlighting = false,
         },
         indent = { enabled = true },
+          -- fold
+          vim.wo.foldmethod = "expr"
+          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
       })
     end,
   },

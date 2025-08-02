@@ -1,8 +1,7 @@
 local o = vim.opt
 
 -- fold
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo.foldmethod = "syntax"
 o.foldlevel = 99
 o.fillchars = {
   fold = "·",
@@ -57,10 +56,6 @@ o.undoreload = 10000 -- Number of lines to save for undo
 
 -- Enable backups and swap files
 o.backup = true
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 o.swapfile = true
 
 -- Set directories for undo, backup, and swap files
