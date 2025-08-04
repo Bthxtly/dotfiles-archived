@@ -1,6 +1,7 @@
 local language = {
   "bash",
   "c",
+  "cpp",
   "json",
   "jsonc",
   "lua",
