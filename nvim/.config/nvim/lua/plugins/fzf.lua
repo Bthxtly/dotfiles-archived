@@ -1,7 +1,3 @@
-vim.keymap.set("i", "<C-x><C-f>", function()
-  require("fzf-lua").complete_path()
-end, { silent = true, desc = "Fuzzy complete path" })
-
 return {
   {
     "ibhagwan/fzf-lua",
