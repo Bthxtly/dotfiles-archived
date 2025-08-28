@@ -45,9 +45,6 @@ return {
           -- highlight
           vim.treesitter.start(buf, lang)
 
-          -- indent
-          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-
           -- fold
           vim.wo.foldmethod = "expr"
           vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
