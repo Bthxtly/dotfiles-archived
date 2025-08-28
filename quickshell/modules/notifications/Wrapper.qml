@@ -3,19 +3,19 @@ import Quickshell
 import QtQuick
 
 Item {
-    id: root
+  id: root
 
-    required property PersistentProperties visibilities
-    required property Item panel
+  required property PersistentProperties visibilities
+  required property Item panel
 
-    visible: height > 0
-    implicitHeight: content.implicitHeight
-    implicitWidth: content.implicitWidth
+  visible: height > 0
+  implicitHeight: content.implicitHeight
+  implicitWidth: content.implicitWidth
 
-    Content {
-        id: content
+  Content {
+    id: content
 
-        visibilities: root.visibilities
-        panel: root.panel
-    }
+    visibilities: root.visibilities
+    panel: root.panel
+  }
 }

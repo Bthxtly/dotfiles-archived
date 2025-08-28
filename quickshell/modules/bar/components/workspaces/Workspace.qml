@@ -19,7 +19,7 @@ Item {
 
     readonly property int ws: groupOffset + index + 1
     readonly property bool isOccupied: occupied[ws] ?? false
-    readonly property bool isActive: Hyprland.activeWsId === root.ws 
+    readonly property bool isActive: Hyprland.activeWsId === root.ws
 
     Layout.preferredWidth: childrenRect.width
     Layout.preferredHeight: size

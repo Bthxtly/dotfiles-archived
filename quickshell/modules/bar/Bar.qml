@@ -133,7 +133,7 @@ Item {
           if (activeWs?.startsWith("special:"))
           Hyprland.dispatch(`togglespecialworkspace ${activeWs.slice(8)}`);
           else
-          Hyprland.dispatch(`workspace r${event.angleDelta.y > 0 ? "+" : "-"}1`);
+          Hyprland.dispatch(`workspace e${event.angleDelta.y > 0 ? "+" : "-"}1`);
         }
       }
 
