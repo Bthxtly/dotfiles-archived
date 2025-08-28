@@ -6,6 +6,18 @@ return {
     opts = {
       fzf_colors = { true }, -- auto-generate colorscheme
 
+      winopts = {
+        border = "single",
+        fullscreen = true,
+
+        preview = {
+          border = "single",
+          vertical = "down:60%",
+          horizontal = "right:60%",
+          delay = 100,
+        },
+      },
+
       defaults = {
         formatter = "path.dirname_first", -- italic the dirname
         prompt = "> ",
@@ -13,23 +25,23 @@ return {
 
       keymap = {
         fzf = {
-          ["ctrl-u"] = "half-page-up",
-          ["ctrl-d"] = "half-page-down",
-          ["ctrl-f"] = "preview-page-down",
-          ["ctrl-b"] = "preview-page-up",
+          ["ctrl-f"] = "half-page-down",
+          ["ctrl-b"] = "half-page-up",
           ["ctrl-x"] = "jump",
         },
         builtin = {
-          ["<c-f>"] = "preview-page-down",
-          ["<c-b>"] = "preview-page-up",
+          ["<c-d>"] = "preview-page-down",
+          ["<c-u>"] = "preview-page-up",
         },
       },
     },
 
     -- stylua: ignore
     keys = {
-      { "<leader><space>", "<cmd>FzfLua files<cr>", desc = "Find Files (Current Dir)" },
+      -- resume
+      { "<leader>fr", "<cmd>FzfLua resume<cr>", desc = "Resume" },
       -- find
+      { "<leader><space>", "<cmd>FzfLua files<cr>", desc = "Find Files (Current Dir)" },
       { "<leader>,", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer", },
       { "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer" },
       { "<leader>fc", "<cmd>lua require('fzf-lua').files({cwd = vim.fn.stdpath('config')})<cr>", desc = "Find Config File" },
@@ -37,7 +49,6 @@ return {
       { "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
       { "<leader>fo", "<cmd>FzfLua zoxide<cr>", desc = "Zoxide" },
       { "<leader>fp", function() require("fzf-lua").files({ cwd = require("lazy.core.config").options.root }) end, desc = "Find Plugin File", },
-      { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
       -- git
       { "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
       { "<leader>gs", "<cmd>FzfLua git_status<CR>", desc = "Status" },
@@ -59,6 +70,7 @@ return {
       { "<leader>sl", "<cmd>FzfLua loclist<cr>", desc = "Location List" },
       { "<leader>sM", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
       { "<leader>sm", "<cmd>FzfLua marks<cr>", desc = "Jump to Mark" },
+      { "<leader>sr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
       { "<leader>sR", "<cmd>FzfLua resume<cr>", desc = "Resume" },
       { "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
       { "<leader>uc", "<cmd>FzfLua colorschemes<cr>", desc = "Colorscheme with Preview" },
@@ -77,7 +89,7 @@ return {
 
   {
     "folke/todo-comments.nvim",
-    cmd = { "TodoTrouble", "TodoFzfLua" },
+    event = { "BufReadPre", "BufNewFile" },
     opts = {},
     -- stylua: ignore
     keys = {
