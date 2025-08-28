@@ -22,6 +22,7 @@ return {
       sh = { "shfmt" },
       zsh = { "shfmt" },
       python = { "autopep8" },
+      rust = { "rustfmt" },
       c = { "clang-format" },
       cpp = { "clang-format" },
       java = { "clang-format" },
