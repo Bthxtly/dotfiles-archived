@@ -20,6 +20,7 @@ return {
         contrast = "soft",
         overrides = {
           SignColumn = { link = "LineNr" },
+          dCursor = { bg = "#076678" },
           -- Markdown Header Background Overrides with Foreground Colors
           ["@markup.heading.1.markdown"] = { fg = "#cc241d", bg = "", bold = true },
           ["@markup.heading.2.markdown"] = { fg = "#98971a", bg = "", bold = true },
