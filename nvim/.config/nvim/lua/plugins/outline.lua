@@ -1,6 +1,7 @@
 return {
   {
     "hedyhli/outline.nvim",
+    dependencies = { "epheien/outline-treesitter-provider.nvim" },
     lazy = true,
     cmd = { "Outline", "OutlineOpen" },
     -- ft = { "markdown", "vimwiki.markdown" },
@@ -17,6 +18,7 @@ return {
         goto_and_close = { "<S-CR>", "M" },
       },
       providers = { -- providers providers providers!!!
+        priority = { "lsp", "coc", "markdown", "norg", "treesitter" },
         markdown = { filetypes = { "vimwiki", "markdown" } },
       },
     },
