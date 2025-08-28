@@ -3,6 +3,7 @@ import Quickshell.Io
 JsonObject {
     property int mediaUpdateInterval: 500
     property int visualiserBars: 45
+    property int beaterSpeed: 1
     property Sizes sizes: Sizes {}
 
     component Sizes: JsonObject {

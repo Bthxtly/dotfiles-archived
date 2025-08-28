@@ -525,7 +525,7 @@ Item {
       height: visualiser.height * 0.75
 
       playing: Players.active?.isPlaying ?? false
-      speed: BeatDetector.bpm / 300
+      speed: BeatDetector.bpm / 3 * Config.dashboard.beaterSpeed
       source: Paths.expandTilde(Config.paths.mediaGif)
       asynchronous: true
       fillMode: AnimatedImage.PreserveAspectFit
