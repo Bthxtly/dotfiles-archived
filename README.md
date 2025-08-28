@@ -2,7 +2,23 @@
 vim:nospell:nowrap
 -->
 # These are my dotfiles
-They are precious and fantastic!
+
++ [Hyprland](#Hyprland)
++ [neovim](#neovim)
++ [kitty](#kitty)
++ [quickshell](#quickshell)
++ [zsh](#zsh)
++ [vifm](#vifm)
++ [kmonad](#kmonad)
++ [fusuma](#fusuma)
++ [rofi](#rofi)
++ [zathura](#zathura)
++ [vimium](#vimium)
+
+no longer used:
+  - [waybar](#waybar)
+  - [vlc](#vlc)
+  - [firefox](#firefox)
 
 ## [Hyprland](https://hyprland.org)
 Hyprland is a tiling window manager on Wayland. [Here](https://github.com/JaKooLit/Arch-Hyprland)
@@ -45,6 +61,7 @@ nvim
 ├── colors/                 # my own color scheme, depend on mini.base16
 ├── current_theme.vim       # works with hypr/.config/hypr/scripts/switcher.sh
 ├── ftplugin                # file type specific settings
+│   ├── cpp.lua             # detect and set keymap to compile CMake project
 │   ├── java.lua            # set up for nvim-jdtls
 │   ├── markdown.lua        # spell, wrap, textwidth and colorcolumn
 │   ├── typst.lua           # comment string with above
@@ -194,7 +211,7 @@ quickshell/
     ├── StyledWindow.qml
     └── VerticalSlider.qml
 ```
-## zsh([ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) as the framework)
+## [zsh](https://github.com/ohmyzsh/ohmyzsh)
 **Z SH**ell is a powerful shell. Oh My Zsh is a framework for managing zsh
 configuration.
 ```sh
