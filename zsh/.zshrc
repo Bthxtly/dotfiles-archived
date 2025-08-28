@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -119,15 +119,9 @@ function mkcd {
   fi
 }
 
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/bthxtly/.dart-cli-completion/zsh-config.zsh ]] && . /home/bthxtly/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-# shellcheck shell=bash
-
-source $HOME/.oh-my-zsh/custom/zoxide.zsh
-source $HOME/.oh-my-zsh/custom/variables.zsh
-source $HOME/.oh-my-zsh/custom/timer.zsh
+# source $HOME/.oh-my-zsh/custom/zoxide.zsh
+# source $HOME/.oh-my-zsh/custom/variables.zsh
+# source $HOME/.oh-my-zsh/custom/timer.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 

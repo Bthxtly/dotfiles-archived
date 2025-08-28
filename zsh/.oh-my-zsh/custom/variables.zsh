@@ -10,8 +10,6 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # config globle variables
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH
 export PATH=$HOME/.config/hypr/scripts/:$PATH
 
@@ -28,3 +26,6 @@ export GOPATH=$HOME/Applications/go
 
 # less UTF-8 supports
 export LESSCHARSET=utf-8
+
+# run gvim in wayland
+export GVIM_ENABLE_WAYLAND=1
