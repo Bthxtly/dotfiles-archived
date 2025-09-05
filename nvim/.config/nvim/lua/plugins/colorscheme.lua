@@ -32,7 +32,8 @@ return {
       }
       require("gruvbox").setup(opts)
 
-      if vim.g.neovide or vim.env.TERM_PROGRAM == "ghostty" then
+      -- if vim.g.neovide or vim.env.TERM_PROGRAM == "ghostty" then
+      if true then
         vim.cmd("colorscheme rose-pine")
       else
         vim.cmd("colorscheme gruvbox")

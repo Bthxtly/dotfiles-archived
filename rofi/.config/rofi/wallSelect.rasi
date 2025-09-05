@@ -11,10 +11,10 @@ configuration {
 //----- Global Properties -----//
 
 * {
-main-bg:                 #EBDBB2;
-main-fg:                 #282828;
-select-bg:               #F2E5BC;
-select-fg:               #282828;
+main-bg:                 #faf4ed;
+main-fg:                 #575279;
+select-bg:               #dfdad9;
+select-fg:               #575279;
 }
 
 //----- Main Window -----//
