@@ -8,6 +8,7 @@ local language = {
   "markdown",
   "markdown_inline",
   "python",
+  "rust",
   "vim",
   "vimdoc",
 }
