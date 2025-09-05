@@ -1,21 +1,18 @@
 alias "fzf=fzf --bind=ctrl-e:preview-down,ctrl-y:preview-up --reverse --color=16 --preview-window=65%:wrap:border-sharp: --preview 'pygmentize -f terminal {}'"
-alias "gpp=g++"
+alias "gg=g++"
 alias "ka=killall"
 alias "pkg_size=expac -H M '%m\t%n' | sort -h"
 alias 'brn=brn2'
 alias 'cl=tty-clock -cC7'
 alias 'cx=chmod +x'
 alias 'ff=vifm .'
-alias 'hib=systemctl hibernate'
 alias 'i=clear && echo "I use   BTW" && fastfetch'
 alias 'icat=kitten icat'
+alias 'lf=vimgolf'
 alias 'lg=lazygit'
 alias 'nv=clear && nvidia-smi'
 alias 'sd=unset all_proxy ALL_PROXY && ~/Applications/stable-diffusion-webui/webui.sh'
-alias 'sus=systemctl suspend'
-alias 'lf=vimgolf'
-alias 'sa=source .venv/bin/activate'
-alias 'da=deactivate'
+alias 'si=swayimg'
 
 # wayland
 alias 'code=code  --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
