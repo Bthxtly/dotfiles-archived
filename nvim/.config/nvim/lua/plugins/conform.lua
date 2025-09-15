@@ -21,6 +21,7 @@ return {
       lua = { "stylua" },
       sh = { "shfmt" },
       zsh = { "shfmt" },
+      fish = { "fish_indent" },
       python = { "autopep8" },
       rust = { "rustfmt" },
       c = { "clang-format" },

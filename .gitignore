@@ -14,3 +14,4 @@ vifm/.config/vifm/vifminfo.json
 lazyvim/
 
 zsh/.oh-my-zsh/custom/api.zsh
+fish/.config/fish/conf.d/token.fish
