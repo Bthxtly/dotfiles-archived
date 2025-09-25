@@ -51,11 +51,17 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+-- Make some keys expend abbreviations
+map("i", ".", "<C-]>.", { remap = true })
+map("i", ";", "<C-]>;", { remap = true })
+map("i", ",", "<C-]>,", { remap = true })
+map("i", "<C-i>", "<C-]><C-i>", { remap = true })
+
 -- Add undo break-points
-map("i", ".", ".<c-g>u")
-map("i", ";", ";<c-g>u")
+map("i", ".", ".<c-g>u", { remap = true })
+map("i", ";", ";<c-g>u", { remap = true })
 -- Auto insert spaces after a comma
-map("i", ",", ", <c-g>u")
+map("i", ",", ", <c-g>u", { remap = true })
 
 -- System clipboard copy and paste
 map("n", "Y", '"+y')

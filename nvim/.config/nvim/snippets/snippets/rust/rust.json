@@ -175,9 +175,9 @@
   },
   "fn": {
     "body": [
-      "fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
-      "    ${5:todo!();}",
-      "}"
+      "fn ${1:name}($2) $3 {",
+      "    ${4:todo!();}",
+      "}$0"
     ],
     "description": "fn …(…) { … }",
     "prefix": "fn"
@@ -297,7 +297,9 @@
   },
   "match": {
     "body": [
-      "match ${1:expr} {}"
+      "match ${1:expr} {",
+      "    $2",
+      "}$0"
     ],
     "description": "match … { … }",
     "prefix": "match"
@@ -370,11 +372,10 @@
   },
   "pfn": {
     "body": [
-      "pub fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
-      "    ${5:todo!();}",
-      "}"
+      "pub fn ${1:Name}($2) $3{",
+      "    $4",
+      "}$0"
     ],
-    "description": "pub fn …(…) { … }",
     "prefix": "pfn"
   },
   "print": {
@@ -400,6 +401,14 @@
     ],
     "prefix": "pstr"
   },
+  "pstru": {
+    "body": [
+      "pub struct ${1:Name} {",
+      "    $2",
+      "}$0"
+    ],
+    "prefix": "pstru"
+  },
   "repr": {
     "body": [
       "#[repr(${1})]"
@@ -420,6 +429,14 @@
     ],
     "description": "stringify!(…)",
     "prefix": "stringify"
+  },
+  "stru": {
+    "body": [
+      "struct ${1:Name} {",
+      "    $2",
+      "}$0"
+    ],
+    "prefix": "stru"
   },
   "struct": {
     "body": [
