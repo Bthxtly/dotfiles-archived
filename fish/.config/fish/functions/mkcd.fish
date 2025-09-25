@@ -1,4 +1,4 @@
 function mkcd
-    mkdir -pv $argv;
-    cd $argv;
+    mkdir -pv $argv
+    cd $argv
 end

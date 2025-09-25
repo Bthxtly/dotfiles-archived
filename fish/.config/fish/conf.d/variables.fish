@@ -5,8 +5,9 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 
 # config globle variables
-set -x PATH $HOME/.local/share/gem/ruby/3.4.0/bin:$PATH
-set -x PATH $HOME/.config/hypr/scripts/:$PATH
+fish_add_path ~/.local/share/gem/ruby/3.4.0/bin
+fish_add_path ~/.config/hypr/scripts
+fish_add_path ~/.local/bin
 # cargo
 
 set -x HYPRSHOT_DIR $HOME/Pictures/Screenshots

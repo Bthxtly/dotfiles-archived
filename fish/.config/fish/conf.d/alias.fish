@@ -46,6 +46,8 @@ alias 'xtei=exit'
 alias 'xtie=exit'
 
 # git
+alias 'ga=git add'
+alias 'gaa=git add --all'
 alias 'gc=git commit -m'
 alias 'gk=git checkout'
 alias 'gu=git commit -m "update"'
