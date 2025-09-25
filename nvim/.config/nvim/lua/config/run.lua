@@ -64,7 +64,7 @@ function CompileRunGcc()
     return
   end
 
-  -- C/C++, sh, Rust, Java, Python(Manim)
+  -- C/C++, sh, Rust, Java, Python(Manim), Lisp(Scheme)
   vim.cmd("w")
   vim.cmd("set splitbelow")
   vim.cmd("sp")
@@ -80,6 +80,8 @@ function CompileRunGcc()
     vim.cmd("term cargo run")
   elseif vim.bo.filetype == "java" then
     vim.cmd("term javac % && java %<")
+  elseif vim.bo.filetype == "scheme" then
+    vim.cmd("term guile -s %")
   elseif vim.bo.filetype == "python" then
     if file_exists(vim.fn.expand("%:p:h") .. "/manim.cfg") then
       render_scene("l")
