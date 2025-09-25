@@ -33,6 +33,10 @@ o.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "global
 o.number = true
 o.relativenumber = true
 
+-- grep
+o.grepprg = "rg --vimgrep"
+o.grepformat = "%f:%l:%c:%m"
+
 -- others
 o.scrolloff = 5
 o.mouse = "nv"

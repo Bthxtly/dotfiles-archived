@@ -47,6 +47,10 @@ return {
       require("rose-pine").setup({
         variant = "auto",
         dark_variant = "moon",
+
+        highlight_groups = {
+          Keyword = { fg = "love" },
+        },
       })
     end,
   },

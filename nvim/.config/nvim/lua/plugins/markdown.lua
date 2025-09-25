@@ -35,6 +35,7 @@ return {
     opts = {
       preview = {
         filetypes = { "markdown", "vimwiki" },
+        map_gx = false,
       },
       markdown = {
         headings = { shift_width = 0 },

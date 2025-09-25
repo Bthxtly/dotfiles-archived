@@ -1,5 +1,5 @@
 return {
-  "chrisgrieser/nvim-origami",
+  "Bthxtly/nvim-origami",
   event = "VeryLazy",
   config = function()
     require("origami").setup({
