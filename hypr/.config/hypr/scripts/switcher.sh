@@ -11,7 +11,7 @@ function dark2light() {
   mode="1 s/dark/light/"
 
   # wallpaper
-  swww query | cut -d' ' -f8 >~/.cache/swww/.dark-wallpaper
+  swww query | cut -d' ' -f9 >~/.cache/swww/.dark-wallpaper
   read wallpaper <~/.cache/swww/.light-wallpaper
 
   # quickshell
@@ -32,7 +32,7 @@ function light2dark() {
   mode="1 s/light/dark/"
 
   # wallpaper
-  swww query | cut -d' ' -f8 >~/.cache/swww/.light-wallpaper
+  swww query | cut -d' ' -f9 >~/.cache/swww/.light-wallpaper
   read wallpaper <~/.cache/swww/.dark-wallpaper
 
   # quickshell
