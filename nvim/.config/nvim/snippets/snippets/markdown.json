@@ -443,6 +443,10 @@
       "url"
     ]
   },
+  "cx": {
+    "body": "- [ ] $0",
+    "prefix": "cx"
+  },
   "header 1": {
     "body": "# ${0}",
     "description": "Add header level 1",
