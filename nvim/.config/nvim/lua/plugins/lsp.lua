@@ -102,8 +102,24 @@ return {
       -- typst
       vim.lsp.enable("tinymist")
 
+      -- racket & scheme
+      vim.lsp.enable("racket_langserver")
+      vim.lsp.config("racket_langserver", {
+        cmd = { "racket", "--lib", "racket-langserver" },
+        filetypes = { "racket", "scheme" },
+        root_markers = { ".git" },
+      })
+
       -- json
       vim.lsp.enable("jsonls")
+      vim.lsp.config("jsonls", {
+        cmd = { "vscode-json-language-server", "--stdio" },
+        filetypes = { "json", "jsonc" },
+        init_options = {
+          provideFormatter = false,
+        },
+        root_markers = { ".git" },
+      })
 
       -- cmake
       vim.lsp.enable("cmake")
