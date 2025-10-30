@@ -1,6 +1,6 @@
 return {
   "Bthxtly/nvim-origami",
-  event = "VeryLazy",
+  event = "BufReadPre",
   config = function()
     require("origami").setup({
       foldtext = {
