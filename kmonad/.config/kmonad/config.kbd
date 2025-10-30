@@ -16,6 +16,7 @@
   ;; Set the implicit around to `around`
   ;; implicit-around around
 )
+
 #| -----------------------------Source-------------------------------------- |#
 (defsrc ;; qwerty layout
   esc
@@ -59,8 +60,17 @@
   esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   lctl a    s    d    f    g    h    j    k    l    ;    @qte ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  @qp2  z    x    c    v    b    n    m    ,    .    /    rsft
   @col      lalt lmet           spc            @sym rctl
+)
+
+(deflayer qwerty_p2
+  caps
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  kp+  up   kp-  r    t    kp3  kp4  kp5  kp6  kp*    [    ]    \
+  lctl left down right f   g    kp7  kp1  kp2  kp8  ;    @qte ret
+  lsft kp9  x    c    v    b    n    m    ,    .    /    rsft
+  @col      lalt lmet           kp0            @sym rctl
 )
 
 (deflayer symbols
@@ -116,10 +126,12 @@
   _    _    _    _    _    _    _    _    _    _    _    _
   _         _    _              _              _    _
 )
+
 #| ----------------------------Aliases-------------------------------------- |#
 (defalias ;; layer
   col (layer-switch colemak)
   qwe (layer-switch qwerty)
+  qp2 (layer-toggle qwerty_p2)
   mc  (layer-switch minecraft)
   num (layer-toggle numbers)
   sym (layer-toggle symbols)
