@@ -4,8 +4,6 @@ swipe:
       sendkey: "VOLUMEUP"         # volume up
     left:
       sendkey: "VOLUMEDOWN"       # volume down
-    up:
-      sendkey: "RIGHTCTRL+W"      # close the browser page
     down:
       sendkey: "GRAVE"            # Escape
 
@@ -30,7 +28,9 @@ pinch:
 
 hold:
   4:
-    command: "hyprctl dispatch fullscreenstate 1 3"  # toggle fullscreen
+    command: "niri msg action maximize-column"  # toggle fullscreen
+  3:
+    sendkey: "RIGHTCTRL+W"      # close the browser page
 
 threshold:
   swipe: 0.8
