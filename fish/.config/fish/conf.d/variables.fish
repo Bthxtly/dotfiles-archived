@@ -6,9 +6,8 @@ set -x EDITOR nvim
 
 # config globle variables
 fish_add_path ~/.local/share/gem/ruby/3.4.0/bin
-fish_add_path ~/.config/hypr/scripts
 fish_add_path ~/.local/bin
-# cargo
+fish_add_path ~/.cargo/bin
 
 set -x HYPRSHOT_DIR $HOME/Pictures/Screenshots
 set -x QT_QPA_PLATFORM wayland

@@ -21,7 +21,21 @@ function fish_prompt
 
     set -l cwd $cyan(prompt_pwd)
 
-    string join '' -- $arrow $cwd $normal ' '
+    # https://asciinema.org/a/608188
+    # Show any backgrounded job, since I get confused about whether I've backgrounded nvim all the time.
+    # jobs -c shows the command name only, not the PID or anything.
+    set -l suspended_job_command (jobs -c | awk 'NR>0 {printf "%s%s", sep, $0; sep=" "} END {print ""}')
+
+    # I have an alias which uses fd, fzf and xargs together to find a file and open in nvim
+    if test $suspended_job_command = "fd fzf xargs"
+        set suspended_job_command nvim
+    end
+
+    if test -n $suspended_job_command
+        set suspended_job " "$(set_color brmagenta)"["$suspended_job_command"]"$(set_color normal)
+    end
+
+    string join '' -- $arrow $cwd $normal $suspended_job ' '
 end
 
 function fish_right_prompt
