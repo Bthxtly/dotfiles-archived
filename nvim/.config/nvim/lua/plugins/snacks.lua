@@ -76,7 +76,10 @@ return {
 
       explorer = { enabled = false },
 
-      notifier = { enabled = true },
+      notifier = {
+        enabled = true,
+        margin = { right = 0 },
+      },
 
       dashboard = {
         width = 60,
@@ -105,6 +108,15 @@ return {
           { section = "header" },
           { section = "keys", gap = 1, padding = 0 },
           { section = "startup" },
+        },
+      },
+
+      styles = {
+        notification = {
+          border = true,
+          wo = {
+            wrap = true,
+          },
         },
       },
     }
