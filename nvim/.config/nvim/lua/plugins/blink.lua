@@ -17,6 +17,8 @@ return {
           python = { inherit_defaults = true, "minuet" },
           c = { inherit_defaults = true, "minuet" },
           cpp = { inherit_defaults = true, "minuet" },
+          rust = { inherit_defaults = true, "minuet" },
+          codecompanion = { "codecompanion" },
         },
         providers = {
           lazydev = {
@@ -68,7 +70,7 @@ return {
       keymap = {
         ["<C-y>"] = { "accept", "fallback" },
         ["<C-k>"] = { "fallback" }, -- disable <c-k> in insert mode
-        ["<C-l>"] = require("minuet").make_blink_map(),
+        ["<C-a>"] = require("minuet").make_blink_map(),
         ["<CR>"] = {},
         ["<Up>"] = {},
         ["<Down>"] = {},
