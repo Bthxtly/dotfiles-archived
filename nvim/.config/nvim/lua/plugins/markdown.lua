@@ -31,10 +31,10 @@ return {
   {
     "OXY2DEV/markview.nvim",
     enabled = true,
-    ft = { "markdown", "vimwiki" },
+    ft = { "markdown", "vimwiki", "codecompanion" },
     opts = {
       preview = {
-        filetypes = { "markdown", "vimwiki" },
+        filetypes = { "markdown", "vimwiki", "codecompanion" },
         map_gx = false,
       },
       markdown = {
