@@ -4,6 +4,18 @@ vim.keymap.set("n", "<leader>uh", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "toggle inlay hints" })
 
+vim.keymap.set("n", "<leader>ci", function()
+  vim.diagnostic.config({ virtual_lines = { current_line = true } })
+
+  vim.api.nvim_create_autocmd("CursorMoved", {
+    group = vim.api.nvim_create_augroup("line-diagnostics", { clear = true }),
+    callback = function()
+      vim.diagnostic.config({ virtual_lines = false })
+      return true
+    end,
+  })
+end, { desc = "turn on virtual lines at current line" })
+
 return {
   {
     "neovim/nvim-lspconfig",
