@@ -30,7 +30,7 @@ return {
   -- Markdown Preview plugin
   {
     "OXY2DEV/markview.nvim",
-    enabled = true,
+    enabled = false,
     ft = { "markdown", "vimwiki", "codecompanion" },
     opts = {
       preview = {
