@@ -57,6 +57,7 @@ alias 'gla=git log --all --decorate --oneline --graph'
 
 # [neo]vim
 alias 'h=nvim "+cd ~/.config/hypr | FzfLua files"'
+alias 'n=nvim ~/.config/niri/config.kdl'
 alias 'k=nvim ~/.config/kitty/kitty.conf'
 alias 'lc=nvim leetcode.nvim'
 alias 't=nvim ~/Documents/VimWiki/TODO.md'
