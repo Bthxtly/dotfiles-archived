@@ -144,7 +144,7 @@ return {
   },
 
   {
-    "Bthxtly/blink.pairs",
+    "saghen/blink.pairs",
     build = "cargo build --release",
     --- @module 'blink.pairs'
     --- @type blink.pairs.Config
