@@ -1,6 +1,17 @@
 <!--
 vim:nospell:nowrap
 -->
+
+Archived
+---
+
+I'm not used to `GNU stow`, and I'm not using `Hyprland` or my customed
+`quickshell` anymore(I use `niri` and `DankMaterialShell` now, by the way).
+Combining with some other reasons, I'm willing to use `chezmoi` as my new dot
+manager. Thus this ropesitory is archived.
+
+[Here](https://github.com/Bthxtly/dotfiles) is the new repo.
+
 # These are my dotfiles
 
 + [Hyprland](#Hyprland)
